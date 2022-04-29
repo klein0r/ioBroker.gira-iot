@@ -4,11 +4,15 @@
   "description": "Integrate your Gira X1 or HomeServer",
   "author": {
     "name": "Matthias Kleine",
-    "email": "info@haus-automatisierung.com"
+    "email": "info@haus-automatisierung.com",
+    "url": "https://haus-automatisierung.com/"
   },
   "homepage": "https://github.com/klein0r/ioBroker.gira-iot",
   "license": "MIT",
   "keywords": [
+    "ioBroker",
+    "Smart Home",
+    "home automation",
     "gira",
     "x1",
     "homeserver",
@@ -16,7 +20,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:klein0r/ioBroker.gira-iot.git"
+    "url": "git+https://github.com/klein0r/ioBroker.gira-iot.git"
+  },
+  "engines": {
+    "node": ">=12.0.0"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^2.6.0"
