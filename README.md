@@ -1,21 +1,30 @@
 ![Logo](admin/gira-iot.png)
+
 # ioBroker.gira-iot
 
 [![NPM version](https://img.shields.io/npm/v/iobroker.gira-iot.svg)](https://www.npmjs.com/package/iobroker.gira-iot)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.gira-iot.svg)](https://www.npmjs.com/package/iobroker.gira-iot)
-![Number of Installations](https://iobroker.live/badges/gira-iot-installed.svg)
-![Current version in stable repository](https://iobroker.live/badges/gira-iot-stable.svg)
+[![Stable](http://iobroker.live/badges/gira-iot-stable.svg)](http://iobroker.live/badges/gira-iot-stable.svg)
+[![installed](http://iobroker.live/badges/gira-iot-installed.svg)](http://iobroker.live/badges/gira-iot-installed.svg)
 [![Dependency Status](https://img.shields.io/david/klein0r/iobroker.gira-iot.svg)](https://david-dm.org/klein0r/iobroker.gira-iot)
+[![Known Vulnerabilities](https://snyk.io/test/github/klein0r/ioBroker.gira-iot/badge.svg)](https://snyk.io/test/github/klein0r/ioBroker.gira-iot)
+![Test and Release](https://github.com/klein0r/ioBroker.gira-iot/workflows/Test%20and%20Release/badge.svg)
 
 [![NPM](https://nodei.co/npm/iobroker.gira-iot.png?downloads=true)](https://nodei.co/npm/iobroker.gira-iot/)
 
-**Tests:** ![Test and Release](https://github.com/klein0r/ioBroker.gira-iot/workflows/Test%20and%20Release/badge.svg)
+This adapters integrates your Gira X1 or Gira HomeServer into your ioBroker installation.
 
-## gira-iot adapter for ioBroker
+## Sponsored by
 
-Integrate your Gira X1 or HomeServer
+[![ioBroker Master Kurs](https://haus-automatisierung.com/images/ads/ioBroker-Kurs.png)](https://haus-automatisierung.com/iobroker-kurs/?refid=iobroker-gira-iot)
 
+## Installation
 
+Please use the "adapter list" in ioBroker to install a stable version of this adapter. You can also use the CLI to install this adapter:
+
+```
+iobroker add gira-iot
+```
 
 ## Changelog
 <!--
@@ -24,9 +33,11 @@ Integrate your Gira X1 or HomeServer
 -->
 
 ### **WORK IN PROGRESS**
+
 * (Matthias Kleine) initial release
 
 ## License
+
 MIT License
 
 Copyright (c) 2022 Matthias Kleine <info@haus-automatisierung.com>
