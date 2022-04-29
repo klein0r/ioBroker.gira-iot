@@ -77,7 +77,8 @@
         ]
     },
     "native": {
-
+        "serverIp": "",
+        "serverPort": 443
     },
     "objects": [],
     "instanceObjects": [

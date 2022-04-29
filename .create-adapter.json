@@ -21,7 +21,7 @@
     "dataSource": "push",
     "connectionIndicator": "yes",
     "language": "JavaScript",
-    "adminReact": "yes",
+    "adminReact": "no",
     "tools": [
         "ESLint",
         "type checking"

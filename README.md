@@ -31,10 +31,13 @@ iobroker add gira-iot
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+* (klein0r) Added Admin 5 configuration
 
 ### 0.0.2 (2022-04-29)
 
-* (Matthias Kleine) initial release
+* (klein0r) initial release
 
 ## License
 
