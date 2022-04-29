@@ -32,7 +32,7 @@ iobroker add gira-iot
     ### **WORK IN PROGRESS**
 -->
 
-### **WORK IN PROGRESS**
+### 0.0.2 (2022-04-29)
 
 * (Matthias Kleine) initial release
 
