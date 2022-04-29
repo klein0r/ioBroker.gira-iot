@@ -1,0 +1,102 @@
+{
+    "common": {
+        "name": "gira-iot",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "Gira IoT",
+        "titleLang": {
+            "en": "Gira IoT",
+            "de": "Gira IoT",
+            "ru": "Гира IoT",
+            "pt": "Gira IoT",
+            "nl": "Gira IoT",
+            "fr": "IdO Gira",
+            "it": "Gira IoT",
+            "es": "Gira IoT",
+            "pl": "Gira IoT",
+            "zh-cn": "Gira 物联网"
+        },
+        "desc": {
+            "en": "Integrate your Gira X1 or HomeServer",
+            "de": "Binden Sie Ihren Gira X1 oder HomeServer ein",
+            "ru": "Интегрируйте свой Gira X1 или HomeServer",
+            "pt": "Integre o seu Gira X1 ou HomeServer",
+            "nl": "Integreer uw Gira X1 of HomeServer",
+            "fr": "Intégrez votre Gira X1 ou HomeServer",
+            "it": "Integra il tuo Gira X1 o HomeServer",
+            "es": "Integre su Gira X1 o HomeServer",
+            "pl": "Zintegruj Gira X1 lub HomeServer",
+            "zh-cn": "集成您的 Gira X1 或 HomeServer"
+        },
+        "authors": [
+            "Matthias Kleine <info@haus-automatisierung.com>"
+        ],
+        "keywords": [
+            "gira",
+            "x1",
+            "homeserver",
+            "iot"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "gira-iot.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/klein0r/ioBroker.gira-iot/master/admin/gira-iot.png",
+        "readme": "https://github.com/klein0r/ioBroker.gira-iot/blob/master/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "iot-systems",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "push",
+        "materialize": true,
+        "eraseOnUpload": true,
+        "dependencies": [
+            {
+                "js-controller": ">=2.0.0"
+            }
+        ]
+    },
+    "native": {
+        "option1": true,
+        "option2": "42"
+    },
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
+    ]
+}

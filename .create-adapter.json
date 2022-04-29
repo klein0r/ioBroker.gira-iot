@@ -1,0 +1,44 @@
+{
+    "cli": true,
+    "target": "directory",
+    "adapterName": "gira-iot",
+    "title": "Gira IoT",
+    "description": "Integrate your Gira X1 or HomeServer",
+    "keywords": [
+        "gira",
+        "x1",
+        "homeserver",
+        "iot"
+    ],
+    "expert": "yes",
+    "features": [
+        "adapter"
+    ],
+    "adminFeatures": [],
+    "type": "iot-systems",
+    "startMode": "daemon",
+    "connectionType": "local",
+    "dataSource": "push",
+    "connectionIndicator": "yes",
+    "language": "JavaScript",
+    "adminReact": "yes",
+    "tools": [
+        "ESLint",
+        "type checking"
+    ],
+    "releaseScript": "yes",
+    "devServer": "yes",
+    "devServerPort": 8081,
+    "indentation": "Space (4)",
+    "quotes": "single",
+    "es6class": "yes",
+    "authorName": "Matthias Kleine",
+    "authorGithub": "klein0r",
+    "authorEmail": "info@haus-automatisierung.com",
+    "gitRemoteProtocol": "SSH",
+    "gitCommit": "no",
+    "defaultBranch": "master",
+    "license": "MIT License",
+    "dependabot": "yes",
+    "creatorVersion": "2.1.1"
+}
