@@ -1,32 +1,79 @@
----
 name: Bug report
-about: Something is not working as it should
-title: ''
-labels: ''
-assignees: ''
----
+title: "Bug report"
+description: "Create a report to help improve this ioBroker adapter"
+labels: bug
+body:
+  - type: markdown
+    attributes:
+      value: >
+        **Thank you for wanting to report a bug in this adapter!**
 
-**Describe the bug**  
-A clear and concise description of what the bug is.
+        If this is the first time you are doing this, please take a few moments to read
+        through the [README](https://github.com/klein0r/ioBroker.gira-iot/blob/master/README.md).
 
-**To Reproduce**  
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '...'
-3. Scroll down to '....'
-4. See error
+        You are about to report a bug in **Gira-IoT Adapter**. Do not proceed if your issues
+        occurs with ioBroker, any third party adapters, unofficial or outdated
+        adapter versions.
 
-**Expected behavior**  
-A clear and concise description of what you expected to happen.
+        Do also not seek support here ("I need help with ...", "I have a
+        question ...", "Can someone walk me through ..."), that belongs into the
+        [ioBroker forum at forum.iobroker.net](https://forum.iobroker.net/).
 
-**Screenshots & Logfiles**  
-If applicable, add screenshots and logfiles to help explain your problem.
+        And finally, make sure any bug you want to report is still present with the **current**
+        adapter (beta) version.
 
-**Versions:**  
- - Adapter version: <adapter-version>
- - JS-Controller version: <js-controller-version> <!-- determine this with `iobroker -v` on the console -->
- - Node version: <node-version> <!-- determine this with `node -v` on the console -->
- - Operating system: <os-name>
+        Thank you for your collaboration!
+  - type: textarea
+    attributes:
+      label: The problem
+      description: >-
+        Describe the issue you are experiencing here. Tell us what you were trying to do
+        step by step, and what happened that you did not expect.
 
-**Additional context**  
-Add any other context about the problem here.
+        Provide a clear and concise description of what the problem is and include as many
+        details as possible.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## Environment
+  - type: input
+    attributes:
+      label: Version of nodejs
+      description: Can be found in the host section of ioBroker admin
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Version of ioBroker js-controller
+      description: Can be found in the host section of ioBroker admin
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Version of Adapter
+      description: Can be found in the adapters tab of ioBroker admin
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Operating system running ioBroker
+      description: >-
+        Linux, Windows, MacOS, something else? With version please?
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## Logs and other files needed for analysis
+  - type: checkboxes
+    attributes:
+      label: Checklist of files to include below
+      options:
+        - label: iobroker.current.log (Please share the logs in debug mode)
+          required: true
+        - label: Contents of the JavaScript browser console (always include in cases of issues with the user interface)
+  - type: textarea
+    attributes:
+      label: Additional information & file uploads
