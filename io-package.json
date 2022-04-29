@@ -86,7 +86,18 @@
             "_id": "info",
             "type": "channel",
             "common": {
-                "name": "Information"
+                "name": {
+                    "en": "Information",
+                    "de": "Information",
+                    "ru": "Информация",
+                    "pt": "Em formação",
+                    "nl": "Informatie",
+                    "fr": "Information",
+                    "it": "Informazione",
+                    "es": "Información",
+                    "pl": "Informacja",
+                    "zh-cn": "信息"
+                }
             },
             "native": {}
         },
@@ -94,12 +105,111 @@
             "_id": "info.connection",
             "type": "state",
             "common": {
-                "role": "indicator.connected",
-                "name": "Device or service connected",
+                "name":  {
+                    "en": "Device or service connected",
+                    "de": "Gerät oder Dienst verbunden",
+                    "ru": "Устройство или служба подключены",
+                    "pt": "Dispositivo ou serviço conectado",
+                    "nl": "Apparaat of service verbonden",
+                    "fr": "Appareil ou service connecté",
+                    "it": "Dispositivo o servizio connesso",
+                    "es": "Dispositivo o servicio conectado",
+                    "pl": "Podłączono urządzenie lub usługę",
+                    "zh-cn": "连接的设备或服务"
+                },
                 "type": "boolean",
+                "role": "indicator.connected",
                 "read": true,
                 "write": false,
                 "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "deviceInfo",
+            "type": "channel",
+            "common": {
+                "name": {
+                    "en": "Device Information",
+                    "de": "Geräteinformation",
+                    "ru": "Информация об устройстве",
+                    "pt": "Informação de dispositivo",
+                    "nl": "Apparaat informatie",
+                    "fr": "Informations sur l'appareil",
+                    "it": "Informazioni sul dispositivo",
+                    "es": "Información del dispositivo",
+                    "pl": "Informacje o urządzeniu",
+                    "zh-cn": "设备信息"
+                }
+            },
+            "native": {}
+        },
+        {
+            "_id": "deviceInfo.name",
+            "type": "state",
+            "common": {
+                "name": {
+                    "en": "Device name",
+                    "de": "Gerätename",
+                    "ru": "Имя устройства",
+                    "pt": "Nome do dispositivo",
+                    "nl": "Toestelnaam",
+                    "fr": "Nom de l'appareil",
+                    "it": "Nome del dispositivo",
+                    "es": "Nombre del dispositivo",
+                    "pl": "Nazwa urządzenia",
+                    "zh-cn": "设备名称"
+                },
+                "type": "string",
+                "role": "text",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "deviceInfo.type",
+            "type": "state",
+            "common": {
+                "name": {
+                    "en": "Device type",
+                    "de": "Gerätetyp",
+                    "ru": "Тип устройства",
+                    "pt": "Tipo de dispositivo",
+                    "nl": "Soort apparaat",
+                    "fr": "Type d'appareil",
+                    "it": "Tipo di dispositivo",
+                    "es": "Tipo de dispositivo",
+                    "pl": "Rodzaj urządzenia",
+                    "zh-cn": "设备类型"
+                },
+                "type": "string",
+                "role": "text",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "deviceInfo.version",
+            "type": "state",
+            "common": {
+                "name": {
+                    "en": "Device version",
+                    "de": "Geräteversion",
+                    "ru": "Версия устройства",
+                    "pt": "Versão do dispositivo",
+                    "nl": "Apparaatversie",
+                    "fr": "Version de l'appareil",
+                    "it": "Versione del dispositivo",
+                    "es": "Versión del dispositivo",
+                    "pl": "Wersja urządzenia",
+                    "zh-cn": "设备版本"
+                },
+                "type": "string",
+                "role": "text",
+                "read": true,
+                "write": false
             },
             "native": {}
         }

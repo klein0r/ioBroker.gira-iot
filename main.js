@@ -2,6 +2,7 @@
 
 const utils = require('@iobroker/adapter-core');
 const axios = require('axios').default;
+const https = require('https');
 
 class GiraIot extends utils.Adapter {
 
@@ -13,15 +14,48 @@ class GiraIot extends utils.Adapter {
             ...options,
             name: 'gira-iot',
         });
+
+        this.giraApiClient = null;
+
         this.on('ready', this.onReady.bind(this));
         this.on('stateChange', this.onStateChange.bind(this));
-        // this.on('objectChange', this.onObjectChange.bind(this));
-        // this.on('message', this.onMessage.bind(this));
         this.on('unload', this.onUnload.bind(this));
     }
 
     async onReady() {
-        
+        if (!this.config.serverIp) {
+            this.log.error(`Server IP is empty - please check instance configuration`);
+            return;
+        }
+
+        this.log.debug(`Current server ip is ${this.config.serverIp}:${this.config.serverPort}`);
+
+        this.giraApiClient = axios.create({
+            baseURL: `https://${this.config.serverIp}:${this.config.serverPort}/api/v2/`,
+            timeout: 1000,
+            responseType: 'json',
+            responseEncoding: 'utf8',
+            httpsAgent: new https.Agent(
+                {
+                    rejectUnauthorized: false
+                }
+            )
+        });
+
+        try {
+            const deviceInfoResponse = await this.giraApiClient.get('/');
+            this.log.debug(`deviceInfoResponse ${JSON.stringify(deviceInfoResponse.status)}: ${JSON.stringify(deviceInfoResponse.data)}`)
+
+            if (deviceInfoResponse.status === 200) {
+                const deviceInfo = deviceInfoResponse.data;
+
+                await this.setStateAsync('deviceInfo.name', {val: deviceInfo.deviceName, ack: true});
+                await this.setStateAsync('deviceInfo.type', {val: deviceInfo.deviceType, ack: true});
+                await this.setStateAsync('deviceInfo.version', {val: deviceInfo.deviceVersion, ack: true});
+            }
+        } catch (err) {
+            this.log.error(err);
+        }
     }
 
     /**
