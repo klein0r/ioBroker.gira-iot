@@ -31,6 +31,10 @@ iobroker add gira-iot
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+(klein0r) Updated depedency for js-controller to 4.0.15
+
 ### 0.0.3 (2022-04-29)
 
 * (klein0r) Added Admin 5 configuration
