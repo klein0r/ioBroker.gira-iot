@@ -2,5 +2,7 @@
     "Options": "Опции",
     "Server": "Сервер",
     "IP or hostname of your Gira X1 or HomeServer": "IP или имя хоста вашего Gira X1 или HomeServer",
-    "Port": "Порт"
+    "Port": "Порт",
+    "Username": "Имя пользователя",
+    "Password": "Пароль"
 }

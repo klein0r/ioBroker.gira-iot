@@ -33,7 +33,7 @@ iobroker add gira-iot
 -->
 ### **WORK IN PROGRESS**
 
-(klein0r) Updated depedency for js-controller to 4.0.15
+* (klein0r) Updated depedency for js-controller to 4.0.15
 
 ### 0.0.3 (2022-04-29)
 

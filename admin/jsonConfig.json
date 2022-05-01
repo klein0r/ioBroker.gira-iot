@@ -23,6 +23,23 @@
                     "lg": 6,
                     "label": "Port"
                 },
+                "userName": {
+                    "newLine": true,
+                    "type": "text",
+                    "sm": 12,
+                    "md": 6,
+                    "lg": 6,
+                    "label": "Username"
+                },
+                "userPassword": {
+                    "type": "password",
+                    "repeat": false,
+                    "visible": false,
+                    "sm": 12,
+                    "md": 6,
+                    "lg": 6,
+                    "label": "Password"
+                },
                 "_ioBrokerKursBanner": {
                     "newLine": true,
                     "type": "staticImage",
