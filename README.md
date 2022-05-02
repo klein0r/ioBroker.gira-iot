@@ -6,7 +6,6 @@
 [![Downloads](https://img.shields.io/npm/dm/iobroker.gira-iot.svg)](https://www.npmjs.com/package/iobroker.gira-iot)
 [![Stable](http://iobroker.live/badges/gira-iot-stable.svg)](http://iobroker.live/badges/gira-iot-stable.svg)
 [![installed](http://iobroker.live/badges/gira-iot-installed.svg)](http://iobroker.live/badges/gira-iot-installed.svg)
-[![Dependency Status](https://img.shields.io/david/klein0r/iobroker.gira-iot.svg)](https://david-dm.org/klein0r/iobroker.gira-iot)
 [![Known Vulnerabilities](https://snyk.io/test/github/klein0r/ioBroker.gira-iot/badge.svg)](https://snyk.io/test/github/klein0r/ioBroker.gira-iot)
 ![Test and Release](https://github.com/klein0r/ioBroker.gira-iot/workflows/Test%20and%20Release/badge.svg)
 
