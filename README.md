@@ -32,6 +32,8 @@ iobroker add gira-iot
 -->
 ### **WORK IN PROGRESS**
 
+NodeJS 14.x is required (NodeJS 12.x is EOL)
+
 * (klein0r) Updated depedency for js-controller to 4.0.15
 
 ### 0.0.3 (2022-04-29)
