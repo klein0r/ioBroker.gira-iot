@@ -2,14 +2,25 @@
 
 # ioBroker.gira-iot
 
-[![NPM version](https://img.shields.io/npm/v/iobroker.gira-iot.svg)](https://www.npmjs.com/package/iobroker.gira-iot)
-[![Downloads](https://img.shields.io/npm/dm/iobroker.gira-iot.svg)](https://www.npmjs.com/package/iobroker.gira-iot)
-[![Stable](http://iobroker.live/badges/gira-iot-stable.svg)](http://iobroker.live/badges/gira-iot-stable.svg)
-[![installed](http://iobroker.live/badges/gira-iot-installed.svg)](http://iobroker.live/badges/gira-iot-installed.svg)
-[![Known Vulnerabilities](https://snyk.io/test/github/klein0r/ioBroker.gira-iot/badge.svg)](https://snyk.io/test/github/klein0r/ioBroker.gira-iot)
-![Test and Release](https://github.com/klein0r/ioBroker.gira-iot/workflows/Test%20and%20Release/badge.svg)
+[![NPM version](https://img.shields.io/npm/v/iobroker.gira-iot?style=flat-square)](https://www.npmjs.com/package/iobroker.gira-iot)
+[![Downloads](https://img.shields.io/npm/dm/iobroker.gira-iot?label=npm%20downloads&style=flat-square)](https://www.npmjs.com/package/iobroker.gira-iot)
+![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/iobroker.gira-iot?label=npm%20vulnerabilities&style=flat-square)
+![node-lts](https://img.shields.io/node/v-lts/iobroker.gira-iot?style=flat-square)
+![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/iobroker.gira-iot?label=npm%20dependencies&style=flat-square)
 
-[![NPM](https://nodei.co/npm/iobroker.gira-iot.png?downloads=true)](https://nodei.co/npm/iobroker.gira-iot/)
+![GitHub](https://img.shields.io/github/license/klein0r/iobroker.gira-iot?style=flat-square)
+![GitHub repo size](https://img.shields.io/github/repo-size/klein0r/iobroker.gira-iot?logo=github&style=flat-square)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/klein0r/iobroker.gira-iot?logo=github&style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/klein0r/iobroker.gira-iot?logo=github&style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues/klein0r/iobroker.gira-iot?logo=github&style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/klein0r/iobroker.gira-iot/Test%20and%20Release?label=Test%20and%20Release&logo=github&style=flat-square)
+![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/klein0r/iobroker.gira-iot?label=repo%20vulnerabilities&logo=github&style=flat-square)
+
+## Versions
+
+![Beta](https://img.shields.io/npm/v/iobroker.gira-iot.svg?color=red&label=beta)
+![Stable](http://iobroker.live/badges/gira-iot-stable.svg)
+![Installed](http://iobroker.live/badges/gira-iot-installed.svg)
 
 This adapters integrates your Gira X1 or Gira HomeServer into your ioBroker installation.
 
