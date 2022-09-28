@@ -16,6 +16,7 @@ class GiraIot extends utils.Adapter {
 
         this.apiConnected = false;
         this.giraApiClient = null;
+        this.uiConfigId = null;
 
         this.refreshStateTimeout = null;
 
@@ -35,7 +36,7 @@ class GiraIot extends utils.Adapter {
             return;
         }
 
-        this.log.debug(`Configured server ip is "${this.config.serverIp}:${this.config.serverPort}" - Connecting with user: "${this.config.userName}"`);
+        this.log.info(`Configured server: "${this.config.serverIp}:${this.config.serverPort}" - Connecting with user: "${this.config.userName}"`);
         await this.setStateAsync('info.connection', { val: false, ack: true });
 
         this.giraApiClient = axios.create({
@@ -48,28 +49,26 @@ class GiraIot extends utils.Adapter {
             }),
         });
 
-        this.refreshState();
+        await this.refreshState();
     }
 
     async refreshState() {
         try {
             const deviceInfoResponse = await this.giraApiClient.get('/v2/');
-            this.log.debug(`deviceInfoResponse ${JSON.stringify(deviceInfoResponse.status)}: ${JSON.stringify(deviceInfoResponse.data)}`);
+            this.log.debug(`deviceInfoResponse ${deviceInfoResponse.status}: ${JSON.stringify(deviceInfoResponse.data)}`);
 
             if (deviceInfoResponse.status === 200) {
-                // Set device online
-                this.apiConnected = true;
-                await this.setStateAsync('info.connection', { val: this.apiConnected, ack: true });
-
                 const deviceInfo = deviceInfoResponse.data;
 
                 await this.setStateAsync('deviceInfo.name', { val: deviceInfo.deviceName, ack: true });
                 await this.setStateAsync('deviceInfo.type', { val: deviceInfo.deviceType, ack: true });
                 await this.setStateAsync('deviceInfo.version', { val: deviceInfo.deviceVersion, ack: true });
 
-                const clientToken = await this.getClientToken();
+                let clientToken = await this.getClientToken();
 
                 if (!clientToken) {
+                    this.log.info(`Client token doesn't exist - creating a new client`);
+
                     const clientIdentifier = `net.iobroker.clients.${this.namespace}`;
                     const registerClientResponse = await this.giraApiClient.post(
                         '/clients',
@@ -83,7 +82,7 @@ class GiraIot extends utils.Adapter {
                             },
                         },
                     );
-                    this.log.debug(`registerClientResponse ${JSON.stringify(registerClientResponse.status)}: ${JSON.stringify(registerClientResponse.data)}`);
+                    this.log.debug(`registerClientResponse ${registerClientResponse.status}: ${JSON.stringify(registerClientResponse.data)}`);
 
                     /*
                         201 Created
@@ -92,22 +91,48 @@ class GiraIot extends utils.Adapter {
                         423 Locked
                     */
                     if (registerClientResponse.status === 201) {
-                        if (registerClientResponse.data.token) {
+                        if (registerClientResponse?.data?.token) {
+                            clientToken = registerClientResponse.data.token;
+
                             await this.setStateAsync('client.identifier', { val: clientIdentifier, ack: true });
-                            await this.setStateAsync('client.token', { val: registerClientResponse.data.token, ack: true });
+                            await this.setStateAsync('client.token', { val: clientToken, ack: true });
+
+                            // Set device online
+                            await this.setApiConnection(true);
                         }
                     } else {
                         this.log.error(`Unable to register client. Device responded with code ${registerClientResponse.status}`);
 
                         await this.setStateAsync('client.identifier', { val: null, ack: true });
                         await this.setStateAsync('client.token', { val: null, ack: true });
+
+                        // Set device offline
+                        await this.setApiConnection(false);
+                    }
+                } else {
+                    // Set device online
+                    await this.setApiConnection(true);
+                }
+
+                if (this.apiConnected) {
+                    const uiConfigIdResponse = await this.giraApiClient.get(`/uiconfig/uid?token=${clientToken}`);
+                    this.log.debug(`uiConfigIdResponse ${uiConfigIdResponse.status}: ${JSON.stringify(uiConfigIdResponse.data)}`);
+
+                    if (uiConfigIdResponse.status === 200) {
+                        if (uiConfigIdResponse?.data?.uid) {
+                            if (uiConfigIdResponse.data.uid !== this.uiConfigId) {
+                                this.log.info(`UI config ID changed to ${uiConfigIdResponse.data.uid} - refreshing devices`);
+
+                                await this.refreshDevices();
+                                this.uiConfigId = uiConfigIdResponse.data.uid;
+                            }
+                        }
                     }
                 }
             }
         } catch (err) {
             // Set device offline
-            this.apiConnected = false;
-            await this.setStateAsync('info.connection', { val: this.apiConnected, ack: true });
+            await this.setApiConnection(false);
 
             this.log.error(err);
         }
@@ -124,13 +149,61 @@ class GiraIot extends utils.Adapter {
         this.log.debug(`refreshStateTimeout: re-created refresh timeout: id ${this.refreshStateTimeout}`);
     }
 
+    async refreshDevices() {
+        if (this.apiConnected) {
+            const clientToken = await this.getClientToken();
+
+            const uiConfigResponse = await this.giraApiClient.get(`/uiconfig?expand=dataPointFlags,parameters,locations,trades&token=${clientToken}`);
+            this.log.debug(`uiConfigResponse ${uiConfigResponse.status}: ${JSON.stringify(uiConfigResponse.data)}`);
+
+            if (uiConfigResponse.status === 200) {
+                for (const func of uiConfigResponse.data.functions) {
+                    this.log.debug(`Found device ${func.uid} with name "${func.displayName}"`);
+
+                    await this.setObjectNotExistsAsync(`functions.${func.uid}`, {
+                        type: 'device',
+                        common: {
+                            name: func.displayName,
+                        },
+                        native: {
+                            uid: func.uid,
+                            channelType: func.channelType,
+                            functionType: func.functionType,
+                        },
+                    });
+
+                    for (const dp of func.dataPoints) {
+                        await this.setObjectNotExistsAsync(`functions.${func.uid}.${dp.name}`, {
+                            type: 'state',
+                            common: {
+                                name: dp.name,
+                                type: 'string',
+                                role: 'state',
+                                read: dp.canRead,
+                                write: dp.canWrite,
+                            },
+                            native: {
+                                uid: dp.uid,
+                            },
+                        });
+                    }
+                }
+            }
+        }
+    }
+
     async getClientToken() {
         const clientTokenState = await this.getStateAsync('client.token');
         if (clientTokenState && clientTokenState.val) {
             return clientTokenState.val;
         }
 
-        throw new Error(`Unable to get client token`);
+        return null;
+    }
+
+    async setApiConnection(status) {
+        this.apiConnected = status;
+        await this.setStateAsync('info.connection', { val: status, ack: true });
     }
 
     /**
@@ -139,6 +212,7 @@ class GiraIot extends utils.Adapter {
      */
     onUnload(callback) {
         try {
+            this.apiConnected = false;
             this.setStateAsync('info.connection', { val: false, ack: true });
 
             // Delete old timer

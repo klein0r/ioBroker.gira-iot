@@ -36,6 +36,11 @@ Please use the "adapter list" in ioBroker to install a stable version of this ad
 iobroker add gira-iot
 ```
 
+## API Documentation (dev)
+
+- [Gira IoT REST API Documentation - EN](https://partner.gira.de/data3/Gira_IoT_REST_API_v2_EN.pdf)
+- [Gira IoT REST API Dokumentation - DE](https://partner.gira.de/data3/Gira_IoT_REST_API_v2_DE.pdf)
+
 ## Changelog
 <!--
     Placeholder for the next version (at the beginning of the line):
@@ -45,6 +50,7 @@ iobroker add gira-iot
 
 NodeJS 14.x is required (NodeJS 12.x is EOL)
 
+* (klein0r) Create devices and states
 * (klein0r) Updated depedency for js-controller to 4.0.15
 
 ### 0.0.3 (2022-04-29)
