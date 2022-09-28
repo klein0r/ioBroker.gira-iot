@@ -188,6 +188,41 @@ class GiraIot extends utils.Adapter {
                         });
                     }
                 }
+
+                if (uiConfigResponse.data?.locations) {
+                    await this.createRooms(uiConfigResponse.data.locations);
+                }
+            }
+        }
+    }
+
+    async createRooms(locations) {
+        for (const location of locations) {
+            if (location?.locationType === 'Room') {
+                const enumId = this.cleanNamespace(location.displayName);
+
+                this.log.debug(`Creating room "${location.displayName}" with enum id ${enumId}`);
+
+                await this.setForeignObjectNotExistsAsync(`enum.rooms.${enumId}`, {
+                    type: 'enum',
+                    common: {
+                        name: location.displayName,
+                        enabled: true,
+                        color: false,
+                        members: [],
+                    },
+                    native: {},
+                });
+
+                if (location?.functions) {
+                    for (const func of location.functions) {
+                        await this.addChannelToEnumAsync('rooms', enumId, 'functions', func);
+                    }
+                }
+            }
+
+            if (location?.locations) {
+                await this.createRooms(location.locations);
             }
         }
     }
@@ -204,6 +239,20 @@ class GiraIot extends utils.Adapter {
     async setApiConnection(status) {
         this.apiConnected = status;
         await this.setStateAsync('info.connection', { val: status, ack: true });
+    }
+
+    cleanNamespace(id) {
+        return id
+            .trim()
+            .replace(/\s/g, '_') // Replace whitespaces with underscores
+            .replace(/[^\p{Ll}\p{Lu}\p{Nd}]+/gu, '_') // Replace not allowed chars with underscore
+            .replace(/[_]+$/g, '') // Remove underscores end
+            .replace(/^[_]+/g, '') // Remove underscores beginning
+            .replace(/_+/g, '_') // Replace multiple underscores with one
+            .toLowerCase()
+            .replace(/_([a-z])/g, (m, w) => {
+                return w.toUpperCase();
+            });
     }
 
     /**
