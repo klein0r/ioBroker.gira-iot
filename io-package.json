@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "gira-iot",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "news": {
+      "0.1.1": {
+        "en": "Changed registration of callbacks via web adapter\nRequest current values on init\nUpdated state roles",
+        "de": "Änderung der Registrierung von Rückrufen über Webadapter\nAktuelle Werte an init anfordern\nAktualisierte Staatsrollen",
+        "ru": "Изменена регистрация звонков через веб-адаптер\nЗапрос текущих значений на init\nОбновленные государственные роли",
+        "pt": "Registo alterado de callbacks via adaptador web\nSolicite valores atuais no init\nFunções estaduais atualizadas",
+        "nl": "Veranderde registratie van bellers via web adapter\nVerzoek de huidige waarden op\nVerouderde staatsrollen",
+        "fr": "Changement d'enregistrement des callbacks via l'adaptateur web\nDemander des valeurs actuelles sur l'init\nRôles d ' État actualisés",
+        "it": "Registrazione modificata dei callback tramite web adapter\nRichiedi i valori correnti su init\nRuoli di stato aggiornati",
+        "es": "Cambio de registro de callbacks a través de adaptador web\nSolicitar valores actuales sobre init\nFunciones estatales actualizadas",
+        "pl": "Zmiana rejestracji za pomocą adapterów internetowych\nRequest bieżące wartości\nRole państwowe",
+        "zh-cn": "B. 通过网络适应人员修改的报警登记\n请求目前关于推定的价值\n最新国家作用"
+      },
       "0.1.0": {
         "en": "Publish new values via HTTP\nUpdated state roles\nUse sendTo to communicate with adapter instance\nImplemented status update of value callbacks",
         "de": "Neue Werte über HTTP veröffentlichen\nAktualisierte Staatsrollen\nVerwenden Sie sendTo, um mit Adapterinstanz zu kommunizieren\nImplementierte Statusaktualisierung von Wertrufen",
