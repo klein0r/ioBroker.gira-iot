@@ -142,22 +142,6 @@ class GiraIot extends utils.Adapter {
                                 this.uiConfigId = uiConfigIdResponse.data.uid;
                             }
                         }
-
-                        if (!this.webHooksRegistered) {
-                            const serviceCallbackUri = `https://172.16.0.125:8082/${this.namespace}/service`;
-                            const valueCallbackUri = `https://172.16.0.125:8082/${this.namespace}/value`;
-
-                            this.log.debug(`Registering callback urls (web adapter) to ${serviceCallbackUri} and ${valueCallbackUri}`);
-
-                            const registerClientsReponse = await this.giraApiClient.post(`/clients/${clientToken}/callbacks`, {
-                                serviceCallback: serviceCallbackUri,
-                                valueCallback: valueCallbackUri,
-                                testCallbacks: false,
-                            });
-                            this.log.debug(`registerClientsReponse ${registerClientsReponse.status}: ${JSON.stringify(registerClientsReponse.data)}`);
-
-                            this.webHooksRegistered = true;
-                        }
                     } else if (uiConfigIdResponse.status === 401) {
                         this.log.warn(`Unable to get UI config ID - looks like your client token is invalid. Will be deleted and recreated automatically`);
                         await this.setStateAsync('client.token', { val: null, ack: true });
@@ -315,6 +299,37 @@ class GiraIot extends utils.Adapter {
         }
     }
 
+    async updateValueOf(uid, value) {
+        this.log.debug(`Received update request of "${uid}" with value: ${value}`);
+
+        // TODO
+    }
+
+    async registerCallbacks(baseUrl) {
+        if (this.apiConnected) {
+            if (!this.webHooksRegistered) {
+                const serviceCallbackUri = `${baseUrl}/service`;
+                const valueCallbackUri = `${baseUrl}/value`;
+
+                this.log.debug(`Registering callback urls (web adapter) to ${serviceCallbackUri} and ${valueCallbackUri}`);
+
+                const clientToken = await this.getClientToken();
+                const registerCallbacksReponse = await this.giraApiClient.post(`/clients/${clientToken}/callbacks`, {
+                    serviceCallback: serviceCallbackUri,
+                    valueCallback: valueCallbackUri,
+                    testCallbacks: false,
+                });
+                this.log.debug(`registerClientsReponse ${registerCallbacksReponse.status}: ${JSON.stringify(registerCallbacksReponse.data)}`);
+
+                if (registerCallbacksReponse.status == 200) {
+                    this.webHooksRegistered = true;
+                }
+            }
+        } else {
+            throw Error('Unable to register callback urls (API not connected)');
+        }
+    }
+
     async unregisterCallbacks() {
         if (this.webHooksRegistered) {
             this.log.debug(`Unregister callback urls`);
@@ -373,8 +388,6 @@ class GiraIot extends utils.Adapter {
                 this.log.debug('refreshStateTimeout: UNLOAD');
                 this.clearTimeout(this.refreshStateTimeout);
             }
-
-            this.unregisterCallbacks();
 
             callback();
         } catch (e) {
