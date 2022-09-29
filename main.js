@@ -16,6 +16,8 @@ class GiraIot extends utils.Adapter {
         });
 
         this.apiConnected = false;
+        this.webHooksRegistered = false;
+
         this.giraApiClient = null;
         this.uiConfigId = null;
 
@@ -48,12 +50,17 @@ class GiraIot extends utils.Adapter {
             httpsAgent: new https.Agent({
                 rejectUnauthorized: false,
             }),
+            validateStatus: (status) => {
+                return [200, 201, 401].includes(status);
+            },
         });
 
         await this.refreshState();
     }
 
     async refreshState() {
+        let nextRefreshSec = 60;
+
         try {
             const deviceInfoResponse = await this.giraApiClient.get('/v2/');
             this.log.debug(`deviceInfoResponse ${deviceInfoResponse.status}: ${JSON.stringify(deviceInfoResponse.data)}`);
@@ -109,6 +116,8 @@ class GiraIot extends utils.Adapter {
 
                         // Set device offline
                         await this.setApiConnection(false);
+
+                        nextRefreshSec = 60 * 5;
                     }
                 } else {
                     // Set device online
@@ -128,6 +137,22 @@ class GiraIot extends utils.Adapter {
                                 this.uiConfigId = uiConfigIdResponse.data.uid;
                             }
                         }
+
+                        if (!this.webHooksRegistered) {
+                            const registerClientsReponse = await this.giraApiClient.post(`/clients/${clientToken}/callbacks`, {
+                                serviceCallback: `https://172.16.0.125:8082/${this.namespace}/service`,
+                                valueCallback: `https://172.16.0.125:8082/${this.namespace}/value`,
+                                testCallbacks: false,
+                            });
+                            this.log.debug(`registerClientsReponse ${registerClientsReponse.status}: ${JSON.stringify(registerClientsReponse.data)}`);
+
+                            this.webHooksRegistered = true;
+                        }
+                    } else if (uiConfigIdResponse.status === 401) {
+                        this.log.warn(`Unable to get UI config ID - looks like your client token is invalid. Will be deleted and recreated automatically`);
+                        await this.setStateAsync('client.token', { val: null, ack: true });
+
+                        nextRefreshSec = 2; // Call refresh function again to create a new token
                     }
                 }
             }
@@ -135,25 +160,30 @@ class GiraIot extends utils.Adapter {
             // Set device offline
             await this.setApiConnection(false);
 
-            this.log.error(err);
-        }
+            if (err.name === 'AxiosError') {
+                this.log.error(`Request to ${err?.config?.url} failed with code ${err?.status} (${err?.code}): ${err.message}`);
+                this.log.debug(`Complete error object: ${JSON.stringify(err)}`);
+            } else {
+                this.log.error(err);
+            }
+        } finally {
+            // Delete old timer
+            if (this.refreshStateTimeout) {
+                this.clearTimeout(this.refreshStateTimeout);
+            }
 
-        // Delete old timer
-        if (this.refreshStateTimeout) {
-            this.clearTimeout(this.refreshStateTimeout);
+            this.refreshStateTimeout = this.setTimeout(() => {
+                this.refreshStateTimeout = null;
+                this.refreshState();
+            }, nextRefreshSec * 1000);
+            this.log.debug(`refreshStateTimeout: re-created refresh timeout: id ${this.refreshStateTimeout}`);
         }
-
-        this.refreshStateTimeout = this.setTimeout(() => {
-            this.refreshStateTimeout = null;
-            this.refreshState();
-        }, 60 * 1000); // Default 60 sec
-        this.log.debug(`refreshStateTimeout: re-created refresh timeout: id ${this.refreshStateTimeout}`);
     }
 
     async refreshDevices() {
         if (this.apiConnected) {
             const clientToken = await this.getClientToken();
-            const uiConfigResponse = await this.giraApiClient.get(`/uiconfig?expand=dataPointFlags,parameters,locations,trades&token=${clientToken}`);
+            const uiConfigResponse = await this.giraApiClient.get(`/uiconfig?expand=locations,trades&token=${clientToken}`);
             this.log.debug(`uiConfigResponse ${uiConfigResponse.status}: ${JSON.stringify(uiConfigResponse.data)}`);
 
             if (uiConfigResponse.status === 200) {
@@ -275,6 +305,17 @@ class GiraIot extends utils.Adapter {
         }
     }
 
+    async unregisterCallbacks() {
+        if (this.webHooksRegistered) {
+            this.log.debug(`Unregister callback urls`);
+
+            const clientToken = await this.getClientToken();
+            this.giraApiClient?.delete(`/clients/${clientToken}/callbacks`);
+
+            this.webHooksRegistered = false;
+        }
+    }
+
     async getClientToken() {
         const clientTokenState = await this.getStateAsync('client.token');
         if (clientTokenState && clientTokenState.val) {
@@ -322,6 +363,8 @@ class GiraIot extends utils.Adapter {
                 this.log.debug('refreshStateTimeout: UNLOAD');
                 this.clearTimeout(this.refreshStateTimeout);
             }
+
+            this.unregisterCallbacks();
 
             callback();
         } catch (e) {
