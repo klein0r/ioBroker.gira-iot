@@ -161,7 +161,7 @@ class GiraIot extends utils.Adapter {
                     this.log.debug(`Found device ${func.uid} with name "${func.displayName}"`);
 
                     await this.setObjectNotExistsAsync(`functions.${func.uid}`, {
-                        type: 'device',
+                        type: 'channel',
                         common: {
                             name: func.displayName,
                         },
@@ -191,6 +191,10 @@ class GiraIot extends utils.Adapter {
 
                 if (uiConfigResponse.data?.locations) {
                     await this.createRooms(uiConfigResponse.data.locations);
+                }
+
+                if (uiConfigResponse.data?.trades) {
+                    await this.createFunctions(uiConfigResponse.data.trades);
                 }
             }
         }
@@ -223,6 +227,31 @@ class GiraIot extends utils.Adapter {
 
             if (location?.locations) {
                 await this.createRooms(location.locations);
+            }
+        }
+    }
+
+    async createFunctions(trades) {
+        for (const trade of trades) {
+            if (trade?.functions && trade.functions.length > 0) {
+                const enumId = this.cleanNamespace(trade.tradeType);
+
+                this.log.debug(`Creating function "${trade.displayName}" with enum id ${enumId}`);
+
+                await this.setForeignObjectNotExistsAsync(`enum.functions.${enumId}`, {
+                    type: 'enum',
+                    common: {
+                        name: trade.displayName,
+                        enabled: true,
+                        color: false,
+                        members: [],
+                    },
+                    native: {},
+                });
+
+                for (const func of trade.functions) {
+                    await this.addChannelToEnumAsync('functions', enumId, 'functions', func);
+                }
             }
         }
     }

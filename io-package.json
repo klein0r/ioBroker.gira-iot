@@ -235,68 +235,87 @@
             "native": {}
         },
         {
-          "_id": "client",
-          "type": "channel",
-          "common": {
-              "name": {
-                "en": "Client",
-                "de": "Klient",
-                "ru": "Клиент",
-                "pt": "Cliente",
-                "nl": "Cliënt",
-                "fr": "Client",
-                "it": "Cliente",
-                "es": "Cliente",
-                "pl": "Klient",
-                "zh-cn": "客户"
-              }
-          },
-          "native": {}
-      },
+            "_id": "client",
+            "type": "channel",
+            "common": {
+                "name": {
+                    "en": "Client",
+                    "de": "Klient",
+                    "ru": "Клиент",
+                    "pt": "Cliente",
+                    "nl": "Cliënt",
+                    "fr": "Client",
+                    "it": "Cliente",
+                    "es": "Cliente",
+                    "pl": "Klient",
+                    "zh-cn": "客户"
+                }
+            },
+            "native": {}
+        },
         {
-          "_id": "client.identifier",
-          "type": "state",
-          "common": {
-              "name": {
-                "en": "Identifier",
-                "de": "Kennung",
-                "ru": "Идентификатор",
-                "pt": "Identificador",
-                "nl": "ID",
-                "fr": "Identifiant",
-                "it": "Identificatore",
-                "es": "identificador",
-                "pl": "Identyfikator",
-                "zh-cn": "标识符"
-              },
-              "type": "string",
-              "role": "text",
-              "read": true,
-              "write": false
-          },
-          "native": {}
+            "_id": "client.identifier",
+            "type": "state",
+            "common": {
+                "name": {
+                    "en": "Identifier",
+                    "de": "Kennung",
+                    "ru": "Идентификатор",
+                    "pt": "Identificador",
+                    "nl": "ID",
+                    "fr": "Identifiant",
+                    "it": "Identificatore",
+                    "es": "identificador",
+                    "pl": "Identyfikator",
+                    "zh-cn": "标识符"
+                },
+                "type": "string",
+                "role": "text",
+                "read": true,
+                "write": false
+            },
+            "native": {}
         },
         {
             "_id": "client.token",
             "type": "state",
             "common": {
                 "name": {
-                  "en": "User token",
-                  "de": "Benutzertoken",
-                  "ru": "Токен пользователя",
-                  "pt": "Token de usuário",
-                  "nl": "Gebruikerstoken",
-                  "fr": "Jeton utilisateur",
-                  "it": "Token utente",
-                  "es": "token de usuario",
-                  "pl": "Token użytkownika",
-                  "zh-cn": "用户令牌"
+                    "en": "User token",
+                    "de": "Benutzertoken",
+                    "ru": "Токен пользователя",
+                    "pt": "Token de usuário",
+                    "nl": "Gebruikerstoken",
+                    "fr": "Jeton utilisateur",
+                    "it": "Token utente",
+                    "es": "token de usuario",
+                    "pl": "Token użytkownika",
+                    "zh-cn": "用户令牌"
                 },
                 "type": "string",
                 "role": "text",
                 "read": true,
                 "write": false,
                 "expert": true
+            },
+            "native": {}
+        },
+        {
+            "_id": "functions",
+            "type": "folder",
+            "common": {
+                "name": {
+                    "en": "Functions",
+                    "de": "Funktionen",
+                    "ru": "Функции",
+                    "pt": "Funções",
+                    "nl": "Functies",
+                    "fr": "Fonctions",
+                    "it": "Funzioni",
+                    "es": "Funciones",
+                    "pl": "Pogrzeb",
+                    "zh-cn": "职能"
+                }
             },
             "native": {}
         }
