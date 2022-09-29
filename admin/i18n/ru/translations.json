@@ -5,5 +5,6 @@
     "Port": "Порт",
     "Username": "Имя пользователя",
     "Password": "Пароль",
-    "Create rooms and functions automatically": "Создавайте комнаты и функции автоматически"
+    "Create rooms and functions automatically": "Создавайте комнаты и функции автоматически",
+    "Web adapter instance": "Экземпляр веб-адаптера"
 }

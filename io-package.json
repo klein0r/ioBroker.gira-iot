@@ -74,12 +74,14 @@
         "connectionType": "local",
         "dataSource": "push",
         "materialize": true,
+        "webExtension": "lib/web.js",
         "adminUI": {
             "config": "json"
         },
         "dependencies": [
             {
-                "js-controller": ">=4.0.15"
+                "js-controller": ">=4.0.15",
+                "web": ">=5.1.2"
             }
         ],
         "globalDependencies": [
@@ -100,7 +102,8 @@
         "serverPort": 443,
         "userName": "Installer",
         "userPassword": "",
-        "createRoomsAndFunctions": false
+        "createRoomsAndFunctions": false,
+        "webInstance": ""
     },
     "objects": [],
     "instanceObjects": [

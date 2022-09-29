@@ -5,5 +5,6 @@
     "Port": "Haven",
     "Username": "gebruikersnaam",
     "Password": "Wachtwoord",
-    "Create rooms and functions automatically": "Creëer automatisch kamers en functies"
+    "Create rooms and functions automatically": "Creëer automatisch kamers en functies",
+    "Web adapter instance": "Webadapter-instantie"
 }

@@ -5,5 +5,6 @@
     "Port": "Puerto",
     "Username": "Nombre de usuario",
     "Password": "Clave",
-    "Create rooms and functions automatically": "Crea salas y funciones automáticamente"
+    "Create rooms and functions automatically": "Crea salas y funciones automáticamente",
+    "Web adapter instance": "Instancia de adaptador web"
 }

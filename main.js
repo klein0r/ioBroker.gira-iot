@@ -30,12 +30,17 @@ class GiraIot extends utils.Adapter {
 
     async onReady() {
         if (!this.config.serverIp) {
-            this.log.error(`Server IP is empty - please check instance configuration`);
+            this.log.error(`Server IP is empty - please check instance configuration of ${this.namespace}`);
             return;
         }
 
         if (!this.config.userName || !this.config.userPassword) {
-            this.log.error(`User name and/or user password empty - please check instance configuration`);
+            this.log.error(`User name and/or user password empty - please check instance configuration of ${this.namespace}`);
+            return;
+        }
+
+        if (!this.config.webInstance) {
+            this.log.error(`Web instance is not configured - please check instance configuration of ${this.namespace}`);
             return;
         }
 
@@ -139,9 +144,14 @@ class GiraIot extends utils.Adapter {
                         }
 
                         if (!this.webHooksRegistered) {
+                            const serviceCallbackUri = `https://172.16.0.125:8082/${this.namespace}/service`;
+                            const valueCallbackUri = `https://172.16.0.125:8082/${this.namespace}/value`;
+
+                            this.log.debug(`Registering callback urls (web adapter) to ${serviceCallbackUri} and ${valueCallbackUri}`);
+
                             const registerClientsReponse = await this.giraApiClient.post(`/clients/${clientToken}/callbacks`, {
-                                serviceCallback: `https://172.16.0.125:8082/${this.namespace}/service`,
-                                valueCallback: `https://172.16.0.125:8082/${this.namespace}/value`,
+                                serviceCallback: serviceCallbackUri,
+                                valueCallback: valueCallbackUri,
                                 testCallbacks: false,
                             });
                             this.log.debug(`registerClientsReponse ${registerClientsReponse.status}: ${JSON.stringify(registerClientsReponse.data)}`);

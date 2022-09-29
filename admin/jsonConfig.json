@@ -48,6 +48,15 @@
                     "lg": 6,
                     "label": "Create rooms and functions automatically"
                 },
+                "webInstance": {
+                    "newLine": true,
+                    "type": "instance",
+                    "adapter": "web",
+                    "sm": 12,
+                    "md": 6,
+                    "lg": 6,
+                    "label": "Web adapter instance"
+                },
                 "_ioBrokerKursBanner": {
                     "newLine": true,
                     "type": "staticImage",
