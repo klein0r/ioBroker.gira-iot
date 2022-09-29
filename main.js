@@ -297,7 +297,7 @@ class GiraIot extends utils.Adapter {
             if (location?.locationType === 'Room') {
                 const enumId = this.cleanNamespace(location.displayName);
 
-                this.log.debug(`Creating room "${location.displayName}" with enum id ${enumId}`);
+                this.log.debug(`Creating room "${location.displayName}" with enum id "enum.rooms.${enumId}"`);
 
                 await this.setForeignObjectNotExistsAsync(`enum.rooms.${enumId}`, {
                     type: 'enum',
@@ -328,7 +328,7 @@ class GiraIot extends utils.Adapter {
             if (trade?.functions && trade.functions.length > 0) {
                 const enumId = this.cleanNamespace(trade.tradeType);
 
-                this.log.debug(`Creating function "${trade.displayName}" with enum id ${enumId}`);
+                this.log.debug(`Creating function "${trade.displayName}" with enum id "enum.functions.${enumId}"`);
 
                 await this.setForeignObjectNotExistsAsync(`enum.functions.${enumId}`, {
                     type: 'enum',
