@@ -26,6 +26,7 @@ class GiraIot extends utils.Adapter {
 
         this.on('ready', this.onReady.bind(this));
         this.on('stateChange', this.onStateChange.bind(this));
+        this.on('message', this.onMessage.bind(this));
         this.on('unload', this.onUnload.bind(this));
     }
 
@@ -316,7 +317,7 @@ class GiraIot extends utils.Adapter {
                 const serviceCallbackUri = `${baseUrl}/service`;
                 const valueCallbackUri = `${baseUrl}/value`;
 
-                this.log.debug(`Registering callback urls (web adapter) to ${serviceCallbackUri} and ${valueCallbackUri}`);
+                this.log.debug(`Registering callback urls to ${serviceCallbackUri} and ${valueCallbackUri}`);
 
                 const clientToken = await this.getClientToken();
                 const registerCallbacksReponse = await this.giraApiClient.post(`/clients/${clientToken}/callbacks`, {
@@ -327,11 +328,12 @@ class GiraIot extends utils.Adapter {
                 this.log.debug(`registerClientsReponse ${registerCallbacksReponse.status}: ${JSON.stringify(registerCallbacksReponse.data)}`);
 
                 if (registerCallbacksReponse.status == 200) {
+                    this.log.info(`Registered callback urls to ${serviceCallbackUri} and ${valueCallbackUri}`);
                     this.webHooksRegistered = true;
                 }
             }
         } else {
-            throw Error('Unable to register callback urls (API not connected)');
+            this.log.error('Unable to register callback urls (API not connected)');
         }
     }
 
@@ -397,6 +399,23 @@ class GiraIot extends utils.Adapter {
             callback();
         } catch (e) {
             callback();
+        }
+    }
+
+    /**
+     * @param {ioBroker.Message} obj
+     */
+    onMessage(obj) {
+        if (obj) {
+            this.log.debug(`Received message: ${JSON.stringify(obj.message)}`);
+
+            if (obj.command === 'updateValueOf') {
+                this.updateValueOf(obj.message.uid, obj.message.value);
+            } else if (obj.command === 'registerCallbacks') {
+                this.registerCallbacks(obj.message.baseUrl);
+            } else if (obj.command === 'unregisterCallbacks') {
+                this.unregisterCallbacks();
+            }
         }
     }
 

@@ -85,8 +85,9 @@
     "compact": true,
     "connectionType": "local",
     "dataSource": "push",
-    "materialize": true,
+    "messagebox": true,
     "webExtension": "lib/web.js",
+    "materialize": true,
     "adminUI": {
       "config": "json"
     },

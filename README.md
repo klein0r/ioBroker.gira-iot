@@ -48,6 +48,7 @@ iobroker add gira-iot
 -->
 ### **WORK IN PROGRESS**
 
+* (klein0r) Use sendTo to communicate with adapter instance
 * (klein0r) Implemented status update of value callbacks
 
 ### 0.0.4 (2022-09-29)
