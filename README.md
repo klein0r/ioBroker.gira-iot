@@ -51,6 +51,7 @@ iobroker add gira-iot
 NodeJS 14.x is required (NodeJS 12.x is EOL)
 
 * (klein0r) Create devices and states
+* (klein0r) Added option to create rooms and functions automatically
 * (klein0r) Updated depedency for js-controller to 4.0.15
 
 ### 0.0.3 (2022-04-29)

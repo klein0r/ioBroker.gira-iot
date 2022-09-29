@@ -4,5 +4,6 @@
     "IP or hostname of your Gira X1 or HomeServer": "IP ou nom d'hôte de votre Gira X1 ou HomeServer",
     "Port": "Port",
     "Username": "Nom d'utilisateur",
-    "Password": "Mot de passe"
+    "Password": "Mot de passe",
+    "Create rooms and functions automatically": "Créez des salles et des fonctions automatiquement"
 }

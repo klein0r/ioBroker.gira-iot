@@ -40,6 +40,14 @@
                     "lg": 6,
                     "label": "Password"
                 },
+                "createRoomsAndFunctions": {
+                    "newLine": true,
+                    "type": "checkbox",
+                    "sm": 12,
+                    "md": 6,
+                    "lg": 6,
+                    "label": "Create rooms and functions automatically"
+                },
                 "_ioBrokerKursBanner": {
                     "newLine": true,
                     "type": "staticImage",

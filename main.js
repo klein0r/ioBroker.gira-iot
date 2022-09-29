@@ -189,12 +189,14 @@ class GiraIot extends utils.Adapter {
                     }
                 }
 
-                if (uiConfigResponse.data?.locations) {
-                    await this.createRooms(uiConfigResponse.data.locations);
-                }
+                if (this.config.createRoomsAndFunctions) {
+                    if (uiConfigResponse.data?.locations) {
+                        await this.createRooms(uiConfigResponse.data.locations);
+                    }
 
-                if (uiConfigResponse.data?.trades) {
-                    await this.createFunctions(uiConfigResponse.data.trades);
+                    if (uiConfigResponse.data?.trades) {
+                        await this.createFunctions(uiConfigResponse.data.trades);
+                    }
                 }
             }
         }

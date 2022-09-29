@@ -99,7 +99,8 @@
         "serverIp": "",
         "serverPort": 443,
         "userName": "Installer",
-        "userPassword": ""
+        "userPassword": "",
+        "createRoomsAndFunctions": false
     },
     "objects": [],
     "instanceObjects": [
