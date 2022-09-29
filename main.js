@@ -232,7 +232,9 @@ class GiraIot extends utils.Adapter {
                         if (giraTypes.channels?.[func.channelType]?.[dp.name]) {
                             this.log.debug(`Creating state "functions.${func.uid}.${dp.name}"`);
 
-                            await this.setObjectNotExistsAsync(`functions.${func.uid}.${dp.name}`, {
+                            const stateObjId = `functions.${func.uid}.${dp.name}`;
+
+                            await this.setObjectNotExistsAsync(stateObjId, {
                                 type: 'state',
                                 common: giraTypes.channels[func.channelType][dp.name].common,
                                 native: {
@@ -245,6 +247,24 @@ class GiraIot extends utils.Adapter {
                             });
 
                             this.uidCache[dp.uid] = `functions.${func.uid}.${dp.name}`;
+
+                            if (giraTypes.channels[func.channelType][dp.name].common.read) {
+                                // Try to get current value
+                                const getValueResponse = await this.giraApiClient.get(`/values/${dp.uid}?token=${clientToken}`);
+                                this.log.debug(`getValueResponse ${getValueResponse.status}: ${JSON.stringify(getValueResponse.data)}`);
+
+                                if (getValueResponse.status === 200) {
+                                    for (const value of getValueResponse.data.values) {
+                                        const newValue = giraTypes.convertValueForState(
+                                            value.value,
+                                            giraTypes.channels[func.channelType][dp.name].common.type,
+                                            giraTypes.channels[func.channelType][dp.name].type,
+                                        );
+
+                                        await this.setStateAsync(stateObjId, { val: newValue, ack: true, c: 'Init value' });
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -336,17 +356,7 @@ class GiraIot extends utils.Adapter {
 
             // Just update "eventing" states
             if (stateObj?.type === 'state' && stateObj?.native?.eventing) {
-                let newValue = value;
-
-                if (stateObj.common.type === 'boolean') {
-                    newValue = newValue == '1';
-                } else if (stateObj.common.type === 'number') {
-                    if (['percent', 'integer', 'byte'].includes(stateObj.native.type)) {
-                        newValue = parseInt(newValue);
-                    } else {
-                        newValue = parseFloat(newValue);
-                    }
-                }
+                const newValue = giraTypes.convertValueForState(value, stateObj.common.type, stateObj.native.type);
 
                 await this.setStateAsync(this.uidCache[uid], { val: newValue, ack: true, c: 'Value callback' });
             } else {
@@ -418,14 +428,10 @@ class GiraIot extends utils.Adapter {
                         const clientToken = await this.getClientToken();
 
                         if (uId && this.apiConnected && clientToken) {
-                            let newValue = state.val;
-
-                            if (stateObj.common.type === 'boolean') {
-                                newValue = newValue ? 1 : 0;
-                            }
+                            const newValue = giraTypes.convertValueForGira(state.val, stateObj.common.type);
 
                             const putValueResponse = await this.giraApiClient.put(`/values/${uId}?token=${clientToken}`, {
-                                value: String(newValue),
+                                value: newValue,
                             });
                             this.log.debug(`putValueResponse ${putValueResponse.status}: ${JSON.stringify(putValueResponse.data)}`);
 
