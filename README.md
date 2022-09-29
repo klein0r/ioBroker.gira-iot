@@ -58,6 +58,7 @@ iobroker add gira-iot
 
 * (klein0r) Changed registration of callbacks via web adapter
 * (klein0r) Request current values on init
+* (klein0r) Updated state roles
 
 ### 0.1.0 (2022-09-29)
 
