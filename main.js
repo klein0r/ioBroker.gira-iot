@@ -47,7 +47,7 @@ class GiraIot extends utils.Adapter {
         }
 
         this.log.info(`Configured server: "${this.config.serverIp}:${this.config.serverPort}" - Connecting with user: "${this.config.userName}"`);
-        await this.setStateAsync('info.connection', { val: false, ack: true });
+        await this.setApiConnection(false);
 
         this.giraApiClient = axios.create({
             baseURL: `https://${this.config.serverIp}:${this.config.serverPort}/api`,
@@ -62,6 +62,7 @@ class GiraIot extends utils.Adapter {
             },
         });
 
+        await this.subscribeStatesAsync('*');
         await this.refreshState();
     }
 
@@ -403,23 +404,42 @@ class GiraIot extends utils.Adapter {
     }
 
     /**
-     * Is called when adapter shuts down - callback has to be called under any circumstances!
-     * @param {() => void} callback
+     * Is called if a subscribed state changes
+     * @param {string} id
+     * @param {ioBroker.State | null | undefined} state
      */
-    onUnload(callback) {
-        try {
-            this.apiConnected = false;
-            this.setStateAsync('info.connection', { val: false, ack: true });
+    onStateChange(id, state) {
+        if (state && !state.ack) {
+            const idNoNamespace = this.removeNamespace(id);
 
-            // Delete old timer
-            if (this.refreshStateTimeout) {
-                this.log.debug('refreshStateTimeout: UNLOAD');
-                this.clearTimeout(this.refreshStateTimeout);
+            if (idNoNamespace.startsWith('functions.')) {
+                this.getObject(id, async (err, stateObj) => {
+                    if (err) {
+                        this.log.error(`Unable to get object for ${idNoNamespace}: ${err}`);
+                    } else if (stateObj?.common?.write) {
+                        const uId = stateObj?.native?.uid;
+                        const clientToken = await this.getClientToken();
+
+                        if (uId && this.apiConnected && clientToken) {
+                            let newValue = state.val;
+
+                            if (stateObj.common.type === 'boolean') {
+                                newValue = newValue ? 1 : 0;
+                            }
+
+                            const putValueResponse = await this.giraApiClient.put(`/values/${uId}?token=${clientToken}`, {
+                                value: String(newValue),
+                            });
+                            this.log.debug(`putValueResponse ${putValueResponse.status}: ${JSON.stringify(putValueResponse.data)}`);
+
+                            if (putValueResponse.status === 200) {
+                                // Confirm new value (if sent)
+                                await this.setStateAsync(idNoNamespace, { val: state.val, ack: true });
+                            }
+                        }
+                    }
+                });
             }
-
-            callback();
-        } catch (e) {
-            callback();
         }
     }
 
@@ -441,17 +461,22 @@ class GiraIot extends utils.Adapter {
     }
 
     /**
-     * Is called if a subscribed state changes
-     * @param {string} id
-     * @param {ioBroker.State | null | undefined} state
+     * Is called when adapter shuts down - callback has to be called under any circumstances!
+     * @param {() => void} callback
      */
-    onStateChange(id, state) {
-        if (state) {
-            // The state was changed
-            this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
-        } else {
-            // The state was deleted
-            this.log.info(`state ${id} deleted`);
+    onUnload(callback) {
+        try {
+            this.setApiConnection(false);
+
+            // Delete old timer
+            if (this.refreshStateTimeout) {
+                this.log.debug('refreshStateTimeout: UNLOAD');
+                this.clearTimeout(this.refreshStateTimeout);
+            }
+
+            callback();
+        } catch (e) {
+            callback();
         }
     }
 }
