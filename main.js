@@ -20,6 +20,7 @@ class GiraIot extends utils.Adapter {
 
         this.giraApiClient = null;
         this.uiConfigId = null;
+        this.uidCache = {};
 
         this.refreshStateTimeout = null;
 
@@ -216,6 +217,8 @@ class GiraIot extends utils.Adapter {
                                     eventing: giraTypes.channels[func.channelType][dp.name].eventing,
                                 },
                             });
+
+                            this.uidCache[dp.uid] = `functions.${func.uid}.${dp.name}`;
                         }
                     }
                 }
@@ -302,7 +305,9 @@ class GiraIot extends utils.Adapter {
     async updateValueOf(uid, value) {
         this.log.debug(`Received update request of "${uid}" with value: ${value}`);
 
-        // TODO
+        if (this.uidCache?.[uid]) {
+            await this.setStateAsync(this.uidCache[uid], { val: value, ack: true, c: 'Value callback' });
+        }
     }
 
     async registerCallbacks(baseUrl) {
