@@ -3,6 +3,7 @@
 const utils = require('@iobroker/adapter-core');
 const axios = require('axios').default;
 const https = require('https');
+const giraTypes = require(__dirname + '/lib/gira-types');
 
 class GiraIot extends utils.Adapter {
     /**
@@ -156,7 +157,6 @@ class GiraIot extends utils.Adapter {
             this.log.debug(`uiConfigResponse ${uiConfigResponse.status}: ${JSON.stringify(uiConfigResponse.data)}`);
 
             if (uiConfigResponse.status === 200) {
-
                 const keepFunctions = [];
                 const allFunctions = (await this.getChannelsOfAsync('functions')).map((obj) => {
                     return this.removeNamespace(obj._id);
@@ -180,19 +180,19 @@ class GiraIot extends utils.Adapter {
                     });
 
                     for (const dp of func.dataPoints) {
-                        await this.setObjectNotExistsAsync(`functions.${func.uid}.${dp.name}`, {
-                            type: 'state',
-                            common: {
-                                name: dp.name,
-                                type: 'string',
-                                role: 'state',
-                                read: dp.canRead,
-                                write: dp.canWrite,
-                            },
-                            native: {
-                                uid: dp.uid,
-                            },
-                        });
+                        if (giraTypes.channels?.[func.channelType]?.[dp.name]) {
+                            this.log.debug(`Creating state "functions.${func.uid}.${dp.name}"`);
+
+                            await this.setObjectNotExistsAsync(`functions.${func.uid}.${dp.name}`, {
+                                type: 'state',
+                                common: giraTypes.channels[func.channelType][dp.name].common,
+                                native: {
+                                    uid: dp.uid,
+                                    mandatory: giraTypes.channels[func.channelType][dp.name].mandatory,
+                                    eventing: giraTypes.channels[func.channelType][dp.name].eventing,
+                                },
+                            });
+                        }
                     }
                 }
 
