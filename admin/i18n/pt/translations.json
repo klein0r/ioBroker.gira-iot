@@ -6,6 +6,5 @@
     "Username": "Nome do usuário",
     "Password": "Senha",
     "Create rooms and functions automatically": "Crie salas e funções automaticamente",
-    "Web adapter instance": "Instância do adaptador da web",
-    "IP interface for incoming connections": "Interface IP para conexões de entrada"
+    "Web adapter instance": "Instância do adaptador da web"
 }

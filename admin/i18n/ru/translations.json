@@ -6,6 +6,5 @@
     "Username": "Имя пользователя",
     "Password": "Пароль",
     "Create rooms and functions automatically": "Создавайте комнаты и функции автоматически",
-    "Web adapter instance": "Экземпляр веб-адаптера",
-    "IP interface for incoming connections": "IP-интерфейс для входящих соединений"
+    "Web adapter instance": "Экземпляр веб-адаптера"
 }

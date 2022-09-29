@@ -6,6 +6,5 @@
     "Username": "gebruikersnaam",
     "Password": "Wachtwoord",
     "Create rooms and functions automatically": "Creëer automatisch kamers en functies",
-    "Web adapter instance": "Webadapter-instantie",
-    "IP interface for incoming connections": "IP-interface voor inkomende verbindingen"
+    "Web adapter instance": "Webadapter-instantie"
 }
