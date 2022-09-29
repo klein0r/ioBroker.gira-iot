@@ -311,14 +311,18 @@ class GiraIot extends utils.Adapter {
         if (this.uidCache?.[uid]) {
             const stateObj = await this.getObjectAsync(this.uidCache[uid]);
 
-            // Just update eventing states
+            // Just update "eventing" states
             if (stateObj?.type === 'state' && stateObj?.native?.eventing) {
                 let newValue = value;
 
                 if (stateObj.common.type === 'boolean') {
-                    newValue = !!newValue;
+                    newValue = newValue == '1';
                 } else if (stateObj.common.type === 'number') {
-                    newValue = parseFloat(newValue);
+                    if (['percent', 'integer', 'byte'].includes(stateObj.native.type)) {
+                        newValue = parseInt(newValue);
+                    } else {
+                        newValue = parseFloat(newValue);
+                    }
                 }
 
                 await this.setStateAsync(this.uidCache[uid], { val: newValue, ack: true, c: 'Value callback' });
