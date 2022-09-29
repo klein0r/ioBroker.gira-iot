@@ -214,6 +214,8 @@ class GiraIot extends utils.Adapter {
                                 common: giraTypes.channels[func.channelType][dp.name].common,
                                 native: {
                                     uid: dp.uid,
+                                    parentChannelType: func.channelType,
+                                    type: giraTypes.channels[func.channelType][dp.name].type,
                                     mandatory: giraTypes.channels[func.channelType][dp.name].mandatory,
                                     eventing: giraTypes.channels[func.channelType][dp.name].eventing,
                                 },
@@ -307,7 +309,22 @@ class GiraIot extends utils.Adapter {
         this.log.debug(`Received update request of "${uid}" with value: ${value}`);
 
         if (this.uidCache?.[uid]) {
-            await this.setStateAsync(this.uidCache[uid], { val: value, ack: true, c: 'Value callback' });
+            const stateObj = await this.getObjectAsync(this.uidCache[uid]);
+
+            // Just update eventing states
+            if (stateObj?.type === 'state' && stateObj?.native?.eventing) {
+                let newValue = value;
+
+                if (stateObj.common.type === 'boolean') {
+                    newValue = !!newValue;
+                } else if (stateObj.common.type === 'number') {
+                    newValue = parseFloat(newValue);
+                }
+
+                await this.setStateAsync(this.uidCache[uid], { val: newValue, ack: true, c: 'Value callback' });
+            } else {
+                this.log.warn(`Received value event for invalid state with "${uid}": ${value}`);
+            }
         }
     }
 
