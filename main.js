@@ -152,12 +152,19 @@ class GiraIot extends utils.Adapter {
     async refreshDevices() {
         if (this.apiConnected) {
             const clientToken = await this.getClientToken();
-
             const uiConfigResponse = await this.giraApiClient.get(`/uiconfig?expand=dataPointFlags,parameters,locations,trades&token=${clientToken}`);
             this.log.debug(`uiConfigResponse ${uiConfigResponse.status}: ${JSON.stringify(uiConfigResponse.data)}`);
 
             if (uiConfigResponse.status === 200) {
+
+                const keepFunctions = [];
+                const allFunctions = (await this.getChannelsOfAsync('functions')).map((obj) => {
+                    return this.removeNamespace(obj._id);
+                });
+
                 for (const func of uiConfigResponse.data.functions) {
+                    keepFunctions.push(`functions.${func.uid}`);
+
                     this.log.debug(`Found device ${func.uid} with name "${func.displayName}"`);
 
                     await this.setObjectNotExistsAsync(`functions.${func.uid}`, {
@@ -186,6 +193,16 @@ class GiraIot extends utils.Adapter {
                                 uid: dp.uid,
                             },
                         });
+                    }
+                }
+
+                // Delete non existent functions
+                for (let i = 0; i < allFunctions.length; i++) {
+                    const id = allFunctions[i];
+
+                    if (keepFunctions.indexOf(id) === -1) {
+                        await this.delObjectAsync(id, { recursive: true });
+                        this.log.debug(`Function deleted: ${id}`);
                     }
                 }
 
@@ -284,6 +301,11 @@ class GiraIot extends utils.Adapter {
             .replace(/_([a-z])/g, (m, w) => {
                 return w.toUpperCase();
             });
+    }
+
+    removeNamespace(id) {
+        const re = new RegExp(this.namespace + '*\\.', 'g');
+        return id.replace(re, '');
     }
 
     /**
