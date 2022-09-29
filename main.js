@@ -16,6 +16,8 @@ class GiraIot extends utils.Adapter {
         });
 
         this.apiConnected = false;
+
+        this.webHooksBaseUrl = null;
         this.webHooksRegistered = false;
 
         this.giraApiClient = null;
@@ -143,6 +145,26 @@ class GiraIot extends utils.Adapter {
 
                                 await this.refreshDevices();
                                 this.uiConfigId = uiConfigIdResponse.data.uid;
+                            }
+
+                            if (!this.webHooksRegistered && this.webHooksBaseUrl) {
+                                const serviceCallbackUri = `${this.webHooksBaseUrl}/service`;
+                                const valueCallbackUri = `${this.webHooksBaseUrl}/value`;
+
+                                this.log.debug(`Registering callback urls to ${serviceCallbackUri} and ${valueCallbackUri}`);
+
+                                const clientToken = await this.getClientToken();
+                                const registerCallbacksReponse = await this.giraApiClient.post(`/clients/${clientToken}/callbacks`, {
+                                    serviceCallback: serviceCallbackUri,
+                                    valueCallback: valueCallbackUri,
+                                    testCallbacks: false,
+                                });
+                                this.log.debug(`registerClientsReponse ${registerCallbacksReponse.status}: ${JSON.stringify(registerCallbacksReponse.data)}`);
+
+                                if (registerCallbacksReponse.status == 200) {
+                                    this.log.info(`Registered callback urls to ${serviceCallbackUri} and ${valueCallbackUri}`);
+                                    this.webHooksRegistered = true;
+                                }
                             }
                         }
                     } else if (uiConfigIdResponse.status === 401) {
@@ -333,32 +355,6 @@ class GiraIot extends utils.Adapter {
         }
     }
 
-    async registerCallbacks(baseUrl) {
-        if (this.apiConnected) {
-            if (!this.webHooksRegistered) {
-                const serviceCallbackUri = `${baseUrl}/service`;
-                const valueCallbackUri = `${baseUrl}/value`;
-
-                this.log.debug(`Registering callback urls to ${serviceCallbackUri} and ${valueCallbackUri}`);
-
-                const clientToken = await this.getClientToken();
-                const registerCallbacksReponse = await this.giraApiClient.post(`/clients/${clientToken}/callbacks`, {
-                    serviceCallback: serviceCallbackUri,
-                    valueCallback: valueCallbackUri,
-                    testCallbacks: false,
-                });
-                this.log.debug(`registerClientsReponse ${registerCallbacksReponse.status}: ${JSON.stringify(registerCallbacksReponse.data)}`);
-
-                if (registerCallbacksReponse.status == 200) {
-                    this.log.info(`Registered callback urls to ${serviceCallbackUri} and ${valueCallbackUri}`);
-                    this.webHooksRegistered = true;
-                }
-            }
-        } else {
-            this.log.error('Unable to register callback urls (API not connected)');
-        }
-    }
-
     async unregisterCallbacks() {
         if (this.webHooksRegistered) {
             this.log.debug(`Unregister callback urls`);
@@ -366,6 +362,7 @@ class GiraIot extends utils.Adapter {
             const clientToken = await this.getClientToken();
             this.giraApiClient?.delete(`/clients/${clientToken}/callbacks`);
 
+            this.webHooksBaseUrl = null;
             this.webHooksRegistered = false;
         }
     }
@@ -453,7 +450,7 @@ class GiraIot extends utils.Adapter {
             if (obj.command === 'updateValueOf') {
                 this.updateValueOf(obj.message.uid, obj.message.value);
             } else if (obj.command === 'registerCallbacks') {
-                this.registerCallbacks(obj.message.baseUrl);
+                this.webHooksBaseUrl = obj.message.baseUrl;
             } else if (obj.command === 'unregisterCallbacks') {
                 this.unregisterCallbacks();
             }
