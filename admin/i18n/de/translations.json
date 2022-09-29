@@ -6,5 +6,6 @@
     "Username": "Nutzername",
     "Password": "Passwort",
     "Create rooms and functions automatically": "Räume und Funktionen automatisch erstellen",
-    "Web adapter instance": "Web-Adapter-Instanz"
+    "Web adapter instance": "Web-Adapter-Instanz",
+    "IP interface for incoming connections": "IP-Schnittstelle für eingehende Verbindungen"
 }

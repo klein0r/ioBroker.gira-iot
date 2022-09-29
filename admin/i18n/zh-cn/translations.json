@@ -6,5 +6,6 @@
     "Username": "用户名",
     "Password": "密码",
     "Create rooms and functions automatically": "自动创建房间和功能",
-    "Web adapter instance": "Web 适配器实例"
+    "Web adapter instance": "Web 适配器实例",
+    "IP interface for incoming connections": "用于传入连接的 IP 接口"
 }

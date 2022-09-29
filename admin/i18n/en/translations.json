@@ -6,5 +6,6 @@
     "Username": "Username",
     "Password": "Password",
     "Create rooms and functions automatically": "Create rooms and functions automatically",
-    "Web adapter instance": "Web adapter instance"
+    "Web adapter instance": "Web adapter instance",
+    "IP interface for incoming connections": "IP interface for incoming connections"
 }
