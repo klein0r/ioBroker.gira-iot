@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "gira-iot",
-    "version": "0.0.4",
+    "version": "0.1.0",
     "news": {
+      "0.1.0": {
+        "en": "Publish new values via HTTP\nUpdated state roles\nUse sendTo to communicate with adapter instance\nImplemented status update of value callbacks",
+        "de": "Neue Werte über HTTP veröffentlichen\nAktualisierte Staatsrollen\nVerwenden Sie sendTo, um mit Adapterinstanz zu kommunizieren\nImplementierte Statusaktualisierung von Wertrufen",
+        "ru": "Опубликовать новые значения через HTTP\nОбновленные государственные роли\nИспользуйте sendTo для связи с примером адаптера\nРеализовано обновление статуса callbacks",
+        "pt": "Publicar novos valores via HTTP\nFunções estaduais atualizadas\nUse sendTo para se comunicar com a instância do adaptador\nAtualização de status implementada de retornos de valor",
+        "nl": "Publish nieuwe waarden via HTP\nVerouderde staatsrollen\nGebruik om te communiceren met adapter bijvoorbeeld\nGeïmplementeerde status update van waardebedragen",
+        "fr": "Publier de nouvelles valeurs via HTTP\nRôles d ' État actualisés\nUtilisez sendTo pour communiquer avec l'instance adaptateur\nMise à jour de l ' état mis en œuvre des rappels de valeur",
+        "it": "Pubblica nuovi valori tramite HTTP\nRuoli di stato aggiornati\nUsa sendTo per comunicare con l'istanza dell'adattatore\nAggiornamento dello stato implementato dei callback di valore",
+        "es": "Publicar nuevos valores a través de HTTP\nFunciones estatales actualizadas\nUse sendTo para comunicarse con instancia de adaptador\nActualización del estado aplicado de los callbacks de valor",
+        "pl": "Wydawne wartości za pośrednictwem HTTP\nRole państwowe\nWykorzystywać do komunikacji z adapterem\nPoprawiony status aktualizacji callbacku wartości",
+        "zh-cn": "通过海贸总协定出版新价值观\n最新国家作用\n使用寄托与适应者联系\n执行附加要求的最新情况"
+      },
       "0.0.4": {
         "en": "NodeJS 14.x is required (NodeJS 12.x is EOL)\n\n* Create devices and states\n* Added option to create rooms and functions automatically\n* Updated depedency for js-controller to 4.0.15",
         "de": "NodeJS 14.x ist erforderlich (NodeJS 12.x ist EOL)\n\n* Geräte und Zustände erstellen\n* Zusätzliche Möglichkeit, Räume und Funktionen automatisch zu erstellen\n* Aktualisierte Depedanz für js-Controller auf 4.0.15",

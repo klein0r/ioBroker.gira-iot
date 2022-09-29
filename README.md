@@ -54,7 +54,7 @@ iobroker add gira-iot
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.1.0 (2022-09-29)
 
 * (klein0r) Publish new values via HTTP
 * (klein0r) Updated state roles
