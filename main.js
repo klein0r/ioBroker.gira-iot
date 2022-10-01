@@ -488,6 +488,8 @@ class GiraIot extends utils.Adapter {
                 this.updateValueOf(obj.message.uid, obj.message.value);
             } else if (obj.command === 'registerCallbacks') {
                 this.webHooksBaseUrl = obj.message.baseUrl;
+                this.log.debug(`Received new webHooksBaseUrl: ${this.webHooksBaseUrl} - register callbacks now`);
+
                 this.registerCallbacks();
             } else if (obj.command === 'unregisterCallbacks') {
                 this.unregisterCallbacks();
