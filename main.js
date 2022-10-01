@@ -50,7 +50,7 @@ class GiraIot extends utils.Adapter {
 
         this.log.info(`Configured server: "${this.config.serverIp}:${this.config.serverPort}" - Connecting with user: "${this.config.userName}"`);
         await this.setApiConnection(false);
-        await this.setStateAsync('info.callbacksRegistered', { val: false, ack: true });
+        await this.setStateChangedAsync('info.callbacksRegistered', { val: false, ack: true });
 
         this.giraApiClient = axios.create({
             baseURL: `https://${this.config.serverIp}:${this.config.serverPort}/api`,
@@ -66,7 +66,8 @@ class GiraIot extends utils.Adapter {
         });
 
         await this.subscribeStatesAsync('*');
-        await this.refreshState();
+
+        this.refreshState();
     }
 
     async refreshState() {
@@ -89,6 +90,8 @@ class GiraIot extends utils.Adapter {
                     this.log.info(`Client token doesn't exist - creating a new client`);
 
                     const clientIdentifier = `net.iobroker.clients.${this.namespace}`;
+                    await this.setStateChangedAsync('client.identifier', { val: clientIdentifier, ack: true });
+
                     const registerClientResponse = await this.giraApiClient.post(
                         '/clients',
                         {
@@ -113,7 +116,6 @@ class GiraIot extends utils.Adapter {
                         if (registerClientResponse?.data?.token) {
                             clientToken = registerClientResponse.data.token;
 
-                            await this.setStateAsync('client.identifier', { val: clientIdentifier, ack: true });
                             await this.setStateAsync('client.token', { val: clientToken, ack: true });
 
                             // Set device online
@@ -122,7 +124,6 @@ class GiraIot extends utils.Adapter {
                     } else {
                         this.log.error(`Unable to register client. Device responded with code ${registerClientResponse.status}`);
 
-                        await this.setStateAsync('client.identifier', { val: null, ack: true });
                         await this.setStateAsync('client.token', { val: null, ack: true });
 
                         // Set device offline
