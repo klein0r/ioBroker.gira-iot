@@ -1,1 +1,5 @@
 blank_issues_enabled: false
+contact_links:
+  - name: Have questions or need support?
+    url: https://forum.iobroker.net/topic/58514/test-adapter-gira-iot
+    about: Please get in touch on the ioBroker Community Forum!
