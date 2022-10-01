@@ -401,7 +401,7 @@ class GiraIot extends utils.Adapter {
                     this.log.debug(`unregisterCallbacksReponse ${unregisterCallbacksReponse.status}: ${JSON.stringify(unregisterCallbacksReponse.data)}`);
 
                     if (unregisterCallbacksReponse.status === 200) {
-                        this.log.info(`Unregistered callback urls (web extension)`);
+                        this.log.info(`Unregistered callback urls to ${this.webHooksBaseUrl} (web extension)`);
 
                         this.webHooksBaseUrl = null;
                         this.webHooksRegistered = false;
