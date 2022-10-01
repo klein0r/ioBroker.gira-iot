@@ -57,6 +57,7 @@ iobroker add gira-iot
 ### **WORK IN PROGRESS**
 
 * (klein0r) Improved callback registration handling
+* (klein0r) Improved error handling
 
 ### 0.1.1 (2022-09-29)
 

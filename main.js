@@ -234,20 +234,24 @@ class GiraIot extends utils.Adapter {
                             this.uidCache[dp.uid] = `functions.${func.uid}.${dp.name}`;
 
                             if (giraTypes.channels[func.channelType][dp.name].common.read) {
-                                // Try to get current value
-                                const getValueResponse = await this.giraApiClient.get(`/values/${dp.uid}?token=${clientToken}`);
-                                this.log.debug(`getValueResponse ${getValueResponse.status}: ${JSON.stringify(getValueResponse.data)}`);
+                                try {
+                                    // Try to get current value
+                                    const getValueResponse = await this.giraApiClient.get(`/values/${dp.uid}?token=${clientToken}`);
+                                    this.log.debug(`getValueResponse ${getValueResponse.status}: ${JSON.stringify(getValueResponse.data)}`);
 
-                                if (getValueResponse.status === 200) {
-                                    for (const value of getValueResponse.data.values) {
-                                        const newValue = giraTypes.convertValueForState(
-                                            value.value,
-                                            giraTypes.channels[func.channelType][dp.name].common.type,
-                                            giraTypes.channels[func.channelType][dp.name].type,
-                                        );
+                                    if (getValueResponse.status === 200) {
+                                        for (const value of getValueResponse.data.values) {
+                                            const newValue = giraTypes.convertValueForState(
+                                                value.value,
+                                                giraTypes.channels[func.channelType][dp.name].common.type,
+                                                giraTypes.channels[func.channelType][dp.name].type,
+                                            );
 
-                                        await this.setStateAsync(stateObjId, { val: newValue, ack: true, c: 'Init value' });
+                                            await this.setStateAsync(stateObjId, { val: newValue, ack: true, c: 'Init value' });
+                                        }
                                     }
+                                } catch (err) {
+                                    this.log.error(`unable to get current value for "${stateObjId}" / "${dp.uid}" - failed with ${err}`);
                                 }
                             }
                         }
@@ -360,19 +364,23 @@ class GiraIot extends utils.Adapter {
 
                 this.log.debug(`Registering callback urls to ${serviceCallbackUri} and ${valueCallbackUri}`);
 
-                const clientToken = await this.getClientToken();
-                const registerCallbacksReponse = await this.giraApiClient.post(`/clients/${clientToken}/callbacks`, {
-                    serviceCallback: serviceCallbackUri,
-                    valueCallback: valueCallbackUri,
-                    testCallbacks: false,
-                });
-                this.log.debug(`registerCallbacksReponse ${registerCallbacksReponse.status}: ${JSON.stringify(registerCallbacksReponse.data)}`);
+                try {
+                    const clientToken = await this.getClientToken();
+                    const registerCallbacksReponse = await this.giraApiClient.post(`/clients/${clientToken}/callbacks`, {
+                        serviceCallback: serviceCallbackUri,
+                        valueCallback: valueCallbackUri,
+                        testCallbacks: false,
+                    });
+                    this.log.debug(`registerCallbacksReponse ${registerCallbacksReponse.status}: ${JSON.stringify(registerCallbacksReponse.data)}`);
 
-                if (registerCallbacksReponse.status == 200) {
-                    this.log.info(`Registered callback urls to ${serviceCallbackUri} and ${valueCallbackUri} (web extension)`);
+                    if (registerCallbacksReponse.status == 200) {
+                        this.log.info(`Registered callback urls to ${serviceCallbackUri} and ${valueCallbackUri} (web extension)`);
 
-                    this.webHooksRegistered = true;
-                    await this.setStateAsync('info.callbacksRegistered', { val: this.webHooksRegistered, ack: true });
+                        this.webHooksRegistered = true;
+                        await this.setStateAsync('info.callbacksRegistered', { val: this.webHooksRegistered, ack: true });
+                    }
+                } catch (err) {
+                    this.log.error(`registerCallbacks failed with ${err}`);
                 }
             } else {
                 this.log.debug(`Unable to register callbacks - webHooksRegistered: ${this.webHooksRegistered}, webHooksBaseUrl: ${this.webHooksBaseUrl}`);
@@ -387,16 +395,20 @@ class GiraIot extends utils.Adapter {
             if (this.webHooksRegistered) {
                 this.log.debug(`Unregister callback urls`);
 
-                const clientToken = await this.getClientToken();
-                const unregisterCallbacksReponse = await this.giraApiClient.delete(`/clients/${clientToken}/callbacks`);
-                this.log.debug(`unregisterCallbacksReponse ${unregisterCallbacksReponse.status}: ${JSON.stringify(unregisterCallbacksReponse.data)}`);
+                try {
+                    const clientToken = await this.getClientToken();
+                    const unregisterCallbacksReponse = await this.giraApiClient.delete(`/clients/${clientToken}/callbacks`);
+                    this.log.debug(`unregisterCallbacksReponse ${unregisterCallbacksReponse.status}: ${JSON.stringify(unregisterCallbacksReponse.data)}`);
 
-                if (unregisterCallbacksReponse.status === 200) {
-                    this.log.info(`Unregistered callback urls (web extension)`);
+                    if (unregisterCallbacksReponse.status === 200) {
+                        this.log.info(`Unregistered callback urls (web extension)`);
 
-                    this.webHooksBaseUrl = null;
-                    this.webHooksRegistered = false;
-                    await this.setStateAsync('info.callbacksRegistered', { val: this.webHooksRegistered, ack: true });
+                        this.webHooksBaseUrl = null;
+                        this.webHooksRegistered = false;
+                        await this.setStateAsync('info.callbacksRegistered', { val: this.webHooksRegistered, ack: true });
+                    }
+                } catch (err) {
+                    this.log.error(`unregisterCallbacks failed with ${err}`);
                 }
             } else {
                 this.log.debug(`Unable to unregister callbacks - webHooksRegistered: ${this.webHooksRegistered}, webHooksBaseUrl: ${this.webHooksBaseUrl}`);
@@ -459,14 +471,18 @@ class GiraIot extends utils.Adapter {
                         if (uId && this.apiConnected && clientToken) {
                             const newValue = giraTypes.convertValueForGira(state.val, stateObj.common.type);
 
-                            const putValueResponse = await this.giraApiClient.put(`/values/${uId}?token=${clientToken}`, {
-                                value: newValue,
-                            });
-                            this.log.debug(`putValueResponse ${putValueResponse.status}: ${JSON.stringify(putValueResponse.data)}`);
+                            try {
+                                const putValueResponse = await this.giraApiClient.put(`/values/${uId}?token=${clientToken}`, {
+                                    value: newValue,
+                                });
+                                this.log.debug(`putValueResponse ${putValueResponse.status}: ${JSON.stringify(putValueResponse.data)}`);
 
-                            if (putValueResponse.status === 200) {
-                                // Confirm new value (if sent)
-                                await this.setStateAsync(idNoNamespace, { val: state.val, ack: true });
+                                if (putValueResponse.status === 200) {
+                                    // Confirm new value (if sent)
+                                    await this.setStateAsync(idNoNamespace, { val: state.val, ack: true });
+                                }
+                            } catch (err) {
+                                this.log.error(`unable to update value of "${idNoNamespace}" / "${uId}" - failed with ${err}`);
                             }
                         }
                     }
