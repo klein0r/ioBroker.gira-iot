@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "gira-iot",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "news": {
+      "0.1.2": {
+        "en": "Improved callback registration handling\nImproved error handling",
+        "de": "Verbesserte Callback-Registrierung\nVerbesserte Fehlerbehandlung",
+        "ru": "Улучшена обработка регистрации звонков\nУлучшена обработка ошибок",
+        "pt": "Manuseio aprimorado do registro de retorno de chamada\nMelhor manuseio de erros",
+        "nl": "Vertaling:\nImproviserende fouten",
+        "fr": "Amélioration du traitement de l ' enregistrement des rappels\nAmélioration de la manipulation des erreurs",
+        "it": "Miglioramento della gestione della registrazione del callback\nMiglioramento della gestione degli errori",
+        "es": "Mejora de la gestión del registro de callback\nMejor manejo de errores",
+        "pl": "Poprawa rejestracyjna\nPoprawiona obsługa błędów",
+        "zh-cn": "改进呼吁登记\n改进错误处理"
+      },
       "0.1.1": {
         "en": "Changed registration of callbacks via web adapter\nRequest current values on init\nUpdated state roles",
         "de": "Änderung der Registrierung von Rückrufen über Webadapter\nAktuelle Werte an init anfordern\nAktualisierte Staatsrollen",
