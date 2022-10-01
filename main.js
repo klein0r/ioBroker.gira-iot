@@ -356,9 +356,11 @@ class GiraIot extends utils.Adapter {
         }
     }
 
-    async registerCallbacks() {
+    async registerCallbacks(baseUrl) {
         if (this.apiConnected) {
             if (!this.webHooksRegistered && this.webHooksBaseUrl) {
+                this.webHooksBaseUrl = baseUrl;
+
                 const serviceCallbackUri = `${this.webHooksBaseUrl}/service`;
                 const valueCallbackUri = `${this.webHooksBaseUrl}/value`;
 
@@ -501,12 +503,14 @@ class GiraIot extends utils.Adapter {
             if (obj.command === 'updateValueOf') {
                 this.updateValueOf(obj.message.uid, obj.message.value);
             } else if (obj.command === 'registerCallbacks') {
-                await this.unregisterCallbacks();
+                const newWebHooksBaseUrl = obj.message.baseUrl;
 
-                this.webHooksBaseUrl = obj.message.baseUrl;
-                this.log.debug(`Received new webHooksBaseUrl: ${this.webHooksBaseUrl} - register callbacks now`);
+                if (newWebHooksBaseUrl !== this.webHooksBaseUrl) {
+                    this.log.debug(`Received new webHooksBaseUrl: ${newWebHooksBaseUrl} - register callbacks now`);
 
-                await this.registerCallbacks();
+                    await this.unregisterCallbacks();
+                    await this.registerCallbacks(newWebHooksBaseUrl);
+                }
             } else if (obj.command === 'unregisterCallbacks') {
                 await this.unregisterCallbacks();
             }
