@@ -358,7 +358,7 @@ class GiraIot extends utils.Adapter {
 
     async registerCallbacks(baseUrl) {
         if (this.apiConnected) {
-            if (!this.webHooksRegistered && this.webHooksBaseUrl) {
+            if (!this.webHooksRegistered) {
                 this.webHooksBaseUrl = baseUrl;
 
                 const serviceCallbackUri = `${this.webHooksBaseUrl}/service`;
