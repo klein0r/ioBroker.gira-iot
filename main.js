@@ -147,8 +147,6 @@ class GiraIot extends utils.Adapter {
                                 await this.refreshDevices();
                                 this.uiConfigId = uiConfigIdResponse.data.uid;
                             }
-
-                            await this.registerCallbacks();
                         }
                     } else if (uiConfigIdResponse.status === 401) {
                         this.log.warn(`Unable to get UI config ID - looks like your client token is invalid. Will be deleted and recreated automatically`);
@@ -480,19 +478,21 @@ class GiraIot extends utils.Adapter {
     /**
      * @param {ioBroker.Message} obj
      */
-    onMessage(obj) {
+    async onMessage(obj) {
         if (obj) {
             this.log.debug(`Received message: ${JSON.stringify(obj.message)}`);
 
             if (obj.command === 'updateValueOf') {
                 this.updateValueOf(obj.message.uid, obj.message.value);
             } else if (obj.command === 'registerCallbacks') {
+                await this.unregisterCallbacks();
+
                 this.webHooksBaseUrl = obj.message.baseUrl;
                 this.log.debug(`Received new webHooksBaseUrl: ${this.webHooksBaseUrl} - register callbacks now`);
 
-                this.registerCallbacks();
+                await this.registerCallbacks();
             } else if (obj.command === 'unregisterCallbacks') {
-                this.unregisterCallbacks();
+                await this.unregisterCallbacks();
             }
         }
     }
