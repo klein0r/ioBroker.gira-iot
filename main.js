@@ -50,6 +50,7 @@ class GiraIot extends utils.Adapter {
 
         this.log.info(`Configured server: "${this.config.serverIp}:${this.config.serverPort}" - Connecting with user: "${this.config.userName}"`);
         await this.setApiConnection(false);
+        await this.setStateAsync('info.callbacksRegistered', { val: false, ack: true });
 
         this.giraApiClient = axios.create({
             baseURL: `https://${this.config.serverIp}:${this.config.serverPort}/api`,
@@ -364,8 +365,10 @@ class GiraIot extends utils.Adapter {
                 this.log.debug(`registerCallbacksReponse ${registerCallbacksReponse.status}: ${JSON.stringify(registerCallbacksReponse.data)}`);
 
                 if (registerCallbacksReponse.status == 200) {
-                    this.log.info(`Registered callback urls to ${serviceCallbackUri} and ${valueCallbackUri}`);
+                    this.log.info(`Registered callback urls to ${serviceCallbackUri} and ${valueCallbackUri} (web extension)`);
+
                     this.webHooksRegistered = true;
+                    await this.setStateAsync('info.callbacksRegistered', { val: this.webHooksRegistered, ack: true });
                 }
             } else {
                 this.log.debug(`Unable to register callbacks - webHooksRegistered: ${this.webHooksRegistered}, webHooksBaseUrl: ${this.webHooksBaseUrl}`);
@@ -384,8 +387,13 @@ class GiraIot extends utils.Adapter {
                 const unregisterCallbacksReponse = await this.giraApiClient.delete(`/clients/${clientToken}/callbacks`);
                 this.log.debug(`unregisterCallbacksReponse ${unregisterCallbacksReponse.status}: ${JSON.stringify(unregisterCallbacksReponse.data)}`);
 
-                this.webHooksBaseUrl = null;
-                this.webHooksRegistered = false;
+                if (unregisterCallbacksReponse.status === 200) {
+                    this.log.info(`Unregistered callback urls (web extension)`);
+
+                    this.webHooksBaseUrl = null;
+                    this.webHooksRegistered = false;
+                    await this.setStateAsync('info.callbacksRegistered', { val: this.webHooksRegistered, ack: true });
+                }
             } else {
                 this.log.debug(`Unable to unregister callbacks - webHooksRegistered: ${this.webHooksRegistered}, webHooksBaseUrl: ${this.webHooksBaseUrl}`);
             }

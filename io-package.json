@@ -188,6 +188,30 @@
       "native": {}
     },
     {
+      "_id": "info.callbacksRegistered",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Callbacks registered",
+          "de": "Callbacks registriert",
+          "ru": "Обратные звонки зарегистрированы",
+          "pt": "Reclamações registadas",
+          "nl": "Callbacks geregistreerd",
+          "fr": "Callbacks registered",
+          "it": "Callback registrati",
+          "es": "Llamadas registradas",
+          "pl": "Callback rejestrować",
+          "zh-cn": "登记的要求"
+        },
+        "type": "boolean",
+        "role": "indicator.working",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
       "_id": "deviceInfo",
       "type": "channel",
       "common": {
