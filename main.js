@@ -197,7 +197,7 @@ class GiraIot extends utils.Adapter {
                 for (const func of uiConfigResponse.data.functions) {
                     keepFunctions.push(`functions.${func.uid}`);
 
-                    this.log.debug(`Found device ${func.uid} with name "${func.displayName}"`);
+                    this.log.debug(`Found device with UID ${func.uid} and name "${func.displayName}"`);
 
                     functionCount++;
                     await this.setObjectNotExistsAsync(`functions.${func.uid}`, {
@@ -247,11 +247,11 @@ class GiraIot extends utils.Adapter {
                                                 giraTypes.channels[func.channelType][dp.name].type,
                                             );
 
-                                            await this.setStateAsync(stateObjId, { val: newValue, ack: true, c: 'Init value' });
+                                            await this.setStateChangedAsync(stateObjId, { val: newValue, ack: true, c: 'Init value' });
                                         }
                                     }
                                 } catch (err) {
-                                    this.log.error(`unable to get current value for "${stateObjId}" / "${dp.uid}" - failed with ${err}`);
+                                    this.log.error(`unable to get current value for "${stateObjId}" / UID "${dp.uid}" - failed with ${err}`);
                                 }
                             }
                         }
@@ -340,8 +340,6 @@ class GiraIot extends utils.Adapter {
     }
 
     async updateValueOf(uid, value) {
-        this.log.debug(`Received update request of "${uid}" with value: ${value}`);
-
         if (this.uidCache?.[uid]) {
             const stateObj = await this.getObjectAsync(this.uidCache[uid]);
 
@@ -349,10 +347,13 @@ class GiraIot extends utils.Adapter {
             if (stateObj?.type === 'state' && stateObj?.native?.eventing) {
                 const newValue = giraTypes.convertValueForState(value, stateObj.common.type, stateObj.native.type);
 
+                this.log.debug(`Received value event for state "${this.uidCache[uid]}": ${value} was converted to ${newValue}`);
                 await this.setStateChangedAsync(this.uidCache[uid], { val: newValue, ack: true, c: 'Value callback' });
             } else {
-                this.log.warn(`Received value event for invalid state with "${uid}": ${value}`);
+                this.log.warn(`Received value event for invalid state with UID "${uid}": ${value}`);
             }
+        } else {
+            this.log.info(`Received value event for unknown state with UID "${uid}": ${value}`);
         }
     }
 
@@ -484,7 +485,7 @@ class GiraIot extends utils.Adapter {
                                     await this.setStateAsync(idNoNamespace, { val: state.val, ack: true });
                                 }
                             } catch (err) {
-                                this.log.error(`unable to update value of "${idNoNamespace}" / "${uId}" - failed with ${err}`);
+                                this.log.error(`unable to update value of "${idNoNamespace}" / UID "${uId}" - failed with ${err}`);
                             }
                         }
                     }
