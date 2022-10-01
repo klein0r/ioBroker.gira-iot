@@ -407,7 +407,7 @@ class GiraIot extends utils.Adapter {
 
                         this.webHooksBaseUrl = null;
                         this.webHooksRegistered = false;
-                        await this.setStateAsync('info.callbacksRegistered', { val: this.webHooksRegistered, ack: true });
+                        await this.setStateAsync('info.callbacksRegistered', { val: this.webHooksRegistered, ack: true, c: this.webHooksBaseUrl });
                     }
                 } catch (err) {
                     this.log.error(`unregisterCallbacks failed with ${err}`);
