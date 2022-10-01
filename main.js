@@ -147,25 +147,7 @@ class GiraIot extends utils.Adapter {
                                 this.uiConfigId = uiConfigIdResponse.data.uid;
                             }
 
-                            if (!this.webHooksRegistered && this.webHooksBaseUrl) {
-                                const serviceCallbackUri = `${this.webHooksBaseUrl}/service`;
-                                const valueCallbackUri = `${this.webHooksBaseUrl}/value`;
-
-                                this.log.debug(`Registering callback urls to ${serviceCallbackUri} and ${valueCallbackUri}`);
-
-                                const clientToken = await this.getClientToken();
-                                const registerCallbacksReponse = await this.giraApiClient.post(`/clients/${clientToken}/callbacks`, {
-                                    serviceCallback: serviceCallbackUri,
-                                    valueCallback: valueCallbackUri,
-                                    testCallbacks: false,
-                                });
-                                this.log.debug(`registerClientsReponse ${registerCallbacksReponse.status}: ${JSON.stringify(registerCallbacksReponse.data)}`);
-
-                                if (registerCallbacksReponse.status == 200) {
-                                    this.log.info(`Registered callback urls to ${serviceCallbackUri} and ${valueCallbackUri}`);
-                                    this.webHooksRegistered = true;
-                                }
-                            }
+                            await this.registerCallbacks();
                         }
                     } else if (uiConfigIdResponse.status === 401) {
                         this.log.warn(`Unable to get UI config ID - looks like your client token is invalid. Will be deleted and recreated automatically`);
@@ -365,15 +347,50 @@ class GiraIot extends utils.Adapter {
         }
     }
 
+    async registerCallbacks() {
+        if (this.apiConnected) {
+            if (!this.webHooksRegistered && this.webHooksBaseUrl) {
+                const serviceCallbackUri = `${this.webHooksBaseUrl}/service`;
+                const valueCallbackUri = `${this.webHooksBaseUrl}/value`;
+
+                this.log.debug(`Registering callback urls to ${serviceCallbackUri} and ${valueCallbackUri}`);
+
+                const clientToken = await this.getClientToken();
+                const registerCallbacksReponse = await this.giraApiClient.post(`/clients/${clientToken}/callbacks`, {
+                    serviceCallback: serviceCallbackUri,
+                    valueCallback: valueCallbackUri,
+                    testCallbacks: false,
+                });
+                this.log.debug(`registerCallbacksReponse ${registerCallbacksReponse.status}: ${JSON.stringify(registerCallbacksReponse.data)}`);
+
+                if (registerCallbacksReponse.status == 200) {
+                    this.log.info(`Registered callback urls to ${serviceCallbackUri} and ${valueCallbackUri}`);
+                    this.webHooksRegistered = true;
+                }
+            } else {
+                this.log.debug(`Unable to register callbacks - webHooksRegistered: ${this.webHooksRegistered}, webHooksBaseUrl: ${this.webHooksBaseUrl}`);
+            }
+        } else {
+            this.log.debug(`Unable to register callbacks - API not connected`);
+        }
+    }
+
     async unregisterCallbacks() {
-        if (this.webHooksRegistered) {
-            this.log.debug(`Unregister callback urls`);
+        if (this.apiConnected) {
+            if (this.webHooksRegistered) {
+                this.log.debug(`Unregister callback urls`);
 
-            const clientToken = await this.getClientToken();
-            this.giraApiClient?.delete(`/clients/${clientToken}/callbacks`);
+                const clientToken = await this.getClientToken();
+                const unregisterCallbacksReponse = await this.giraApiClient.delete(`/clients/${clientToken}/callbacks`);
+                this.log.debug(`unregisterCallbacksReponse ${unregisterCallbacksReponse.status}: ${JSON.stringify(unregisterCallbacksReponse.data)}`);
 
-            this.webHooksBaseUrl = null;
-            this.webHooksRegistered = false;
+                this.webHooksBaseUrl = null;
+                this.webHooksRegistered = false;
+            } else {
+                this.log.debug(`Unable to unregister callbacks - webHooksRegistered: ${this.webHooksRegistered}, webHooksBaseUrl: ${this.webHooksBaseUrl}`);
+            }
+        } else {
+            this.log.debug(`Unable to unregister callbacks - API not connected`);
         }
     }
 
@@ -457,6 +474,7 @@ class GiraIot extends utils.Adapter {
                 this.updateValueOf(obj.message.uid, obj.message.value);
             } else if (obj.command === 'registerCallbacks') {
                 this.webHooksBaseUrl = obj.message.baseUrl;
+                this.registerCallbacks();
             } else if (obj.command === 'unregisterCallbacks') {
                 this.unregisterCallbacks();
             }
@@ -470,6 +488,8 @@ class GiraIot extends utils.Adapter {
     onUnload(callback) {
         try {
             this.setApiConnection(false);
+
+            this.unregisterCallbacks();
 
             // Delete old timer
             if (this.refreshStateTimeout) {

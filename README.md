@@ -54,6 +54,10 @@ iobroker add gira-iot
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+* (klein0r) Improved callback registration handling
+
 ### 0.1.1 (2022-09-29)
 
 * (klein0r) Changed registration of callbacks via web adapter
