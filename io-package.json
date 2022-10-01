@@ -101,7 +101,7 @@
     "platform": "Javascript/Node.js",
     "icon": "gira-iot.png",
     "extIcon": "https://raw.githubusercontent.com/klein0r/ioBroker.gira-iot/master/admin/gira-iot.png",
-    "enabled": true,
+    "enabled": false,
     "readme": "https://github.com/klein0r/ioBroker.gira-iot/blob/master/README.md",
     "loglevel": "info",
     "mode": "daemon",
