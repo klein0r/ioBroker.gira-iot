@@ -79,9 +79,9 @@ class GiraIot extends utils.Adapter {
             if (deviceInfoResponse.status === 200) {
                 const deviceInfo = deviceInfoResponse.data;
 
-                await this.setStateAsync('deviceInfo.name', { val: deviceInfo.deviceName, ack: true });
-                await this.setStateAsync('deviceInfo.type', { val: deviceInfo.deviceType, ack: true });
-                await this.setStateAsync('deviceInfo.version', { val: deviceInfo.deviceVersion, ack: true });
+                await this.setStateChangedAsync('deviceInfo.name', { val: deviceInfo.deviceName, ack: true });
+                await this.setStateChangedAsync('deviceInfo.type', { val: deviceInfo.deviceType, ack: true });
+                await this.setStateChangedAsync('deviceInfo.version', { val: deviceInfo.deviceVersion, ack: true });
 
                 let clientToken = await this.getClientToken();
 
@@ -432,7 +432,7 @@ class GiraIot extends utils.Adapter {
 
     async setApiConnection(status) {
         this.apiConnected = status;
-        await this.setStateAsync('info.connection', { val: status, ack: true });
+        await this.setStateChangedAsync('info.connection', { val: status, ack: true });
     }
 
     cleanNamespace(id) {
