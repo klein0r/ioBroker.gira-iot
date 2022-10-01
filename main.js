@@ -189,6 +189,8 @@ class GiraIot extends utils.Adapter {
             this.log.debug(`uiConfigResponse ${uiConfigResponse.status}: ${JSON.stringify(uiConfigResponse.data)}`);
 
             if (uiConfigResponse.status === 200) {
+                let functionCount = 0;
+                let stateCount = 0;
                 const keepFunctions = [];
                 const allFunctions = (await this.getChannelsOfAsync('functions')).map((obj) => {
                     return this.removeNamespace(obj._id);
@@ -199,6 +201,7 @@ class GiraIot extends utils.Adapter {
 
                     this.log.debug(`Found device ${func.uid} with name "${func.displayName}"`);
 
+                    functionCount++;
                     await this.setObjectNotExistsAsync(`functions.${func.uid}`, {
                         type: 'channel',
                         common: {
@@ -217,6 +220,7 @@ class GiraIot extends utils.Adapter {
 
                             const stateObjId = `functions.${func.uid}.${dp.name}`;
 
+                            stateCount++;
                             await this.setObjectNotExistsAsync(stateObjId, {
                                 type: 'state',
                                 common: giraTypes.channels[func.channelType][dp.name].common,
@@ -251,6 +255,8 @@ class GiraIot extends utils.Adapter {
                         }
                     }
                 }
+
+                this.log.info(`Updated (or created) ${functionCount} functions with ${stateCount} states`);
 
                 // Delete non existent functions
                 for (let i = 0; i < allFunctions.length; i++) {
@@ -341,7 +347,7 @@ class GiraIot extends utils.Adapter {
             if (stateObj?.type === 'state' && stateObj?.native?.eventing) {
                 const newValue = giraTypes.convertValueForState(value, stateObj.common.type, stateObj.native.type);
 
-                await this.setStateAsync(this.uidCache[uid], { val: newValue, ack: true, c: 'Value callback' });
+                await this.setStateChangedAsync(this.uidCache[uid], { val: newValue, ack: true, c: 'Value callback' });
             } else {
                 this.log.warn(`Received value event for invalid state with "${uid}": ${value}`);
             }
