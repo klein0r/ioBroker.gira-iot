@@ -36,18 +36,11 @@ Please use the "adapter list" in ioBroker to install a stable version of this ad
 iobroker add gira-iot
 ```
 
-## Getting started
+## Documentation
 
-- Install the iobroker.web adapter and create a new instance
-- Configure HTTPS (secure) on that instance and choose the IP address which should be used for external connections
-- Choose this web instance in the configuration of the gira-iot instance
-- Configure IP, user name and password of your Gira X1 (or Home Server) in the instance
-- Start the instance
+[🇺🇸 Documentation](./docs/en/README.md)
 
-## API Documentation (dev)
-
-- [Gira IoT REST API Documentation - EN](https://partner.gira.de/data3/Gira_IoT_REST_API_v2_EN.pdf)
-- [Gira IoT REST API Dokumentation - DE](https://partner.gira.de/data3/Gira_IoT_REST_API_v2_DE.pdf)
+[🇩🇪 Dokumentation](./docs/de/README.md)
 
 ## Changelog
 <!--

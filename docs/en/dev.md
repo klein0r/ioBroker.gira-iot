@@ -2,6 +2,11 @@
 
 # ioBroker.gira-iot
 
+## API Documentation (dev)
+
+- [Gira IoT REST API Documentation - EN](https://partner.gira.de/data3/Gira_IoT_REST_API_v2_EN.pdf)
+- [Gira IoT REST API Dokumentation - DE](https://partner.gira.de/data3/Gira_IoT_REST_API_v2_DE.pdf)
+
 ## Channel types
 
 See ``lib/gira-types.js``
