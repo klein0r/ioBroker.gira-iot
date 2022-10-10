@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "gira-iot",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "news": {
+      "0.1.3": {
+        "en": "Update objects if configuration changed\nFixed client registration for Gira Home Server",
+        "de": "Aktualisieren von Objekten, wenn die Konfiguration geändert wird\nBehobene Client-Registrierung für Gira Home Server",
+        "ru": "Обновить объекты, если конфигурация изменилась\nИсправлена регистрация клиента для Gira Home Server",
+        "pt": "Atualizar objetos se a configuração mudou\nRegisto de cliente fixo para Gira Home Server",
+        "nl": "Update objecten als vertrouwen veranderd\nGeregistreerd cliënt registratie voor Gira Home Server",
+        "fr": "Mettre à jour des objets si la configuration change\nEnregistrement fixe du client pour Gira Home Server",
+        "it": "Aggiorna gli oggetti se la configurazione è cambiata\nRegistrazione client fissa per Gira Home Server",
+        "es": "Actualizar objetos si la configuración cambia\nRegistro de cliente fijo para Gira Home Server",
+        "pl": "Obiekty aktualne, jeśli konfiguracja zmieniła się zmieniać\nStrona internetowa firmy Gira Home Server",
+        "zh-cn": "如果组合变化,更新物体\nGira Home Server的固定客户登记"
+      },
       "0.1.2": {
         "en": "Improved callback registration handling\nImproved error handling",
         "de": "Verbesserte Callback-Registrierung\nVerbesserte Fehlerbehandlung",

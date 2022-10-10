@@ -54,7 +54,7 @@ iobroker add gira-iot
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.1.3 (2022-10-10)
 
 * (klein0r) Update objects if configuration changed
 * (klein0r) Fixed client registration for Gira Home Server
@@ -84,11 +84,6 @@ NodeJS 14.x is required (NodeJS 12.x is EOL)
 * (klein0r) Create devices and states
 * (klein0r) Added option to create rooms and functions automatically
 * (klein0r) Updated depedency for js-controller to 4.0.15
-
-### 0.0.3 (2022-04-29)
-
-* (klein0r) Added Admin 5 configuration
-* (klein0r) Get basic information about the device
 
 ## License
 
