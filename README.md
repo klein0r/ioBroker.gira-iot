@@ -57,6 +57,7 @@ iobroker add gira-iot
 ### **WORK IN PROGRESS**
 
 * (klein0r) Update objects if configuration changed
+* (klein0r) Fixed client registration for Gira Home Server
 
 ### 0.1.2 (2022-10-01)
 

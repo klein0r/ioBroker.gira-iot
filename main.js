@@ -107,16 +107,19 @@ class GiraIot extends utils.Adapter {
                     this.log.debug(`registerClientResponse ${registerClientResponse.status}: ${JSON.stringify(registerClientResponse.data)}`);
 
                     /*
+                        200 Created (Home Server - not documented?!)
                         201 Created
                         400 Bad Request
                         401 Unauthorized
                         423 Locked
                     */
-                    if (registerClientResponse.status === 201) {
+                    if (registerClientResponse.status === 201 || registerClientResponse.status === 200) {
                         if (registerClientResponse?.data?.token) {
                             clientToken = registerClientResponse.data.token;
 
                             await this.setStateAsync('client.token', { val: clientToken, ack: true });
+
+                            this.log.info(`Registered new client - received token: "${clientToken}"`);
 
                             // Set device online
                             await this.setApiConnection(true);
