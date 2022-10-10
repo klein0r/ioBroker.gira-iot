@@ -260,6 +260,8 @@ class GiraIot extends utils.Adapter {
                                     this.log.error(`unable to get current value for "${stateObjId}" / UID "${dp.uid}" - failed with ${err}`);
                                 }
                             }
+                        } else {
+                            this.log.warn(`Data point "${dp.name}" of channel type "${func.channelType}" is missing in ioBroker description`);
                         }
                     }
                 }
