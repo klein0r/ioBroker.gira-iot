@@ -143,7 +143,9 @@ class GiraIot extends utils.Adapter {
                     if (uiConfigIdResponse.status === 200) {
                         if (uiConfigIdResponse?.data?.uid) {
                             if (uiConfigIdResponse.data.uid !== this.uiConfigId) {
-                                this.log.info(`UI config ID changed to ${uiConfigIdResponse.data.uid} - refreshing devices`);
+                                if (this.uiConfigId) {
+                                    this.log.info(`UI config ID changed from "${this.uiConfigId}" to "${uiConfigIdResponse.data.uid}" - refreshing functions`);
+                                }
 
                                 await this.refreshDevices();
                                 this.uiConfigId = uiConfigIdResponse.data.uid;
@@ -201,7 +203,7 @@ class GiraIot extends utils.Adapter {
                     this.log.debug(`Found device with UID ${func.uid} and name "${func.displayName}"`);
 
                     functionCount++;
-                    await this.setObjectNotExistsAsync(`functions.${func.uid}`, {
+                    await this.extendObjectAsync(`functions.${func.uid}`, {
                         type: 'channel',
                         common: {
                             name: func.displayName,
@@ -220,7 +222,7 @@ class GiraIot extends utils.Adapter {
                             const stateObjId = `functions.${func.uid}.${dp.name}`;
 
                             stateCount++;
-                            await this.setObjectNotExistsAsync(stateObjId, {
+                            await this.extendObjectAsync(stateObjId, {
                                 type: 'state',
                                 common: giraTypes.channels[func.channelType][dp.name].common,
                                 native: {
