@@ -355,7 +355,7 @@ class GiraIot extends utils.Adapter {
             if (stateObj?.type === 'state' && stateObj?.native?.eventing) {
                 const newValue = giraTypes.convertValueForState(value, stateObj.common.type, stateObj.native.type);
 
-                this.log.debug(`Received value event for state "${this.uidCache[uid]}": ${value} was converted to ${newValue}`);
+                this.log.debug(`Received value event for state "${this.uidCache[uid]}" / UID "${uid}": ${value} (${typeof value}) was converted to ${newValue} (${typeof newValue})`);
                 await this.setStateChangedAsync(this.uidCache[uid], { val: newValue, ack: true, c: 'Value callback' });
             } else {
                 this.log.warn(`Received value event for invalid state with UID "${uid}": ${value}`);
@@ -476,14 +476,16 @@ class GiraIot extends utils.Adapter {
                     if (err) {
                         this.log.error(`Unable to get object for ${idNoNamespace}: ${err}`);
                     } else if (stateObj?.common?.write) {
-                        const uId = stateObj?.native?.uid;
+                        const uid = stateObj?.native?.uid;
                         const clientToken = await this.getClientToken();
 
-                        if (uId && this.apiConnected && clientToken) {
+                        if (uid && this.apiConnected && clientToken) {
                             const newValue = giraTypes.convertValueForGira(state.val, stateObj.common.type);
 
+                            this.log.debug(`Sending new value for state "${idNoNamespace}" / UID "${uid}": ${state.val} (${typeof state.val}) was converted to ${newValue} (${typeof newValue})`);
+
                             try {
-                                const putValueResponse = await this.giraApiClient.put(`/values/${uId}?token=${clientToken}`, {
+                                const putValueResponse = await this.giraApiClient.put(`/values/${uid}?token=${clientToken}`, {
                                     value: newValue,
                                 });
                                 this.log.debug(`putValueResponse ${putValueResponse.status}: ${JSON.stringify(putValueResponse.data)}`);
@@ -493,7 +495,7 @@ class GiraIot extends utils.Adapter {
                                     await this.setStateAsync(idNoNamespace, { val: state.val, ack: true });
                                 }
                             } catch (err) {
-                                this.log.error(`unable to update value of "${idNoNamespace}" / UID "${uId}" - failed with ${err}`);
+                                this.log.error(`Unable to update value of "${idNoNamespace}" / UID "${uid}" - failed with ${err}`);
                             }
                         }
                     }
