@@ -135,7 +135,6 @@
     "dataSource": "push",
     "messagebox": true,
     "webExtension": "lib/web.js",
-    "materialize": true,
     "adminUI": {
       "config": "json"
     },
@@ -155,7 +154,7 @@
     ],
     "globalDependencies": [
       {
-        "admin": ">=5.3.2"
+        "admin": ">=6.0.0"
       }
     ]
   },
