@@ -1,0 +1,10 @@
+{
+    "Options": "Опції",
+    "Server": "Сервер",
+    "IP or hostname of your Gira X1 or HomeServer": "IP або ім’я хосту вашого Gira X1 або HomeServer",
+    "Port": "Порт",
+    "Username": "Ім'я користувача",
+    "Password": "Пароль",
+    "Create rooms and functions automatically": "Автоматично створюйте кімнати та функції",
+    "Web adapter instance": "Примірник веб-адаптера"
+}
