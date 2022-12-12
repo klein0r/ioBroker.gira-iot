@@ -47,7 +47,7 @@ iobroker add gira-iot
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.2.0 (2022-12-12)
 
 * (klein0r) Dropped Admin 5 support
 * (klein0r) Added Ukrainian language
@@ -74,14 +74,6 @@ iobroker add gira-iot
 * (klein0r) Updated state roles
 * (klein0r) Use sendTo to communicate with adapter instance
 * (klein0r) Implemented status update of value callbacks
-
-### 0.0.4 (2022-09-29)
-
-NodeJS 14.x is required (NodeJS 12.x is EOL)
-
-* (klein0r) Create devices and states
-* (klein0r) Added option to create rooms and functions automatically
-* (klein0r) Updated depedency for js-controller to 4.0.15
 
 ## License
 

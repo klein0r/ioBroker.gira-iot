@@ -1,428 +1,428 @@
 {
-    "common": {
-        "name": "gira-iot",
-        "version": "0.1.3",
-        "news": {
-            "0.1.3": {
-                "en": "Update objects if configuration changed\nFixed client registration for Gira Home Server",
-                "de": "Aktualisieren von Objekten, wenn die Konfiguration geändert wird\nBehobene Client-Registrierung für Gira Home Server",
-                "ru": "Обновить объекты, если конфигурация изменилась\nИсправлена регистрация клиента для Gira Home Server",
-                "pt": "Atualizar objetos se a configuração mudou\nRegisto de cliente fixo para Gira Home Server",
-                "nl": "Update objecten als vertrouwen veranderd\nGeregistreerd cliënt registratie voor Gira Home Server",
-                "fr": "Mettre à jour des objets si la configuration change\nEnregistrement fixe du client pour Gira Home Server",
-                "it": "Aggiorna gli oggetti se la configurazione è cambiata\nRegistrazione client fissa per Gira Home Server",
-                "es": "Actualizar objetos si la configuración cambia\nRegistro de cliente fijo para Gira Home Server",
-                "pl": "Obiekty aktualne, jeśli konfiguracja zmieniła się zmieniać\nStrona internetowa firmy Gira Home Server",
-                "zh-cn": "如果组合变化,更新物体\nGira Home Server的固定客户登记",
-                "uk": "Оновити об’єкти, якщо змінилася конфігурація\nВиправлена ​​реєстрація клієнта для Gira Home Server"
-            },
-            "0.1.2": {
-                "en": "Improved callback registration handling\nImproved error handling",
-                "de": "Verbesserte Callback-Registrierung\nVerbesserte Fehlerbehandlung",
-                "ru": "Улучшена обработка регистрации звонков\nУлучшена обработка ошибок",
-                "pt": "Manuseio aprimorado do registro de retorno de chamada\nMelhor manuseio de erros",
-                "nl": "Vertaling:\nImproviserende fouten",
-                "fr": "Amélioration du traitement de l ' enregistrement des rappels\nAmélioration de la manipulation des erreurs",
-                "it": "Miglioramento della gestione della registrazione del callback\nMiglioramento della gestione degli errori",
-                "es": "Mejora de la gestión del registro de callback\nMejor manejo de errores",
-                "pl": "Poprawa rejestracyjna\nPoprawiona obsługa błędów",
-                "zh-cn": "改进呼吁登记\n改进错误处理",
-                "uk": "Покращена обробка реєстрації зворотного виклику\nПокращена обробка помилок"
-            },
-            "0.1.1": {
-                "en": "Changed registration of callbacks via web adapter\nRequest current values on init\nUpdated state roles",
-                "de": "Änderung der Registrierung von Rückrufen über Webadapter\nAktuelle Werte an init anfordern\nAktualisierte Staatsrollen",
-                "ru": "Изменена регистрация звонков через веб-адаптер\nЗапрос текущих значений на init\nОбновленные государственные роли",
-                "pt": "Registo alterado de callbacks via adaptador web\nSolicite valores atuais no init\nFunções estaduais atualizadas",
-                "nl": "Veranderde registratie van bellers via web adapter\nVerzoek de huidige waarden op\nVerouderde staatsrollen",
-                "fr": "Changement d'enregistrement des callbacks via l'adaptateur web\nDemander des valeurs actuelles sur l'init\nRôles d ' État actualisés",
-                "it": "Registrazione modificata dei callback tramite web adapter\nRichiedi i valori correnti su init\nRuoli di stato aggiornati",
-                "es": "Cambio de registro de callbacks a través de adaptador web\nSolicitar valores actuales sobre init\nFunciones estatales actualizadas",
-                "pl": "Zmiana rejestracji za pomocą adapterów internetowych\nRequest bieżące wartości\nRole państwowe",
-                "zh-cn": "B. 通过网络适应人员修改的报警登记\n请求目前关于推定的价值\n最新国家作用",
-                "uk": "Змінено реєстрацію зворотних дзвінків через веб-адаптер\nЗапит поточних значень на init\nОновлені ролі стану"
-            },
-            "0.1.0": {
-                "en": "Publish new values via HTTP\nUpdated state roles\nUse sendTo to communicate with adapter instance\nImplemented status update of value callbacks",
-                "de": "Neue Werte über HTTP veröffentlichen\nAktualisierte Staatsrollen\nVerwenden Sie sendTo, um mit Adapterinstanz zu kommunizieren\nImplementierte Statusaktualisierung von Wertrufen",
-                "ru": "Опубликовать новые значения через HTTP\nОбновленные государственные роли\nИспользуйте sendTo для связи с примером адаптера\nРеализовано обновление статуса callbacks",
-                "pt": "Publicar novos valores via HTTP\nFunções estaduais atualizadas\nUse sendTo para se comunicar com a instância do adaptador\nAtualização de status implementada de retornos de valor",
-                "nl": "Publish nieuwe waarden via HTP\nVerouderde staatsrollen\nGebruik om te communiceren met adapter bijvoorbeeld\nGeïmplementeerde status update van waardebedragen",
-                "fr": "Publier de nouvelles valeurs via HTTP\nRôles d ' État actualisés\nUtilisez sendTo pour communiquer avec l'instance adaptateur\nMise à jour de l ' état mis en œuvre des rappels de valeur",
-                "it": "Pubblica nuovi valori tramite HTTP\nRuoli di stato aggiornati\nUsa sendTo per comunicare con l'istanza dell'adattatore\nAggiornamento dello stato implementato dei callback di valore",
-                "es": "Publicar nuevos valores a través de HTTP\nFunciones estatales actualizadas\nUse sendTo para comunicarse con instancia de adaptador\nActualización del estado aplicado de los callbacks de valor",
-                "pl": "Wydawne wartości za pośrednictwem HTTP\nRole państwowe\nWykorzystywać do komunikacji z adapterem\nPoprawiony status aktualizacji callbacku wartości",
-                "zh-cn": "通过海贸总协定出版新价值观\n最新国家作用\n使用寄托与适应者联系\n执行附加要求的最新情况",
-                "uk": "Опублікувати нові значення через HTTP\nОновлені ролі стану\nВикористовуйте sendTo для зв’язку з примірником адаптера\nРеалізовано оновлення статусу зворотних викликів значень"
-            },
-            "0.0.4": {
-                "en": "NodeJS 14.x is required (NodeJS 12.x is EOL)\n\n* Create devices and states\n* Added option to create rooms and functions automatically\n* Updated depedency for js-controller to 4.0.15",
-                "de": "NodeJS 14.x ist erforderlich (NodeJS 12.x ist EOL)\n\n* Geräte und Zustände erstellen\n* Zusätzliche Möglichkeit, Räume und Funktionen automatisch zu erstellen\n* Aktualisierte Depedanz für js-Controller auf 4.0.15",
-                "ru": "NodeJS 14.x требуется (NodeJS 12.x EOL)\n\n* Создать устройства и государства\n* Добавлена возможность создавать комнаты и функции автоматически\n* Обновленная депедентность для js-контроллера до 4.0.15",
-                "pt": "NodeJS 14.x é necessário (NodeJS 12.x é EOL)\n\n* Criar dispositivos e estados\n* opção adicionada para criar quartos e funções automaticamente\n* Depedência atualizada para js-controller para 4.0.15",
-                "nl": "NodeJS 14.x is vereist (NodeJS 12.x is EOL)\n\n♪ Create apps and states ♪\nQuality over Quantity (QoQ) Releases Vertaling:\n♪ Verhoogde afleiding voor JS-controller tot 4.015",
-                "fr": "NodeJS 14.x est nécessaire (NodeJS 12.x est EOL)\n\n* Créer des dispositifs et des états\n* Ajout de l'option pour créer des chambres et des fonctions automatiquement\n* Mise à jour depedency for js-controller à 4.0.15",
-                "it": "NodeJS 14.x è richiesto (NodeJS 12.x è EOL)\n\n* Creare dispositivi e stati\n* Aggiunta opzione per creare automaticamente camere e funzioni\n# Dispedenza aggiornata per js-controller a 4.0.15",
-                "es": "NodeJS 14.x es necesario (NodeJS 12.x es EOL)\n\n* Crear dispositivos y estados\n* opción agregada para crear habitaciones y funciones automáticamente\n* Dispersión actualizada para js-controller a 4.0.15",
-                "pl": "NodeJS 14.x jest wymagana (NodeJS 12.x is EOL)\n\n* Współczynnik Ctworów i Państwa\n* Wstępna opcja do tworzenia pomieszczeń i funkcji automatycznie funkcjonuje\n* Zawartość dla js-kontrolatora do 4,0,15",
-                "zh-cn": "不需要14.JS14x(Node JS 12x is EOL))\n\n* 建立装置和州\n* 增加自动设立室和职能的选择\n* A/64/50。 控制巴士的最新缺陷",
-                "uk": "Потрібен NodeJS 14.x (NodeJS 12.x є EOL)\n\n* Створення пристроїв і станів\n* Додана можливість автоматичного створення кімнат і функцій\n* Оновлено залежності для js-контролера до 4.0.15"
-            },
-            "0.0.3": {
-                "en": "Added Admin 5 configuration\nGet basic information about the device",
-                "de": "Admin 5-Konfiguration hinzugefügt\nHolen Sie sich grundlegende Informationen über das Gerät",
-                "ru": "Добавлена конфигурация администратора 5\nПолучить основную информацию об устройстве",
-                "pt": "Adicionada configuração do Admin 5\nObtenha informações básicas sobre o dispositivo",
-                "nl": "Admin 5 configuratie toegevoegd\nKrijg basisinformatie over het apparaat",
-                "fr": "Ajout de la configuration Admin 5\nObtenir des informations de base sur l'appareil",
-                "it": "Aggiunta la configurazione dell'amministratore 5\nOttieni informazioni di base sul dispositivo",
-                "es": "Configuración de administrador 5 agregada\nObtener información básica sobre el dispositivo",
-                "pl": "Dodano konfigurację Admin 5\nUzyskaj podstawowe informacje o urządzeniu",
-                "zh-cn": "添加了 Admin 5 配置\n获取设备的基本信息",
-                "uk": "Додана конфігурація Admin 5\nОтримайте основну інформацію про пристрій"
-            },
-            "0.0.2": {
-                "en": "initial release",
-                "de": "Erstveröffentlichung",
-                "ru": "Начальная версия",
-                "pt": "lançamento inicial",
-                "nl": "Eerste uitgave",
-                "fr": "Première version",
-                "it": "Versione iniziale",
-                "es": "Versión inicial",
-                "pl": "Pierwsze wydanie",
-                "zh-cn": "首次出版",
-                "uk": "початковий випуск"
-            }
-        },
-        "titleLang": {
-            "en": "Gira IoT",
-            "de": "Gira IoT",
-            "ru": "Гира IoT",
-            "pt": "Gira IoT",
-            "nl": "Gira IoT",
-            "fr": "IdO Gira",
-            "it": "Gira IoT",
-            "es": "Gira IoT",
-            "pl": "Gira IoT",
-            "zh-cn": "Gira 物联网",
-            "uk": "Gira IoT"
-        },
-        "desc": {
-            "en": "Integrate your Gira X1 or HomeServer",
-            "de": "Binden Sie Ihren Gira X1 oder HomeServer ein",
-            "ru": "Интегрируйте свой Gira X1 или HomeServer",
-            "pt": "Integre o seu Gira X1 ou HomeServer",
-            "nl": "Integreer uw Gira X1 of HomeServer",
-            "fr": "Intégrez votre Gira X1 ou HomeServer",
-            "it": "Integra il tuo Gira X1 o HomeServer",
-            "es": "Integre su Gira X1 o HomeServer",
-            "pl": "Zintegruj Gira X1 lub HomeServer",
-            "zh-cn": "集成您的 Gira X1 或 HomeServer",
-            "uk": "Інтегруйте Gira X1 або HomeServer"
-        },
-        "authors": [
-            "Matthias Kleine <info@haus-automatisierung.com>"
-        ],
-        "keywords": [
-            "gira",
-            "x1",
-            "homeserver",
-            "iot"
-        ],
-        "license": "MIT",
-        "platform": "Javascript/Node.js",
-        "icon": "gira-iot.png",
-        "extIcon": "https://raw.githubusercontent.com/klein0r/ioBroker.gira-iot/master/admin/gira-iot.png",
-        "enabled": false,
-        "readme": "https://github.com/klein0r/ioBroker.gira-iot/blob/master/README.md",
-        "loglevel": "info",
-        "mode": "daemon",
-        "type": "iot-systems",
-        "compact": true,
-        "connectionType": "local",
-        "dataSource": "push",
-        "messagebox": true,
-        "webExtension": "lib/web.js",
-        "adminUI": {
-            "config": "json"
-        },
-        "docs": {
-            "en": [
-                "docs/en/README.md"
-            ],
-            "de": [
-                "docs/de/README.md"
-            ]
-        },
-        "dependencies": [
-            {
-                "js-controller": ">=4.0.15",
-                "web": ">=5.1.2"
-            }
-        ],
-        "globalDependencies": [
-            {
-                "admin": ">=6.0.0"
-            }
-        ]
+  "common": {
+    "name": "gira-iot",
+    "version": "0.2.0",
+    "news": {
+      "0.2.0": {
+        "en": "Dropped Admin 5 support\nAdded Ukrainian language",
+        "de": "Droped Admin 5 Unterstützung\nUkrainische Sprache",
+        "ru": "Dropped Admin 5 поддержка\nДобавлен украинский язык",
+        "pt": "Suporte de Admin 5 Dropped\nAdicionado idioma ucraniano",
+        "nl": "Vertaling:\nVoeg Oekraïense taal toe",
+        "fr": "Soutien Admin 5 abandonné\nAjout de la langue ukrainienne",
+        "it": "Supporto per admin goccia 5\nAggiunto lingua ucraina",
+        "es": "Soporte de Admin 5\nIdioma ucraniano añadido",
+        "pl": "Dropped Admin 5 (ang.)\nJęzyk ukraiński",
+        "uk": "Підтримка Dropped Admin 5\nУкраїнська мова",
+        "zh-cn": "D. 减少5个支助\n增加乌克兰语"
+      },
+      "0.1.3": {
+        "en": "Update objects if configuration changed\nFixed client registration for Gira Home Server",
+        "de": "Aktualisieren von Objekten, wenn die Konfiguration geändert wird\nBehobene Client-Registrierung für Gira Home Server",
+        "ru": "Обновить объекты, если конфигурация изменилась\nИсправлена регистрация клиента для Gira Home Server",
+        "pt": "Atualizar objetos se a configuração mudou\nRegisto de cliente fixo para Gira Home Server",
+        "nl": "Update objecten als vertrouwen veranderd\nGeregistreerd cliënt registratie voor Gira Home Server",
+        "fr": "Mettre à jour des objets si la configuration change\nEnregistrement fixe du client pour Gira Home Server",
+        "it": "Aggiorna gli oggetti se la configurazione è cambiata\nRegistrazione client fissa per Gira Home Server",
+        "es": "Actualizar objetos si la configuración cambia\nRegistro de cliente fijo para Gira Home Server",
+        "pl": "Obiekty aktualne, jeśli konfiguracja zmieniła się zmieniać\nStrona internetowa firmy Gira Home Server",
+        "zh-cn": "如果组合变化,更新物体\nGira Home Server的固定客户登记",
+        "uk": "Оновити об’єкти, якщо змінилася конфігурація\nВиправлена ​​реєстрація клієнта для Gira Home Server"
+      },
+      "0.1.2": {
+        "en": "Improved callback registration handling\nImproved error handling",
+        "de": "Verbesserte Callback-Registrierung\nVerbesserte Fehlerbehandlung",
+        "ru": "Улучшена обработка регистрации звонков\nУлучшена обработка ошибок",
+        "pt": "Manuseio aprimorado do registro de retorno de chamada\nMelhor manuseio de erros",
+        "nl": "Vertaling:\nImproviserende fouten",
+        "fr": "Amélioration du traitement de l ' enregistrement des rappels\nAmélioration de la manipulation des erreurs",
+        "it": "Miglioramento della gestione della registrazione del callback\nMiglioramento della gestione degli errori",
+        "es": "Mejora de la gestión del registro de callback\nMejor manejo de errores",
+        "pl": "Poprawa rejestracyjna\nPoprawiona obsługa błędów",
+        "zh-cn": "改进呼吁登记\n改进错误处理",
+        "uk": "Покращена обробка реєстрації зворотного виклику\nПокращена обробка помилок"
+      },
+      "0.1.1": {
+        "en": "Changed registration of callbacks via web adapter\nRequest current values on init\nUpdated state roles",
+        "de": "Änderung der Registrierung von Rückrufen über Webadapter\nAktuelle Werte an init anfordern\nAktualisierte Staatsrollen",
+        "ru": "Изменена регистрация звонков через веб-адаптер\nЗапрос текущих значений на init\nОбновленные государственные роли",
+        "pt": "Registo alterado de callbacks via adaptador web\nSolicite valores atuais no init\nFunções estaduais atualizadas",
+        "nl": "Veranderde registratie van bellers via web adapter\nVerzoek de huidige waarden op\nVerouderde staatsrollen",
+        "fr": "Changement d'enregistrement des callbacks via l'adaptateur web\nDemander des valeurs actuelles sur l'init\nRôles d ' État actualisés",
+        "it": "Registrazione modificata dei callback tramite web adapter\nRichiedi i valori correnti su init\nRuoli di stato aggiornati",
+        "es": "Cambio de registro de callbacks a través de adaptador web\nSolicitar valores actuales sobre init\nFunciones estatales actualizadas",
+        "pl": "Zmiana rejestracji za pomocą adapterów internetowych\nRequest bieżące wartości\nRole państwowe",
+        "zh-cn": "B. 通过网络适应人员修改的报警登记\n请求目前关于推定的价值\n最新国家作用",
+        "uk": "Змінено реєстрацію зворотних дзвінків через веб-адаптер\nЗапит поточних значень на init\nОновлені ролі стану"
+      },
+      "0.1.0": {
+        "en": "Publish new values via HTTP\nUpdated state roles\nUse sendTo to communicate with adapter instance\nImplemented status update of value callbacks",
+        "de": "Neue Werte über HTTP veröffentlichen\nAktualisierte Staatsrollen\nVerwenden Sie sendTo, um mit Adapterinstanz zu kommunizieren\nImplementierte Statusaktualisierung von Wertrufen",
+        "ru": "Опубликовать новые значения через HTTP\nОбновленные государственные роли\nИспользуйте sendTo для связи с примером адаптера\nРеализовано обновление статуса callbacks",
+        "pt": "Publicar novos valores via HTTP\nFunções estaduais atualizadas\nUse sendTo para se comunicar com a instância do adaptador\nAtualização de status implementada de retornos de valor",
+        "nl": "Publish nieuwe waarden via HTP\nVerouderde staatsrollen\nGebruik om te communiceren met adapter bijvoorbeeld\nGeïmplementeerde status update van waardebedragen",
+        "fr": "Publier de nouvelles valeurs via HTTP\nRôles d ' État actualisés\nUtilisez sendTo pour communiquer avec l'instance adaptateur\nMise à jour de l ' état mis en œuvre des rappels de valeur",
+        "it": "Pubblica nuovi valori tramite HTTP\nRuoli di stato aggiornati\nUsa sendTo per comunicare con l'istanza dell'adattatore\nAggiornamento dello stato implementato dei callback di valore",
+        "es": "Publicar nuevos valores a través de HTTP\nFunciones estatales actualizadas\nUse sendTo para comunicarse con instancia de adaptador\nActualización del estado aplicado de los callbacks de valor",
+        "pl": "Wydawne wartości za pośrednictwem HTTP\nRole państwowe\nWykorzystywać do komunikacji z adapterem\nPoprawiony status aktualizacji callbacku wartości",
+        "zh-cn": "通过海贸总协定出版新价值观\n最新国家作用\n使用寄托与适应者联系\n执行附加要求的最新情况",
+        "uk": "Опублікувати нові значення через HTTP\nОновлені ролі стану\nВикористовуйте sendTo для зв’язку з примірником адаптера\nРеалізовано оновлення статусу зворотних викликів значень"
+      },
+      "0.0.4": {
+        "en": "NodeJS 14.x is required (NodeJS 12.x is EOL)\n\n* Create devices and states\n* Added option to create rooms and functions automatically\n* Updated depedency for js-controller to 4.0.15",
+        "de": "NodeJS 14.x ist erforderlich (NodeJS 12.x ist EOL)\n\n* Geräte und Zustände erstellen\n* Zusätzliche Möglichkeit, Räume und Funktionen automatisch zu erstellen\n* Aktualisierte Depedanz für js-Controller auf 4.0.15",
+        "ru": "NodeJS 14.x требуется (NodeJS 12.x EOL)\n\n* Создать устройства и государства\n* Добавлена возможность создавать комнаты и функции автоматически\n* Обновленная депедентность для js-контроллера до 4.0.15",
+        "pt": "NodeJS 14.x é necessário (NodeJS 12.x é EOL)\n\n* Criar dispositivos e estados\n* opção adicionada para criar quartos e funções automaticamente\n* Depedência atualizada para js-controller para 4.0.15",
+        "nl": "NodeJS 14.x is vereist (NodeJS 12.x is EOL)\n\n♪ Create apps and states ♪\nQuality over Quantity (QoQ) Releases Vertaling:\n♪ Verhoogde afleiding voor JS-controller tot 4.015",
+        "fr": "NodeJS 14.x est nécessaire (NodeJS 12.x est EOL)\n\n* Créer des dispositifs et des états\n* Ajout de l'option pour créer des chambres et des fonctions automatiquement\n* Mise à jour depedency for js-controller à 4.0.15",
+        "it": "NodeJS 14.x è richiesto (NodeJS 12.x è EOL)\n\n* Creare dispositivi e stati\n* Aggiunta opzione per creare automaticamente camere e funzioni\n# Dispedenza aggiornata per js-controller a 4.0.15",
+        "es": "NodeJS 14.x es necesario (NodeJS 12.x es EOL)\n\n* Crear dispositivos y estados\n* opción agregada para crear habitaciones y funciones automáticamente\n* Dispersión actualizada para js-controller a 4.0.15",
+        "pl": "NodeJS 14.x jest wymagana (NodeJS 12.x is EOL)\n\n* Współczynnik Ctworów i Państwa\n* Wstępna opcja do tworzenia pomieszczeń i funkcji automatycznie funkcjonuje\n* Zawartość dla js-kontrolatora do 4,0,15",
+        "zh-cn": "不需要14.JS14x(Node JS 12x is EOL))\n\n* 建立装置和州\n* 增加自动设立室和职能的选择\n* A/64/50。 控制巴士的最新缺陷",
+        "uk": "Потрібен NodeJS 14.x (NodeJS 12.x є EOL)\n\n* Створення пристроїв і станів\n* Додана можливість автоматичного створення кімнат і функцій\n* Оновлено залежності для js-контролера до 4.0.15"
+      },
+      "0.0.3": {
+        "en": "Added Admin 5 configuration\nGet basic information about the device",
+        "de": "Admin 5-Konfiguration hinzugefügt\nHolen Sie sich grundlegende Informationen über das Gerät",
+        "ru": "Добавлена конфигурация администратора 5\nПолучить основную информацию об устройстве",
+        "pt": "Adicionada configuração do Admin 5\nObtenha informações básicas sobre o dispositivo",
+        "nl": "Admin 5 configuratie toegevoegd\nKrijg basisinformatie over het apparaat",
+        "fr": "Ajout de la configuration Admin 5\nObtenir des informations de base sur l'appareil",
+        "it": "Aggiunta la configurazione dell'amministratore 5\nOttieni informazioni di base sul dispositivo",
+        "es": "Configuración de administrador 5 agregada\nObtener información básica sobre el dispositivo",
+        "pl": "Dodano konfigurację Admin 5\nUzyskaj podstawowe informacje o urządzeniu",
+        "zh-cn": "添加了 Admin 5 配置\n获取设备的基本信息",
+        "uk": "Додана конфігурація Admin 5\nОтримайте основну інформацію про пристрій"
+      }
     },
-    "protectedNative": [
-        "userName",
-        "userPassword"
-    ],
-    "encryptedNative": [
-        "userPassword"
-    ],
-    "native": {
-        "serverIp": "",
-        "serverPort": 443,
-        "userName": "Installer",
-        "userPassword": "",
-        "createRoomsAndFunctions": false,
-        "webInstance": ""
+    "titleLang": {
+      "en": "Gira IoT",
+      "de": "Gira IoT",
+      "ru": "Гира IoT",
+      "pt": "Gira IoT",
+      "nl": "Gira IoT",
+      "fr": "IdO Gira",
+      "it": "Gira IoT",
+      "es": "Gira IoT",
+      "pl": "Gira IoT",
+      "zh-cn": "Gira 物联网",
+      "uk": "Gira IoT"
     },
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "info",
-            "type": "channel",
-            "common": {
-                "name": {
-                    "en": "Information",
-                    "de": "Information",
-                    "ru": "Информация",
-                    "pt": "Em formação",
-                    "nl": "Informatie",
-                    "fr": "Information",
-                    "it": "Informazione",
-                    "es": "Información",
-                    "pl": "Informacja",
-                    "zh-cn": "信息"
-                }
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.connection",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Device or service connected",
-                    "de": "Gerät oder Dienst verbunden",
-                    "ru": "Устройство или служба подключены",
-                    "pt": "Dispositivo ou serviço conectado",
-                    "nl": "Apparaat of service verbonden",
-                    "fr": "Appareil ou service connecté",
-                    "it": "Dispositivo o servizio connesso",
-                    "es": "Dispositivo o servicio conectado",
-                    "pl": "Podłączono urządzenie lub usługę",
-                    "zh-cn": "连接的设备或服务"
-                },
-                "type": "boolean",
-                "role": "indicator.connected",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.callbacksRegistered",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Callbacks registered",
-                    "de": "Callbacks registriert",
-                    "ru": "Обратные звонки зарегистрированы",
-                    "pt": "Reclamações registadas",
-                    "nl": "Callbacks geregistreerd",
-                    "fr": "Callbacks registered",
-                    "it": "Callback registrati",
-                    "es": "Llamadas registradas",
-                    "pl": "Callback rejestrować",
-                    "zh-cn": "登记的要求"
-                },
-                "type": "boolean",
-                "role": "indicator.working",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "deviceInfo",
-            "type": "channel",
-            "common": {
-                "name": {
-                    "en": "Device Information",
-                    "de": "Geräteinformation",
-                    "ru": "Информация об устройстве",
-                    "pt": "Informação de dispositivo",
-                    "nl": "Apparaat informatie",
-                    "fr": "Informations sur l'appareil",
-                    "it": "Informazioni sul dispositivo",
-                    "es": "Información del dispositivo",
-                    "pl": "Informacje o urządzeniu",
-                    "zh-cn": "设备信息"
-                }
-            },
-            "native": {}
-        },
-        {
-            "_id": "deviceInfo.name",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Device name",
-                    "de": "Gerätename",
-                    "ru": "Имя устройства",
-                    "pt": "Nome do dispositivo",
-                    "nl": "Toestelnaam",
-                    "fr": "Nom de l'appareil",
-                    "it": "Nome del dispositivo",
-                    "es": "Nombre del dispositivo",
-                    "pl": "Nazwa urządzenia",
-                    "zh-cn": "设备名称"
-                },
-                "type": "string",
-                "role": "text",
-                "read": true,
-                "write": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "deviceInfo.type",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Device type",
-                    "de": "Gerätetyp",
-                    "ru": "Тип устройства",
-                    "pt": "Tipo de dispositivo",
-                    "nl": "Soort apparaat",
-                    "fr": "Type d'appareil",
-                    "it": "Tipo di dispositivo",
-                    "es": "Tipo de dispositivo",
-                    "pl": "Rodzaj urządzenia",
-                    "zh-cn": "设备类型"
-                },
-                "type": "string",
-                "role": "text",
-                "read": true,
-                "write": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "deviceInfo.version",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Device version",
-                    "de": "Geräteversion",
-                    "ru": "Версия устройства",
-                    "pt": "Versão do dispositivo",
-                    "nl": "Apparaatversie",
-                    "fr": "Version de l'appareil",
-                    "it": "Versione del dispositivo",
-                    "es": "Versión del dispositivo",
-                    "pl": "Wersja urządzenia",
-                    "zh-cn": "设备版本"
-                },
-                "type": "string",
-                "role": "text",
-                "read": true,
-                "write": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "client",
-            "type": "channel",
-            "common": {
-                "name": {
-                    "en": "Client",
-                    "de": "Klient",
-                    "ru": "Клиент",
-                    "pt": "Cliente",
-                    "nl": "Cliënt",
-                    "fr": "Client",
-                    "it": "Cliente",
-                    "es": "Cliente",
-                    "pl": "Klient",
-                    "zh-cn": "客户"
-                }
-            },
-            "native": {}
-        },
-        {
-            "_id": "client.identifier",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Identifier",
-                    "de": "Kennung",
-                    "ru": "Идентификатор",
-                    "pt": "Identificador",
-                    "nl": "ID",
-                    "fr": "Identifiant",
-                    "it": "Identificatore",
-                    "es": "identificador",
-                    "pl": "Identyfikator",
-                    "zh-cn": "标识符"
-                },
-                "type": "string",
-                "role": "text",
-                "read": true,
-                "write": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "client.token",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "User token",
-                    "de": "Benutzertoken",
-                    "ru": "Токен пользователя",
-                    "pt": "Token de usuário",
-                    "nl": "Gebruikerstoken",
-                    "fr": "Jeton utilisateur",
-                    "it": "Token utente",
-                    "es": "token de usuario",
-                    "pl": "Token użytkownika",
-                    "zh-cn": "用户令牌"
-                },
-                "type": "string",
-                "role": "text",
-                "read": true,
-                "write": false,
-                "expert": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "functions",
-            "type": "folder",
-            "common": {
-                "name": {
-                    "en": "Functions",
-                    "de": "Funktionen",
-                    "ru": "Функции",
-                    "pt": "Funções",
-                    "nl": "Functies",
-                    "fr": "Fonctions",
-                    "it": "Funzioni",
-                    "es": "Funciones",
-                    "pl": "Pogrzeb",
-                    "zh-cn": "职能"
-                }
-            },
-            "native": {}
-        }
+    "desc": {
+      "en": "Integrate your Gira X1 or HomeServer",
+      "de": "Binden Sie Ihren Gira X1 oder HomeServer ein",
+      "ru": "Интегрируйте свой Gira X1 или HomeServer",
+      "pt": "Integre o seu Gira X1 ou HomeServer",
+      "nl": "Integreer uw Gira X1 of HomeServer",
+      "fr": "Intégrez votre Gira X1 ou HomeServer",
+      "it": "Integra il tuo Gira X1 o HomeServer",
+      "es": "Integre su Gira X1 o HomeServer",
+      "pl": "Zintegruj Gira X1 lub HomeServer",
+      "zh-cn": "集成您的 Gira X1 或 HomeServer",
+      "uk": "Інтегруйте Gira X1 або HomeServer"
+    },
+    "authors": [
+      "Matthias Kleine <info@haus-automatisierung.com>"
+    ],
+    "keywords": [
+      "gira",
+      "x1",
+      "homeserver",
+      "iot"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "icon": "gira-iot.png",
+    "extIcon": "https://raw.githubusercontent.com/klein0r/ioBroker.gira-iot/master/admin/gira-iot.png",
+    "enabled": false,
+    "readme": "https://github.com/klein0r/ioBroker.gira-iot/blob/master/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "iot-systems",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "push",
+    "messagebox": true,
+    "webExtension": "lib/web.js",
+    "adminUI": {
+      "config": "json"
+    },
+    "docs": {
+      "en": [
+        "docs/en/README.md"
+      ],
+      "de": [
+        "docs/de/README.md"
+      ]
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=4.0.15",
+        "web": ">=5.1.2"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=6.0.0"
+      }
     ]
+  },
+  "protectedNative": [
+    "userName",
+    "userPassword"
+  ],
+  "encryptedNative": [
+    "userPassword"
+  ],
+  "native": {
+    "serverIp": "",
+    "serverPort": 443,
+    "userName": "Installer",
+    "userPassword": "",
+    "createRoomsAndFunctions": false,
+    "webInstance": ""
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": {
+          "en": "Information",
+          "de": "Information",
+          "ru": "Информация",
+          "pt": "Em formação",
+          "nl": "Informatie",
+          "fr": "Information",
+          "it": "Informazione",
+          "es": "Información",
+          "pl": "Informacja",
+          "zh-cn": "信息"
+        }
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Device or service connected",
+          "de": "Gerät oder Dienst verbunden",
+          "ru": "Устройство или служба подключены",
+          "pt": "Dispositivo ou serviço conectado",
+          "nl": "Apparaat of service verbonden",
+          "fr": "Appareil ou service connecté",
+          "it": "Dispositivo o servizio connesso",
+          "es": "Dispositivo o servicio conectado",
+          "pl": "Podłączono urządzenie lub usługę",
+          "zh-cn": "连接的设备或服务"
+        },
+        "type": "boolean",
+        "role": "indicator.connected",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.callbacksRegistered",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Callbacks registered",
+          "de": "Callbacks registriert",
+          "ru": "Обратные звонки зарегистрированы",
+          "pt": "Reclamações registadas",
+          "nl": "Callbacks geregistreerd",
+          "fr": "Callbacks registered",
+          "it": "Callback registrati",
+          "es": "Llamadas registradas",
+          "pl": "Callback rejestrować",
+          "zh-cn": "登记的要求"
+        },
+        "type": "boolean",
+        "role": "indicator.working",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "deviceInfo",
+      "type": "channel",
+      "common": {
+        "name": {
+          "en": "Device Information",
+          "de": "Geräteinformation",
+          "ru": "Информация об устройстве",
+          "pt": "Informação de dispositivo",
+          "nl": "Apparaat informatie",
+          "fr": "Informations sur l'appareil",
+          "it": "Informazioni sul dispositivo",
+          "es": "Información del dispositivo",
+          "pl": "Informacje o urządzeniu",
+          "zh-cn": "设备信息"
+        }
+      },
+      "native": {}
+    },
+    {
+      "_id": "deviceInfo.name",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Device name",
+          "de": "Gerätename",
+          "ru": "Имя устройства",
+          "pt": "Nome do dispositivo",
+          "nl": "Toestelnaam",
+          "fr": "Nom de l'appareil",
+          "it": "Nome del dispositivo",
+          "es": "Nombre del dispositivo",
+          "pl": "Nazwa urządzenia",
+          "zh-cn": "设备名称"
+        },
+        "type": "string",
+        "role": "text",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "deviceInfo.type",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Device type",
+          "de": "Gerätetyp",
+          "ru": "Тип устройства",
+          "pt": "Tipo de dispositivo",
+          "nl": "Soort apparaat",
+          "fr": "Type d'appareil",
+          "it": "Tipo di dispositivo",
+          "es": "Tipo de dispositivo",
+          "pl": "Rodzaj urządzenia",
+          "zh-cn": "设备类型"
+        },
+        "type": "string",
+        "role": "text",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "deviceInfo.version",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Device version",
+          "de": "Geräteversion",
+          "ru": "Версия устройства",
+          "pt": "Versão do dispositivo",
+          "nl": "Apparaatversie",
+          "fr": "Version de l'appareil",
+          "it": "Versione del dispositivo",
+          "es": "Versión del dispositivo",
+          "pl": "Wersja urządzenia",
+          "zh-cn": "设备版本"
+        },
+        "type": "string",
+        "role": "text",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "client",
+      "type": "channel",
+      "common": {
+        "name": {
+          "en": "Client",
+          "de": "Klient",
+          "ru": "Клиент",
+          "pt": "Cliente",
+          "nl": "Cliënt",
+          "fr": "Client",
+          "it": "Cliente",
+          "es": "Cliente",
+          "pl": "Klient",
+          "zh-cn": "客户"
+        }
+      },
+      "native": {}
+    },
+    {
+      "_id": "client.identifier",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Identifier",
+          "de": "Kennung",
+          "ru": "Идентификатор",
+          "pt": "Identificador",
+          "nl": "ID",
+          "fr": "Identifiant",
+          "it": "Identificatore",
+          "es": "identificador",
+          "pl": "Identyfikator",
+          "zh-cn": "标识符"
+        },
+        "type": "string",
+        "role": "text",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "client.token",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "User token",
+          "de": "Benutzertoken",
+          "ru": "Токен пользователя",
+          "pt": "Token de usuário",
+          "nl": "Gebruikerstoken",
+          "fr": "Jeton utilisateur",
+          "it": "Token utente",
+          "es": "token de usuario",
+          "pl": "Token użytkownika",
+          "zh-cn": "用户令牌"
+        },
+        "type": "string",
+        "role": "text",
+        "read": true,
+        "write": false,
+        "expert": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "functions",
+      "type": "folder",
+      "common": {
+        "name": {
+          "en": "Functions",
+          "de": "Funktionen",
+          "ru": "Функции",
+          "pt": "Funções",
+          "nl": "Functies",
+          "fr": "Fonctions",
+          "it": "Funzioni",
+          "es": "Funciones",
+          "pl": "Pogrzeb",
+          "zh-cn": "职能"
+        }
+      },
+      "native": {}
+    }
+  ]
 }
