@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gira-iot",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "news": {
+      "0.2.1": {
+        "en": "Added Ukrainian language",
+        "de": "Ukrainische Sprache",
+        "ru": "Добавлен украинский язык",
+        "pt": "Adicionado idioma ucraniano",
+        "nl": "Voeg Oekraïense taal toe",
+        "fr": "Ajout de la langue ukrainienne",
+        "it": "Aggiunto lingua ucraina",
+        "es": "Idioma ucraniano añadido",
+        "pl": "Język ukraiński",
+        "uk": "Українська мова",
+        "zh-cn": "增加乌克兰语"
+      },
       "0.2.0": {
         "en": "Dropped Admin 5 support\nAdded Ukrainian language",
         "de": "Droped Admin 5 Unterstützung\nUkrainische Sprache",
@@ -80,19 +93,6 @@
         "pl": "NodeJS 14.x jest wymagana (NodeJS 12.x is EOL)\n\n* Współczynnik Ctworów i Państwa\n* Wstępna opcja do tworzenia pomieszczeń i funkcji automatycznie funkcjonuje\n* Zawartość dla js-kontrolatora do 4,0,15",
         "uk": "Потрібен NodeJS 14.x (NodeJS 12.x є EOL)\n\n* Створення пристроїв і станів\n* Додана можливість автоматичного створення кімнат і функцій\n* Оновлено залежності для js-контролера до 4.0.15",
         "zh-cn": "不需要14.JS14x(Node JS 12x is EOL))\n\n* 建立装置和州\n* 增加自动设立室和职能的选择\n* A/64/50。 控制巴士的最新缺陷"
-      },
-      "0.0.3": {
-        "en": "Added Admin 5 configuration\nGet basic information about the device",
-        "de": "Admin 5-Konfiguration hinzugefügt\nHolen Sie sich grundlegende Informationen über das Gerät",
-        "ru": "Добавлена конфигурация администратора 5\nПолучить основную информацию об устройстве",
-        "pt": "Adicionada configuração do Admin 5\nObtenha informações básicas sobre o dispositivo",
-        "nl": "Admin 5 configuratie toegevoegd\nKrijg basisinformatie over het apparaat",
-        "fr": "Ajout de la configuration Admin 5\nObtenir des informations de base sur l'appareil",
-        "it": "Aggiunta la configurazione dell'amministratore 5\nOttieni informazioni di base sul dispositivo",
-        "es": "Configuración de administrador 5 agregada\nObtener información básica sobre el dispositivo",
-        "pl": "Dodano konfigurację Admin 5\nUzyskaj podstawowe informacje o urządzeniu",
-        "uk": "Додана конфігурація Admin 5\nОтримайте основну інформацію про пристрій",
-        "zh-cn": "添加了 Admin 5 配置\n获取设备的基本信息"
       }
     },
     "titleLang": {

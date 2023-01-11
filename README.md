@@ -47,7 +47,7 @@ iobroker add gira-iot
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.2.1 (2023-01-11)
 
 * (klein0r) Added Ukrainian language
 
@@ -71,13 +71,6 @@ iobroker add gira-iot
 * (klein0r) Changed registration of callbacks via web adapter
 * (klein0r) Request current values on init
 * (klein0r) Updated state roles
-
-### 0.1.0 (2022-09-29)
-
-* (klein0r) Publish new values via HTTP
-* (klein0r) Updated state roles
-* (klein0r) Use sendTo to communicate with adapter instance
-* (klein0r) Implemented status update of value callbacks
 
 ## License
 
