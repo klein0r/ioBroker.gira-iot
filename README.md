@@ -47,6 +47,10 @@ iobroker add gira-iot
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+* (klein0r) Added Ukrainian language
+
 ### 0.2.0 (2022-12-12)
 
 * (klein0r) Dropped Admin 5 support
@@ -79,7 +83,7 @@ iobroker add gira-iot
 
 MIT License
 
-Copyright (c) 2022 Matthias Kleine <info@haus-automatisierung.com>
+Copyright (c) 2023 Matthias Kleine <info@haus-automatisierung.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
