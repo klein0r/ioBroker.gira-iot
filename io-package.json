@@ -26,8 +26,8 @@
         "it": "Aggiorna gli oggetti se la configurazione è cambiata\nRegistrazione client fissa per Gira Home Server",
         "es": "Actualizar objetos si la configuración cambia\nRegistro de cliente fijo para Gira Home Server",
         "pl": "Obiekty aktualne, jeśli konfiguracja zmieniła się zmieniać\nStrona internetowa firmy Gira Home Server",
-        "zh-cn": "如果组合变化,更新物体\nGira Home Server的固定客户登记",
-        "uk": "Оновити об’єкти, якщо змінилася конфігурація\nВиправлена ​​реєстрація клієнта для Gira Home Server"
+        "uk": "Оновити об’єкти, якщо змінилася конфігурація\nВиправлена ​​реєстрація клієнта для Gira Home Server",
+        "zh-cn": "如果组合变化,更新物体\nGira Home Server的固定客户登记"
       },
       "0.1.2": {
         "en": "Improved callback registration handling\nImproved error handling",
@@ -39,8 +39,8 @@
         "it": "Miglioramento della gestione della registrazione del callback\nMiglioramento della gestione degli errori",
         "es": "Mejora de la gestión del registro de callback\nMejor manejo de errores",
         "pl": "Poprawa rejestracyjna\nPoprawiona obsługa błędów",
-        "zh-cn": "改进呼吁登记\n改进错误处理",
-        "uk": "Покращена обробка реєстрації зворотного виклику\nПокращена обробка помилок"
+        "uk": "Покращена обробка реєстрації зворотного виклику\nПокращена обробка помилок",
+        "zh-cn": "改进呼吁登记\n改进错误处理"
       },
       "0.1.1": {
         "en": "Changed registration of callbacks via web adapter\nRequest current values on init\nUpdated state roles",
@@ -52,8 +52,8 @@
         "it": "Registrazione modificata dei callback tramite web adapter\nRichiedi i valori correnti su init\nRuoli di stato aggiornati",
         "es": "Cambio de registro de callbacks a través de adaptador web\nSolicitar valores actuales sobre init\nFunciones estatales actualizadas",
         "pl": "Zmiana rejestracji za pomocą adapterów internetowych\nRequest bieżące wartości\nRole państwowe",
-        "zh-cn": "B. 通过网络适应人员修改的报警登记\n请求目前关于推定的价值\n最新国家作用",
-        "uk": "Змінено реєстрацію зворотних дзвінків через веб-адаптер\nЗапит поточних значень на init\nОновлені ролі стану"
+        "uk": "Змінено реєстрацію зворотних дзвінків через веб-адаптер\nЗапит поточних значень на init\nОновлені ролі стану",
+        "zh-cn": "B. 通过网络适应人员修改的报警登记\n请求目前关于推定的价值\n最新国家作用"
       },
       "0.1.0": {
         "en": "Publish new values via HTTP\nUpdated state roles\nUse sendTo to communicate with adapter instance\nImplemented status update of value callbacks",
@@ -65,8 +65,8 @@
         "it": "Pubblica nuovi valori tramite HTTP\nRuoli di stato aggiornati\nUsa sendTo per comunicare con l'istanza dell'adattatore\nAggiornamento dello stato implementato dei callback di valore",
         "es": "Publicar nuevos valores a través de HTTP\nFunciones estatales actualizadas\nUse sendTo para comunicarse con instancia de adaptador\nActualización del estado aplicado de los callbacks de valor",
         "pl": "Wydawne wartości za pośrednictwem HTTP\nRole państwowe\nWykorzystywać do komunikacji z adapterem\nPoprawiony status aktualizacji callbacku wartości",
-        "zh-cn": "通过海贸总协定出版新价值观\n最新国家作用\n使用寄托与适应者联系\n执行附加要求的最新情况",
-        "uk": "Опублікувати нові значення через HTTP\nОновлені ролі стану\nВикористовуйте sendTo для зв’язку з примірником адаптера\nРеалізовано оновлення статусу зворотних викликів значень"
+        "uk": "Опублікувати нові значення через HTTP\nОновлені ролі стану\nВикористовуйте sendTo для зв’язку з примірником адаптера\nРеалізовано оновлення статусу зворотних викликів значень",
+        "zh-cn": "通过海贸总协定出版新价值观\n最新国家作用\n使用寄托与适应者联系\n执行附加要求的最新情况"
       },
       "0.0.4": {
         "en": "NodeJS 14.x is required (NodeJS 12.x is EOL)\n\n* Create devices and states\n* Added option to create rooms and functions automatically\n* Updated depedency for js-controller to 4.0.15",
@@ -78,8 +78,8 @@
         "it": "NodeJS 14.x è richiesto (NodeJS 12.x è EOL)\n\n* Creare dispositivi e stati\n* Aggiunta opzione per creare automaticamente camere e funzioni\n# Dispedenza aggiornata per js-controller a 4.0.15",
         "es": "NodeJS 14.x es necesario (NodeJS 12.x es EOL)\n\n* Crear dispositivos y estados\n* opción agregada para crear habitaciones y funciones automáticamente\n* Dispersión actualizada para js-controller a 4.0.15",
         "pl": "NodeJS 14.x jest wymagana (NodeJS 12.x is EOL)\n\n* Współczynnik Ctworów i Państwa\n* Wstępna opcja do tworzenia pomieszczeń i funkcji automatycznie funkcjonuje\n* Zawartość dla js-kontrolatora do 4,0,15",
-        "zh-cn": "不需要14.JS14x(Node JS 12x is EOL))\n\n* 建立装置和州\n* 增加自动设立室和职能的选择\n* A/64/50。 控制巴士的最新缺陷",
-        "uk": "Потрібен NodeJS 14.x (NodeJS 12.x є EOL)\n\n* Створення пристроїв і станів\n* Додана можливість автоматичного створення кімнат і функцій\n* Оновлено залежності для js-контролера до 4.0.15"
+        "uk": "Потрібен NodeJS 14.x (NodeJS 12.x є EOL)\n\n* Створення пристроїв і станів\n* Додана можливість автоматичного створення кімнат і функцій\n* Оновлено залежності для js-контролера до 4.0.15",
+        "zh-cn": "不需要14.JS14x(Node JS 12x is EOL))\n\n* 建立装置和州\n* 增加自动设立室和职能的选择\n* A/64/50。 控制巴士的最新缺陷"
       },
       "0.0.3": {
         "en": "Added Admin 5 configuration\nGet basic information about the device",
@@ -91,8 +91,8 @@
         "it": "Aggiunta la configurazione dell'amministratore 5\nOttieni informazioni di base sul dispositivo",
         "es": "Configuración de administrador 5 agregada\nObtener información básica sobre el dispositivo",
         "pl": "Dodano konfigurację Admin 5\nUzyskaj podstawowe informacje o urządzeniu",
-        "zh-cn": "添加了 Admin 5 配置\n获取设备的基本信息",
-        "uk": "Додана конфігурація Admin 5\nОтримайте основну інформацію про пристрій"
+        "uk": "Додана конфігурація Admin 5\nОтримайте основну інформацію про пристрій",
+        "zh-cn": "添加了 Admin 5 配置\n获取设备的基本信息"
       }
     },
     "titleLang": {
@@ -105,8 +105,8 @@
       "it": "Gira IoT",
       "es": "Gira IoT",
       "pl": "Gira IoT",
-      "zh-cn": "Gira 物联网",
-      "uk": "Gira IoT"
+      "uk": "Gira IoT",
+      "zh-cn": "Gira 物联网"
     },
     "desc": {
       "en": "Integrate your Gira X1 or HomeServer",
@@ -118,8 +118,8 @@
       "it": "Integra il tuo Gira X1 o HomeServer",
       "es": "Integre su Gira X1 o HomeServer",
       "pl": "Zintegruj Gira X1 lub HomeServer",
-      "zh-cn": "集成您的 Gira X1 或 HomeServer",
-      "uk": "Інтегруйте Gira X1 або HomeServer"
+      "uk": "Інтегруйте Gira X1 або HomeServer",
+      "zh-cn": "集成您的 Gira X1 或 HomeServer"
     },
     "authors": [
       "Matthias Kleine <info@haus-automatisierung.com>"
@@ -198,6 +198,7 @@
           "it": "Informazione",
           "es": "Información",
           "pl": "Informacja",
+          "uk": "Інформація",
           "zh-cn": "信息"
         }
       },
@@ -217,6 +218,7 @@
           "it": "Dispositivo o servizio connesso",
           "es": "Dispositivo o servicio conectado",
           "pl": "Podłączono urządzenie lub usługę",
+          "uk": "Пристрої або послуги підключені",
           "zh-cn": "连接的设备或服务"
         },
         "type": "boolean",
@@ -241,6 +243,7 @@
           "it": "Callback registrati",
           "es": "Llamadas registradas",
           "pl": "Callback rejestrować",
+          "uk": "Реєстрація дзвінків",
           "zh-cn": "登记的要求"
         },
         "type": "boolean",
@@ -265,6 +268,7 @@
           "it": "Informazioni sul dispositivo",
           "es": "Información del dispositivo",
           "pl": "Informacje o urządzeniu",
+          "uk": "Інформація про пристрій",
           "zh-cn": "设备信息"
         }
       },
@@ -307,6 +311,7 @@
           "it": "Tipo di dispositivo",
           "es": "Tipo de dispositivo",
           "pl": "Rodzaj urządzenia",
+          "uk": "Назва пристрою",
           "zh-cn": "设备类型"
         },
         "type": "string",
@@ -330,6 +335,7 @@
           "it": "Versione del dispositivo",
           "es": "Versión del dispositivo",
           "pl": "Wersja urządzenia",
+          "uk": "Версія пристрою",
           "zh-cn": "设备版本"
         },
         "type": "string",
@@ -353,6 +359,7 @@
           "it": "Cliente",
           "es": "Cliente",
           "pl": "Klient",
+          "uk": "Клієнт",
           "zh-cn": "客户"
         }
       },
@@ -372,6 +379,7 @@
           "it": "Identificatore",
           "es": "identificador",
           "pl": "Identyfikator",
+          "uk": "Виявлення",
           "zh-cn": "标识符"
         },
         "type": "string",
@@ -395,6 +403,7 @@
           "it": "Token utente",
           "es": "token de usuario",
           "pl": "Token użytkownika",
+          "uk": "Користувач токени",
           "zh-cn": "用户令牌"
         },
         "type": "string",
@@ -419,6 +428,7 @@
           "it": "Funzioni",
           "es": "Funciones",
           "pl": "Pogrzeb",
+          "uk": "Функції",
           "zh-cn": "职能"
         }
       },
