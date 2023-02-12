@@ -6,5 +6,7 @@
     "Username": "Имя пользователя",
     "Password": "Пароль",
     "Create rooms and functions automatically": "Создавайте комнаты и функции автоматически",
-    "Web adapter instance": "Экземпляр веб-адаптера"
+    "Web adapter instance": "Экземпляр веб-адаптера",
+    "Url preview": "Предварительный просмотр URL",
+    "Your server will use this url to communicate with ioBroker": "Ваш сервер будет использовать этот URL-адрес для связи с ioBroker."
 }

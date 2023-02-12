@@ -6,5 +6,7 @@
     "Username": "用户名",
     "Password": "密码",
     "Create rooms and functions automatically": "自动创建房间和功能",
-    "Web adapter instance": "Web 适配器实例"
+    "Web adapter instance": "Web 适配器实例",
+    "Url preview": "网址预览",
+    "Your server will use this url to communicate with ioBroker": "您的服务器将使用此 url 与 ioBroker 进行通信"
 }

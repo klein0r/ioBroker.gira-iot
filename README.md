@@ -47,6 +47,10 @@ iobroker add gira-iot
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+* (klein0r) Url preview in instance configuration
+
 ### 0.2.1 (2023-01-11)
 
 * (klein0r) Added Ukrainian language

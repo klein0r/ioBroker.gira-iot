@@ -6,5 +6,7 @@
     "Username": "Nutzername",
     "Password": "Passwort",
     "Create rooms and functions automatically": "Räume und Funktionen automatisch erstellen",
-    "Web adapter instance": "Web-Adapter-Instanz"
+    "Web adapter instance": "Web-Adapter-Instanz",
+    "Url preview": "URL-Vorschau",
+    "Your server will use this url to communicate with ioBroker": "Ihr Server verwendet diese URL, um mit dem ioBroker zu kommunizieren"
 }

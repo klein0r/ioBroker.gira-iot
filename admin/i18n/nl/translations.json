@@ -6,5 +6,7 @@
     "Username": "gebruikersnaam",
     "Password": "Wachtwoord",
     "Create rooms and functions automatically": "Creëer automatisch kamers en functies",
-    "Web adapter instance": "Webadapter-instantie"
+    "Web adapter instance": "Webadapter-instantie",
+    "Url preview": "URL-voorbeeld",
+    "Your server will use this url to communicate with ioBroker": "Uw server zal deze url gebruiken om te communiceren met ioBroker"
 }
