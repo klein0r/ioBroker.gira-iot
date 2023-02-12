@@ -57,6 +57,19 @@
                     "lg": 6,
                     "label": "Web adapter instance"
                 },
+                "_webInstanceUrl": {
+                    "type": "textSendTo",
+                    "container": "text",
+                    "copyToClipboard": false,
+                    "alsoDependsOn": ["webInstance"],
+                    "command": "getWebUrl",
+                    "jsonData": "{\"webInstance\": \"${data.webInstance}\"}",
+                    "sm": 12,
+                    "md": 6,
+                    "lg": 6,
+                    "label": "Url preview",
+                    "help": "Your server will use this url to communicate with ioBroker"
+                },
                 "_ioBrokerKursBanner": {
                     "newLine": true,
                     "type": "staticImage",
