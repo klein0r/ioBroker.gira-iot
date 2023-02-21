@@ -463,7 +463,6 @@ class GiraIot extends utils.Adapter {
     }
 
     /**
-     * Is called if a subscribed state changes
      * @param {string} id
      * @param {ioBroker.State | null | undefined} state
      */
