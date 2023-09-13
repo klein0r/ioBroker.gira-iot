@@ -51,6 +51,7 @@ iobroker add gira-iot
 
 * (klein0r) Added missing channel type for remote access
 * (klein0r) Url preview in instance configuration
+* (klein0r) Improved error handling
 
 ### 0.2.1 (2023-01-11)
 

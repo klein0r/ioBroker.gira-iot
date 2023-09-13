@@ -298,21 +298,25 @@ class GiraIot extends utils.Adapter {
 
                 this.log.debug(`Creating room "${location.displayName}" with enum id "enum.rooms.${enumId}"`);
 
-                await this.setForeignObjectNotExistsAsync(`enum.rooms.${enumId}`, {
-                    type: 'enum',
-                    common: {
-                        name: location.displayName,
-                        enabled: true,
-                        color: false,
-                        members: [],
-                    },
-                    native: {},
-                });
+                if (enumId) {
+                    await this.setForeignObjectNotExistsAsync(`enum.rooms.${enumId}`, {
+                        type: 'enum',
+                        common: {
+                            name: location.displayName,
+                            enabled: true,
+                            color: false,
+                            members: [],
+                        },
+                        native: {},
+                    });
 
-                if (location?.functions) {
-                    for (const func of location.functions) {
-                        await this.addChannelToEnumAsync('rooms', enumId, 'functions', func);
+                    if (location?.functions) {
+                        for (const func of location.functions) {
+                            await this.addChannelToEnumAsync('rooms', enumId, 'functions', func);
+                        }
                     }
+                } else {
+                    this.log.warn(`[createRooms] Found room with empty name: "${location.displayName}" was converted to "enum.rooms.${enumId}"`);
                 }
             }
 
@@ -329,19 +333,23 @@ class GiraIot extends utils.Adapter {
 
                 this.log.debug(`Creating function "${trade.displayName}" with enum id "enum.functions.${enumId}"`);
 
-                await this.setForeignObjectNotExistsAsync(`enum.functions.${enumId}`, {
-                    type: 'enum',
-                    common: {
-                        name: trade.displayName,
-                        enabled: true,
-                        color: false,
-                        members: [],
-                    },
-                    native: {},
-                });
+                if (enumId) {
+                    await this.setForeignObjectNotExistsAsync(`enum.functions.${enumId}`, {
+                        type: 'enum',
+                        common: {
+                            name: trade.displayName,
+                            enabled: true,
+                            color: false,
+                            members: [],
+                        },
+                        native: {},
+                    });
 
-                for (const func of trade.functions) {
-                    await this.addChannelToEnumAsync('functions', enumId, 'functions', func);
+                    for (const func of trade.functions) {
+                        await this.addChannelToEnumAsync('functions', enumId, 'functions', func);
+                    }
+                } else {
+                    this.log.warn(`[createFunctions] Found function with empty name: "${trade.tradeType}" was converted to "enum.functions.${enumId}"`);
                 }
             }
         }
