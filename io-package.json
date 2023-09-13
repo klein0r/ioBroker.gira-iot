@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gira-iot",
-    "version": "0.2.1",
+    "version": "0.3.0",
     "news": {
+      "0.3.0": {
+        "en": "Added missing channel type for remote access\nUrl preview in instance configuration\nImproved error handling",
+        "de": "Hinzufügen fehlender Kanaltyp für Fernzugriff\nUrl Vorschau zum Beispiel Konfiguration\nVerbesserte Fehlerbehandlung",
+        "ru": "Добавлен тип отсутствующего канала для удаленного доступа\nПредварительный просмотр Url в конфигурации экземпляра\nУлучшена обработка ошибок",
+        "pt": "Adicionado tipo de canal ausente para acesso remoto\nVisualização do URL na configuração da instância\nMelhor manuseio de erros",
+        "nl": "Vermiste kanaaltype\nUrl preview in bijvoorbeeld configu\nImproviserende fouten",
+        "fr": "Ajout du type de canal manquant pour l'accès à distance\nAperçu de l'url en configuration d'instance\nAmélioration de la manipulation des erreurs",
+        "it": "Aggiunto tipo di canale mancante per l'accesso remoto\nAnteprima Url nella configurazione di istanza\nMiglioramento della gestione degli errori",
+        "es": "Tipo de canal perdido para el acceso remoto\nPrevisualización Url en configuración de instancia\nMejor manejo de errores",
+        "pl": "Zamknięte kanały dla odległego dostępu\nUrl preview\nPoprawiona obsługa błędów",
+        "uk": "Додано відсутній тип каналів для дистанційного доступу\nУрл попередній перегляд в конфігурації екземпляра\nПоліпшення обробки помилок",
+        "zh-cn": "增加远距离准入的缺失渠道\n审 编\n改进错误处理"
+      },
       "0.2.1": {
         "en": "Added Ukrainian language",
         "de": "Ukrainische Sprache",
@@ -80,19 +93,6 @@
         "pl": "Wydawne wartości za pośrednictwem HTTP\nRole państwowe\nWykorzystywać do komunikacji z adapterem\nPoprawiony status aktualizacji callbacku wartości",
         "uk": "Опублікувати нові значення через HTTP\nОновлені ролі стану\nВикористовуйте sendTo для зв’язку з примірником адаптера\nРеалізовано оновлення статусу зворотних викликів значень",
         "zh-cn": "通过海贸总协定出版新价值观\n最新国家作用\n使用寄托与适应者联系\n执行附加要求的最新情况"
-      },
-      "0.0.4": {
-        "en": "NodeJS 14.x is required (NodeJS 12.x is EOL)\n\n* Create devices and states\n* Added option to create rooms and functions automatically\n* Updated depedency for js-controller to 4.0.15",
-        "de": "NodeJS 14.x ist erforderlich (NodeJS 12.x ist EOL)\n\n* Geräte und Zustände erstellen\n* Zusätzliche Möglichkeit, Räume und Funktionen automatisch zu erstellen\n* Aktualisierte Depedanz für js-Controller auf 4.0.15",
-        "ru": "NodeJS 14.x требуется (NodeJS 12.x EOL)\n\n* Создать устройства и государства\n* Добавлена возможность создавать комнаты и функции автоматически\n* Обновленная депедентность для js-контроллера до 4.0.15",
-        "pt": "NodeJS 14.x é necessário (NodeJS 12.x é EOL)\n\n* Criar dispositivos e estados\n* opção adicionada para criar quartos e funções automaticamente\n* Depedência atualizada para js-controller para 4.0.15",
-        "nl": "NodeJS 14.x is vereist (NodeJS 12.x is EOL)\n\n♪ Create apps and states ♪\nQuality over Quantity (QoQ) Releases Vertaling:\n♪ Verhoogde afleiding voor JS-controller tot 4.015",
-        "fr": "NodeJS 14.x est nécessaire (NodeJS 12.x est EOL)\n\n* Créer des dispositifs et des états\n* Ajout de l'option pour créer des chambres et des fonctions automatiquement\n* Mise à jour depedency for js-controller à 4.0.15",
-        "it": "NodeJS 14.x è richiesto (NodeJS 12.x è EOL)\n\n* Creare dispositivi e stati\n* Aggiunta opzione per creare automaticamente camere e funzioni\n# Dispedenza aggiornata per js-controller a 4.0.15",
-        "es": "NodeJS 14.x es necesario (NodeJS 12.x es EOL)\n\n* Crear dispositivos y estados\n* opción agregada para crear habitaciones y funciones automáticamente\n* Dispersión actualizada para js-controller a 4.0.15",
-        "pl": "NodeJS 14.x jest wymagana (NodeJS 12.x is EOL)\n\n* Współczynnik Ctworów i Państwa\n* Wstępna opcja do tworzenia pomieszczeń i funkcji automatycznie funkcjonuje\n* Zawartość dla js-kontrolatora do 4,0,15",
-        "uk": "Потрібен NodeJS 14.x (NodeJS 12.x є EOL)\n\n* Створення пристроїв і станів\n* Додана можливість автоматичного створення кімнат і функцій\n* Оновлено залежності для js-контролера до 4.0.15",
-        "zh-cn": "不需要14.JS14x(Node JS 12x is EOL))\n\n* 建立装置和州\n* 增加自动设立室和职能的选择\n* A/64/50。 控制巴士的最新缺陷"
       }
     },
     "titleLang": {

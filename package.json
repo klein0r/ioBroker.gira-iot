@@ -1,6 +1,6 @@
 {
   "name": "iobroker.gira-iot",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Integrate your Gira X1 or HomeServer",
   "author": {
     "name": "Matthias Kleine",

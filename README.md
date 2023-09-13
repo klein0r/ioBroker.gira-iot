@@ -47,7 +47,7 @@ iobroker add gira-iot
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.3.0 (2023-09-13)
 
 * (klein0r) Added missing channel type for remote access
 * (klein0r) Url preview in instance configuration
@@ -71,12 +71,6 @@ iobroker add gira-iot
 
 * (klein0r) Improved callback registration handling
 * (klein0r) Improved error handling
-
-### 0.1.1 (2022-09-29)
-
-* (klein0r) Changed registration of callbacks via web adapter
-* (klein0r) Request current values on init
-* (klein0r) Updated state roles
 
 ## License
 
