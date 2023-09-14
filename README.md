@@ -4,7 +4,6 @@
 
 [![NPM version](https://img.shields.io/npm/v/iobroker.gira-iot?style=flat-square)](https://www.npmjs.com/package/iobroker.gira-iot)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.gira-iot?label=npm%20downloads&style=flat-square)](https://www.npmjs.com/package/iobroker.gira-iot)
-![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/iobroker.gira-iot?label=npm%20vulnerabilities&style=flat-square)
 ![node-lts](https://img.shields.io/node/v-lts/iobroker.gira-iot?style=flat-square)
 ![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/iobroker.gira-iot?label=npm%20dependencies&style=flat-square)
 
@@ -14,7 +13,6 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/klein0r/iobroker.gira-iot?logo=github&style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues/klein0r/iobroker.gira-iot?logo=github&style=flat-square)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/klein0r/iobroker.gira-iot/test-and-release.yml?branch=master&logo=github&style=flat-square)
-![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/klein0r/iobroker.gira-iot?label=repo%20vulnerabilities&logo=github&style=flat-square)
 
 ## Versions
 
