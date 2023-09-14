@@ -5,7 +5,7 @@
 ## Compatible devices
 
 - Gira X1
-- Gira Homeserver
+- Gira Homeserver (recommended firmware >=4.12)
 - Gira One Server
 
 ## Getting started
