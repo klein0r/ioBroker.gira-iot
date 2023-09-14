@@ -4,17 +4,17 @@
     "version": "0.3.0",
     "news": {
       "0.3.0": {
-        "en": "Added missing channel type for remote access\nUrl preview in instance configuration\nImproved error handling",
-        "de": "Hinzufügen fehlender Kanaltyp für Fernzugriff\nUrl Vorschau zum Beispiel Konfiguration\nVerbesserte Fehlerbehandlung",
-        "ru": "Добавлен тип отсутствующего канала для удаленного доступа\nПредварительный просмотр Url в конфигурации экземпляра\nУлучшена обработка ошибок",
-        "pt": "Adicionado tipo de canal ausente para acesso remoto\nVisualização do URL na configuração da instância\nMelhor manuseio de erros",
-        "nl": "Vermiste kanaaltype\nUrl preview in bijvoorbeeld configu\nImproviserende fouten",
-        "fr": "Ajout du type de canal manquant pour l'accès à distance\nAperçu de l'url en configuration d'instance\nAmélioration de la manipulation des erreurs",
-        "it": "Aggiunto tipo di canale mancante per l'accesso remoto\nAnteprima Url nella configurazione di istanza\nMiglioramento della gestione degli errori",
-        "es": "Tipo de canal perdido para el acceso remoto\nPrevisualización Url en configuración de instancia\nMejor manejo de errores",
-        "pl": "Zamknięte kanały dla odległego dostępu\nUrl preview\nPoprawiona obsługa błędów",
-        "uk": "Додано відсутній тип каналів для дистанційного доступу\nУрл попередній перегляд в конфігурації екземпляра\nПоліпшення обробки помилок",
-        "zh-cn": "增加远距离准入的缺失渠道\n审 编\n改进错误处理"
+        "en": "Url preview in instance configuration\nImproved error handling",
+        "de": "Url Vorschau zum Beispiel Konfiguration\nVerbesserte Fehlerbehandlung",
+        "ru": "Предварительный просмотр Url в конфигурации экземпляра\nУлучшена обработка ошибок",
+        "pt": "Visualização do URL na configuração da instância\nMelhor manuseio de erros",
+        "nl": "Url preview in bijvoorbeeld configu\nImproviserende fouten",
+        "fr": "Aperçu de l'url en configuration d'instance\nAmélioration de la manipulation des erreurs",
+        "it": "Anteprima Url nella configurazione di istanza\nMiglioramento della gestione degli errori",
+        "es": "Previsualización Url en configuración de instancia\nMejor manejo de errores",
+        "pl": "Url preview\nPoprawiona obsługa błędów",
+        "uk": "Урл попередній перегляд в конфігурації екземпляра\nПоліпшення обробки помилок",
+        "zh-cn": "审 编\n改进错误处理"
       },
       "0.2.1": {
         "en": "Added Ukrainian language",

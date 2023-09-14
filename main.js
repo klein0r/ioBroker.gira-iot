@@ -274,7 +274,7 @@ class GiraIot extends utils.Adapter {
 
                 // Delete non existent functions
                 for (const func of allFunctions) {
-                    if (keepFunctions.indexOf(func) === -1) {
+                    if (!keepFunctions.includes(func)) {
                         await this.delObjectAsync(func, { recursive: true });
                         this.log.debug(`Function deleted: ${func}`);
                     }
