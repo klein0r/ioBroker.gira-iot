@@ -45,6 +45,10 @@ iobroker add gira-iot
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+* (klein0r) Added types for remote access (not documented by Gira)
+
 ### 0.3.0 (2023-09-13)
 
 * (klein0r) Added missing channel type for remote access
