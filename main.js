@@ -303,7 +303,6 @@ class GiraIot extends utils.Adapter {
                         type: 'enum',
                         common: {
                             name: location.displayName,
-                            enabled: true,
                             color: false,
                             members: [],
                         },
@@ -338,7 +337,6 @@ class GiraIot extends utils.Adapter {
                         type: 'enum',
                         common: {
                             name: trade.displayName,
-                            enabled: true,
                             color: false,
                             members: [],
                         },
