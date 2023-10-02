@@ -8,5 +8,10 @@
     "Create rooms and functions automatically": "Räume und Funktionen automatisch erstellen",
     "Web adapter instance": "Web-Adapter-Instanz",
     "Url preview": "URL-Vorschau",
-    "Your server will use this url to communicate with ioBroker": "Ihr Server verwendet diese URL, um mit dem ioBroker zu kommunizieren"
+    "Your server will use this url to communicate with ioBroker": "Ihr Server verwendet diese URL, um mit dem ioBroker zu kommunizieren",
+    "Url settings": "URL-Einstellungen",
+    "Use custom url for web binding": "Verwende benutzerdefinierte Web-URL",
+    "Custom web url": "Benutzerdefinierte Web-URL",
+    "Hostname or ip address": "Hostname oder IP-Adresse",
+    "Support this project": "Unterstützen Dieses Projekt"
 }

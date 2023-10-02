@@ -8,5 +8,10 @@
     "Create rooms and functions automatically": "Creëer automatisch kamers en functies",
     "Web adapter instance": "Webadapter-instantie",
     "Url preview": "URL-voorbeeld",
-    "Your server will use this url to communicate with ioBroker": "Uw server zal deze url gebruiken om te communiceren met ioBroker"
+    "Your server will use this url to communicate with ioBroker": "Uw server zal deze url gebruiken om te communiceren met ioBroker",
+    "Url settings": "URL-instellingen",
+    "Use custom url for web binding": "Gebruik een aangepaste URL voor webbinding",
+    "Custom web url": "Aangepaste web-URL",
+    "Hostname or ip address": "Hostnaam of IP-adres",
+    "Support this project": "Steun dit project"
 }

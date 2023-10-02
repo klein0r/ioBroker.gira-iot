@@ -8,5 +8,10 @@
     "Create rooms and functions automatically": "Создавайте комнаты и функции автоматически",
     "Web adapter instance": "Экземпляр веб-адаптера",
     "Url preview": "Предварительный просмотр URL",
-    "Your server will use this url to communicate with ioBroker": "Ваш сервер будет использовать этот URL-адрес для связи с ioBroker."
+    "Your server will use this url to communicate with ioBroker": "Ваш сервер будет использовать этот URL-адрес для связи с ioBroker.",
+    "Url settings": "Настройки URL",
+    "Use custom url for web binding": "Использовать собственный URL-адрес для веб-привязки",
+    "Custom web url": "Пользовательский веб-адрес",
+    "Hostname or ip address": "Имя хоста или IP-адрес",
+    "Support this project": "Поддержите этот проект"
 }

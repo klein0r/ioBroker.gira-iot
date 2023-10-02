@@ -8,5 +8,10 @@
     "Create rooms and functions automatically": "自动创建房间和功能",
     "Web adapter instance": "Web 适配器实例",
     "Url preview": "网址预览",
-    "Your server will use this url to communicate with ioBroker": "您的服务器将使用此 url 与 ioBroker 进行通信"
+    "Your server will use this url to communicate with ioBroker": "您的服务器将使用此 url 与 ioBroker 进行通信",
+    "Url settings": "网址设置",
+    "Use custom url for web binding": "使用自定义 url 进行 Web 绑定",
+    "Custom web url": "自定义网址",
+    "Hostname or ip address": "主机名或 IP 地址",
+    "Support this project": "支持这个项目"
 }
