@@ -1,4 +1,9 @@
 # Older changes
+## 0.1.2 (2022-10-01)
+
+* (klein0r) Improved callback registration handling
+* (klein0r) Improved error handling
+
 ## 0.1.1 (2022-09-29)
 
 * (klein0r) Changed registration of callbacks via web adapter

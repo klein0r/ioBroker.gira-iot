@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gira-iot",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "news": {
+      "0.4.0": {
+        "en": "Added types for remote access (not documented by Gira)\nAdded option for custom callback url (e.g. in Docker environments)",
+        "de": "Hinzugefügte Typen für Fernzugriff (nicht von Gira dokumentiert)\nZusätzliche Option für benutzerdefinierte Callback url (z.B. in Docker-Umgebungen)",
+        "ru": "Добавлены типы удаленного доступа (не задокументированы Gira)\nДобавлена опция для пользовательского callback url (например, в Docker-средах)",
+        "pt": "Tipos adicionados para acesso remoto (não documentado por Gira)\nAdicionado opção para callback personalizado url (por exemplo em ambientes Docker)",
+        "nl": "Geadresseerde types voor afstandsbediening\nToegevoegd optie voor gebruikelijke bel-url (e.g in Docker milieu)",
+        "fr": "Ajout de types pour l'accès à distance (non documenté par Gira)\nOption ajoutée pour callback url personnalisé (p. ex. dans les environnements Docker)",
+        "it": "Tipi aggiunti per accesso remoto (non documentati da Gira)\nAggiunta opzione per callback url personalizzato (ad esempio in ambienti Docker)",
+        "es": "Tipos de acceso remoto (no documentados por Gira)\nOpción adicional para url de llamada personalizada (por ejemplo en entornos Docker)",
+        "pl": "Dodrukowane typy zdalnego dostępu (nie udokumentowane przez Girę)\nDodrukowana opcja dla zwyczajowego urla (np. w środowisku Dockera)",
+        "uk": "Додано типи віддаленого доступу (не задокументовано Gira)\nДодано варіант для користувацького зворотного зв'язку url (наприклад, у Docker середовищі)",
+        "zh-cn": "增加远程准入类型(未在吉拉记录)\n增加习惯呼声(例如多克环境)的选择"
+      },
       "0.3.0": {
         "en": "Url preview in instance configuration\nImproved error handling",
         "de": "Url Vorschau zum Beispiel Konfiguration\nVerbesserte Fehlerbehandlung",
@@ -80,19 +93,6 @@
         "pl": "Zmiana rejestracji za pomocą adapterów internetowych\nRequest bieżące wartości\nRole państwowe",
         "uk": "Змінено реєстрацію зворотних дзвінків через веб-адаптер\nЗапит поточних значень на init\nОновлені ролі стану",
         "zh-cn": "B. 通过网络适应人员修改的报警登记\n请求目前关于推定的价值\n最新国家作用"
-      },
-      "0.1.0": {
-        "en": "Publish new values via HTTP\nUpdated state roles\nUse sendTo to communicate with adapter instance\nImplemented status update of value callbacks",
-        "de": "Neue Werte über HTTP veröffentlichen\nAktualisierte Staatsrollen\nVerwenden Sie sendTo, um mit Adapterinstanz zu kommunizieren\nImplementierte Statusaktualisierung von Wertrufen",
-        "ru": "Опубликовать новые значения через HTTP\nОбновленные государственные роли\nИспользуйте sendTo для связи с примером адаптера\nРеализовано обновление статуса callbacks",
-        "pt": "Publicar novos valores via HTTP\nFunções estaduais atualizadas\nUse sendTo para se comunicar com a instância do adaptador\nAtualização de status implementada de retornos de valor",
-        "nl": "Publish nieuwe waarden via HTP\nVerouderde staatsrollen\nGebruik om te communiceren met adapter bijvoorbeeld\nGeïmplementeerde status update van waardebedragen",
-        "fr": "Publier de nouvelles valeurs via HTTP\nRôles d ' État actualisés\nUtilisez sendTo pour communiquer avec l'instance adaptateur\nMise à jour de l ' état mis en œuvre des rappels de valeur",
-        "it": "Pubblica nuovi valori tramite HTTP\nRuoli di stato aggiornati\nUsa sendTo per comunicare con l'istanza dell'adattatore\nAggiornamento dello stato implementato dei callback di valore",
-        "es": "Publicar nuevos valores a través de HTTP\nFunciones estatales actualizadas\nUse sendTo para comunicarse con instancia de adaptador\nActualización del estado aplicado de los callbacks de valor",
-        "pl": "Wydawne wartości za pośrednictwem HTTP\nRole państwowe\nWykorzystywać do komunikacji z adapterem\nPoprawiony status aktualizacji callbacku wartości",
-        "uk": "Опублікувати нові значення через HTTP\nОновлені ролі стану\nВикористовуйте sendTo для зв’язку з примірником адаптера\nРеалізовано оновлення статусу зворотних викликів значень",
-        "zh-cn": "通过海贸总协定出版新价值观\n最新国家作用\n使用寄托与适应者联系\n执行附加要求的最新情况"
       }
     },
     "titleLang": {

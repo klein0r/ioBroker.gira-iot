@@ -45,7 +45,7 @@ iobroker add gira-iot
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.4.0 (2023-10-02)
 
 * (klein0r) Added types for remote access (not documented by Gira)
 * (klein0r) Added option for custom callback url (e.g. in Docker environments)
@@ -68,11 +68,6 @@ iobroker add gira-iot
 
 * (klein0r) Update objects if configuration changed
 * (klein0r) Fixed client registration for Gira Home Server
-
-### 0.1.2 (2022-10-01)
-
-* (klein0r) Improved callback registration handling
-* (klein0r) Improved error handling
 
 ## License
 
