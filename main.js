@@ -537,11 +537,27 @@ class GiraIot extends utils.Adapter {
 
                     this.getForeignObjectAsync(`system.adapter.${obj.message.webInstance}`)
                         .then((webObj) => {
-                            const protocol = webObj?.native?.secure ? 'https' : 'http';
-                            const bind = webObj?.native?.bind;
+                            const isSecure = webObj?.native?.secure;
+                            const protocol = isSecure ? 'https' : 'http';
                             const port = webObj?.native?.port;
+                            const bind = webObj?.native?.bind;
 
-                            this.sendTo(obj.from, obj.command, `${protocol}://${bind}:${port}/${this.namespace}/`, obj.callback);
+                            if (!isSecure) {
+                                this.sendTo(obj.from, obj.command, `Error: https (secure mode) is required in ${obj.message.webInstance}`, obj.callback);
+                            } else if (bind && bind.includes('0.0.0.0')) {
+                                this.sendTo(obj.from, obj.command, `Error: Configure specific interface in ${obj.message.webInstance} (or use manual mode)`, obj.callback);
+                            } else {
+                                if (obj.message?.webCustomUrlActive) {
+                                    const customWebUrl = obj.message?.webCustomUrl;
+                                    if (customWebUrl) {
+                                        this.sendTo(obj.from, obj.command, `${protocol}://${customWebUrl}:${port}/${this.namespace}/`, obj.callback);
+                                    } else {
+                                        this.sendTo(obj.from, obj.command, `Error: Custom web url is not defined`, obj.callback);
+                                    }
+                                } else {
+                                    this.sendTo(obj.from, obj.command, `${protocol}://${bind}:${port}/${this.namespace}/`, obj.callback);
+                                }
+                            }
                         })
                         .catch((err) => {
                             this.sendTo(obj.from, obj.command, `Error: ${err}`, obj.callback);

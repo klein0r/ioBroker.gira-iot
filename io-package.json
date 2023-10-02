@@ -180,7 +180,9 @@
     "userName": "Installer",
     "userPassword": "",
     "createRoomsAndFunctions": false,
-    "webInstance": ""
+    "webInstance": "",
+    "webCustomUrlActive": false,
+    "webCustomUrl": ""
   },
   "objects": [],
   "instanceObjects": [

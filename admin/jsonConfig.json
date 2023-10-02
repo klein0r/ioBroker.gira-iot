@@ -48,6 +48,15 @@
                     "lg": 6,
                     "label": "Create rooms and functions automatically"
                 },
+                "_headerOptionsWebSettings": {
+                    "newLine": true,
+                    "type": "header",
+                    "text": "Url settings",
+                    "size": 3,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12
+                },
                 "webInstance": {
                     "newLine": true,
                     "type": "instance",
@@ -61,14 +70,44 @@
                     "type": "textSendTo",
                     "container": "text",
                     "copyToClipboard": false,
-                    "alsoDependsOn": ["webInstance"],
+                    "alsoDependsOn": [
+                        "webInstance",
+                        "webCustomUrlActive",
+                        "webCustomUrl"
+                    ],
                     "command": "getWebUrl",
-                    "jsonData": "{\"webInstance\": \"${data.webInstance}\"}",
+                    "jsonData": "{\"webInstance\": \"${data.webInstance}\", \"webCustomUrlActive\": ${!!data.webCustomUrlActive}, \"webCustomUrl\": \"${data.webCustomUrl}\"}",
                     "sm": 12,
                     "md": 6,
                     "lg": 6,
                     "label": "Url preview",
                     "help": "Your server will use this url to communicate with ioBroker"
+                },
+                "webCustomUrlActive": {
+                    "newLine": true,
+                    "type": "checkbox",
+                    "sm": 12,
+                    "md": 6,
+                    "lg": 6,
+                    "label": "Use custom url for web binding"
+                },
+                "webCustomUrl": {
+                    "hidden": "!data.webCustomUrlActive",
+                    "type": "text",
+                    "sm": 12,
+                    "md": 6,
+                    "lg": 6,
+                    "label": "Custom web url",
+                    "help": "Hostname or ip address"
+                },
+                "_headerOptionsSupport": {
+                    "newLine": true,
+                    "type": "header",
+                    "text": "Support this project",
+                    "size": 3,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12
                 },
                 "_ioBrokerKursBanner": {
                     "newLine": true,

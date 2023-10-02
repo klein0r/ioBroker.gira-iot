@@ -48,6 +48,7 @@ iobroker add gira-iot
 ### **WORK IN PROGRESS**
 
 * (klein0r) Added types for remote access (not documented by Gira)
+* (klein0r) Added option for custom callback url (e.g. in Docker environments)
 
 ### 0.3.0 (2023-09-13)
 
