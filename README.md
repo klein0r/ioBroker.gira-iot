@@ -45,6 +45,10 @@ iobroker add gira-iot
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+NodeJS 16.x is required
+
 ### 0.4.0 (2023-10-02)
 
 * (klein0r) Added types for remote access (not documented by Gira)
