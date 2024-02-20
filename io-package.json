@@ -130,7 +130,12 @@
       "homeserver",
       "iot"
     ],
-    "license": "MIT",
+    "tier": 3,
+    "licenseInformation": {
+      "license": "MIT",
+      "type": "free"
+    },
+    "automaticUpgrade": "patch",
     "platform": "Javascript/Node.js",
     "icon": "gira-iot.png",
     "extIcon": "https://raw.githubusercontent.com/klein0r/ioBroker.gira-iot/master/admin/gira-iot.png",
