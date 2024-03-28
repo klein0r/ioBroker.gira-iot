@@ -45,7 +45,7 @@ iobroker add gira-iot
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.5.0 (2024-03-28)
 
 NodeJS >= 18.x and js-controller >= 5 is required
 
@@ -67,11 +67,6 @@ NodeJS >= 18.x and js-controller >= 5 is required
 
 * (klein0r) Dropped Admin 5 support
 * (klein0r) Added Ukrainian language
-
-### 0.1.3 (2022-10-10)
-
-* (klein0r) Update objects if configuration changed
-* (klein0r) Fixed client registration for Gira Home Server
 
 ## License
 

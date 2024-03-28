@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gira-iot",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "news": {
+      "0.5.0": {
+        "en": "NodeJS >= 18.x and js-controller >= 5 is required",
+        "de": "NodeJS >= 18.x und js-Controller >= 5 ist erforderlich",
+        "ru": "NodeJS >= 18.x и js-контроллер >= 5 требуется",
+        "pt": "NodeJS >= 18.x e js-controller >= 5 é necessário",
+        "nl": "Voor de toepassing van de onderverdelingen 870190 tot en met 870290 wordt onder post 8702 verstaan: 5 is vereist",
+        "fr": "NodeJS >= 18.x et js-controller >= 5 est nécessaire",
+        "it": "NodeJS >= 18.x e js-controller 5 è richiesto",
+        "es": "NodeJS >= 18.x y js-controller Se requiere 5",
+        "pl": "NodeJS > = 18.x i kontroler js- > = 5 jest wymagane",
+        "uk": "NodeJS >= 18.x та js-controller >= 5 обов'язково",
+        "zh-cn": "节点JS18x和js控制器QQ 需要5个"
+      },
       "0.4.0": {
         "en": "Added types for remote access (not documented by Gira)\nAdded option for custom callback url (e.g. in Docker environments)",
         "de": "Hinzugefügte Typen für Fernzugriff (nicht von Gira dokumentiert)\nZusätzliche Option für benutzerdefinierte Callback url (z.B. in Docker-Umgebungen)",
@@ -80,19 +93,6 @@
         "pl": "Poprawa rejestracyjna\nPoprawiona obsługa błędów",
         "uk": "Покращена обробка реєстрації зворотного виклику\nПокращена обробка помилок",
         "zh-cn": "改进呼吁登记\n改进错误处理"
-      },
-      "0.1.1": {
-        "en": "Changed registration of callbacks via web adapter\nRequest current values on init\nUpdated state roles",
-        "de": "Änderung der Registrierung von Rückrufen über Webadapter\nAktuelle Werte an init anfordern\nAktualisierte Staatsrollen",
-        "ru": "Изменена регистрация звонков через веб-адаптер\nЗапрос текущих значений на init\nОбновленные государственные роли",
-        "pt": "Registo alterado de callbacks via adaptador web\nSolicite valores atuais no init\nFunções estaduais atualizadas",
-        "nl": "Veranderde registratie van bellers via web adapter\nVerzoek de huidige waarden op\nVerouderde staatsrollen",
-        "fr": "Changement d'enregistrement des callbacks via l'adaptateur web\nDemander des valeurs actuelles sur l'init\nRôles d ' État actualisés",
-        "it": "Registrazione modificata dei callback tramite web adapter\nRichiedi i valori correnti su init\nRuoli di stato aggiornati",
-        "es": "Cambio de registro de callbacks a través de adaptador web\nSolicitar valores actuales sobre init\nFunciones estatales actualizadas",
-        "pl": "Zmiana rejestracji za pomocą adapterów internetowych\nRequest bieżące wartości\nRole państwowe",
-        "uk": "Змінено реєстрацію зворотних дзвінків через веб-адаптер\nЗапит поточних значень на init\nОновлені ролі стану",
-        "zh-cn": "B. 通过网络适应人员修改的报警登记\n请求目前关于推定的价值\n最新国家作用"
       }
     },
     "titleLang": {

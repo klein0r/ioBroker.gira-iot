@@ -1,4 +1,9 @@
 # Older changes
+## 0.1.3 (2022-10-10)
+
+* (klein0r) Update objects if configuration changed
+* (klein0r) Fixed client registration for Gira Home Server
+
 ## 0.1.2 (2022-10-01)
 
 * (klein0r) Improved callback registration handling
