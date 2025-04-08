@@ -45,6 +45,10 @@ iobroker add gira-iot
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+NodeJS >= 20.x and js-controller >= 6 is required
+
 ### 0.5.0 (2024-03-28)
 
 NodeJS >= 18.x and js-controller >= 5 is required
