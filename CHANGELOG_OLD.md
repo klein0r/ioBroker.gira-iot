@@ -1,4 +1,9 @@
 # Older changes
+## 0.2.0 (2022-12-12)
+
+* (klein0r) Dropped Admin 5 support
+* (klein0r) Added Ukrainian language
+
 ## 0.1.3 (2022-10-10)
 
 * (klein0r) Update objects if configuration changed

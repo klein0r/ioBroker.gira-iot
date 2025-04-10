@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gira-iot",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "news": {
+      "0.6.0": {
+        "en": "NodeJS >= 20.x and js-controller >= 6 is required",
+        "de": "NodeJS >= 20.x und js-Controller >= 6 ist erforderlich",
+        "ru": "NodeJS >= 20.x и js-контроллер >= 6 Требуется",
+        "pt": "NodeJS >= 20.x e js-controller >= 6 é necessário",
+        "nl": "Van niet-gelegeerd staal 6 is vereist",
+        "fr": "NodeJS >= 20.x et js-controller >= 6 est nécessaire",
+        "it": "NodeJS >= 20.x e js-controller >= 6 è richiesto",
+        "es": "NodeJS ю= 20.x y js-controller Se requiere 6",
+        "pl": "NodeJS > = 20 x i kontroler js- > = 6 jest wymagane",
+        "uk": "NodeJS >= 20.x та js-controller >= 6 обов'язковий",
+        "zh-cn": "节点JS20x和js控制器QQ 需要6个"
+      },
       "0.5.0": {
         "en": "NodeJS >= 18.x and js-controller >= 5 is required",
         "de": "NodeJS >= 18.x und js-Controller >= 5 ist erforderlich",
@@ -80,19 +93,6 @@
         "pl": "Obiekty aktualne, jeśli konfiguracja zmieniła się zmieniać\nStrona internetowa firmy Gira Home Server",
         "uk": "Оновити об’єкти, якщо змінилася конфігурація\nВиправлена ​​реєстрація клієнта для Gira Home Server",
         "zh-cn": "如果组合变化,更新物体\nGira Home Server的固定客户登记"
-      },
-      "0.1.2": {
-        "en": "Improved callback registration handling\nImproved error handling",
-        "de": "Verbesserte Callback-Registrierung\nVerbesserte Fehlerbehandlung",
-        "ru": "Улучшена обработка регистрации звонков\nУлучшена обработка ошибок",
-        "pt": "Manuseio aprimorado do registro de retorno de chamada\nMelhor manuseio de erros",
-        "nl": "Vertaling:\nImproviserende fouten",
-        "fr": "Amélioration du traitement de l ' enregistrement des rappels\nAmélioration de la manipulation des erreurs",
-        "it": "Miglioramento della gestione della registrazione del callback\nMiglioramento della gestione degli errori",
-        "es": "Mejora de la gestión del registro de callback\nMejor manejo de errores",
-        "pl": "Poprawa rejestracyjna\nPoprawiona obsługa błędów",
-        "uk": "Покращена обробка реєстрації зворотного виклику\nПокращена обробка помилок",
-        "zh-cn": "改进呼吁登记\n改进错误处理"
       }
     },
     "titleLang": {
