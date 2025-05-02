@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gira-iot",
-    "version": "0.6.0",
+    "version": "0.6.1",
     "news": {
+      "0.6.1": {
+        "en": "NodeJS >= 20.x and js-controller >= 6 is required",
+        "de": "NodeJS >= 20.x und js-Controller >= 6 ist erforderlich",
+        "ru": "NodeJS >= 20.x и js-контроллер >= 6 Требуется",
+        "pt": "NodeJS >= 20.x e js-controller >= 6 é necessário",
+        "nl": "Van niet-gelegeerd staal 6 is vereist",
+        "fr": "NodeJS >= 20.x et js-controller >= 6 est nécessaire",
+        "it": "NodeJS >= 20.x e js-controller >= 6 è richiesto",
+        "es": "NodeJS ю= 20.x y js-controller Se requiere 6",
+        "pl": "NodeJS > = 20 x i kontroler js- > = 6 jest wymagane",
+        "uk": "NodeJS >= 20.x та js-controller >= 6 обов'язковий",
+        "zh-cn": "节点JS20x和js控制器QQ 需要6个"
+      },
       "0.5.0": {
         "en": "NodeJS >= 18.x and js-controller >= 5 is required",
         "de": "NodeJS >= 18.x und js-Controller >= 5 ist erforderlich",
