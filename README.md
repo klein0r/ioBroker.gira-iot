@@ -73,6 +73,8 @@ NodeJS >= 18.x and js-controller >= 5 is required
 
 * (klein0r) Added Ukrainian language
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 
 MIT License
