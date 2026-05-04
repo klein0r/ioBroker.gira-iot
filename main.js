@@ -2,7 +2,7 @@
 
 const utils = require('@iobroker/adapter-core');
 const axios = require('axios').default;
-const https = require('https');
+const https = require('node:https');
 const giraTypes = require(`${__dirname}/lib/gira-types`);
 
 class GiraIot extends utils.Adapter {
