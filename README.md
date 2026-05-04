@@ -46,9 +46,9 @@ iobroker add gira-iot
     ### **WORK IN PROGRESS**
 -->
 ### **WORK IN PROGRESS**
-- (copilot) Adapter requires node.js >= 22 now
 
-* (@klein0r) admin 7.6.17 and js-controller 6.0.11 (or later) are required
+* (copilot) Adapter requires node.js >= 22 now
+* (@klein0r) admin 7.6.20 and js-controller 6.0.11 (or later) are required
 * (@klein0r) Updated dependencies
 
 ### 0.6.1 (2025-05-02)
