@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "gira-iot",
-    "version": "0.6.1",
+    "version": "0.7.0",
     "news": {
+      "0.7.0": {
+        "en": "Adapter requires node.js >= 22 now\nadmin 7.6.20 and js-controller 6.0.11 (or later) are required\nUpdated dependencies",
+        "de": "Adapter benötigt node.js >= 22 jetzt\nadmin 7.6.20 und js-controller 6.0.11 (oder später) sind erforderlich\nAktualisierte Abhängigkeiten",
+        "ru": "Адаптер требует node.js >= 22 сейчас\nadmin 7.6.20 и js-контроллер 6.0.11 (или более поздний)\nОбновленные зависимости",
+        "pt": "Adaptador requer nod.js >= 22 agora\nadmin 7.6.20 e js-controller 6.0.11 (ou posterior) são necessários\nDependências atualizadas",
+        "nl": "Voor de adapter zijn node.js < 22 nu nodig\nadmin 7.6.20 en js-controller 6.0.11 (of later) zijn vereist\nBijgewerkte afhankelijkheden",
+        "fr": "Adaptateur nécessite node.js >= 22 maintenant\nadmin 7.6.20 et js-controller 6.0.11 (ou plus tard) sont requis\nDépendances actualisées",
+        "it": "Adattatore richiede node.js >= 22 ora\nadmin 7.6.20 e js-controller 6.0.11 (o più tardi) sono richiesti\nDipendenze aggiornate",
+        "es": "Adaptador requiere node.js ю= 22 ahora\nadmin 7.6.20 y js-controller 6.0.11 (o posterior) son necesarios\nDependencias actualizadas",
+        "pl": "Adapter wymaga node.js > = 22\nwymagane jest admin 7.6.20 i js- controller 6.0.11 (lub później)\nAktualizacja zależności",
+        "uk": "Адаптер вимагає node.js >= 22 тепер\nadmin 7.6.20 і js-controller 6.0.11 (або пізніше) обов'язкові\nОновлені залежності",
+        "zh-cn": "适配器需要节点.js 现在22\n需要admin 7.6.20和js控制器 6.0.11(或以后)\n更新的依赖关系"
+      },
       "0.6.1": {
         "en": "NodeJS >= 20.x and js-controller >= 6 is required",
         "de": "NodeJS >= 20.x und js-Controller >= 6 ist erforderlich",
@@ -80,19 +93,6 @@
         "pl": "Dropped Admin 5 (ang.)\nJęzyk ukraiński",
         "uk": "Підтримка Dropped Admin 5\nУкраїнська мова",
         "zh-cn": "D. 减少5个支助\n增加乌克兰语"
-      },
-      "0.1.3": {
-        "en": "Update objects if configuration changed\nFixed client registration for Gira Home Server",
-        "de": "Aktualisieren von Objekten, wenn die Konfiguration geändert wird\nBehobene Client-Registrierung für Gira Home Server",
-        "ru": "Обновить объекты, если конфигурация изменилась\nИсправлена регистрация клиента для Gira Home Server",
-        "pt": "Atualizar objetos se a configuração mudou\nRegisto de cliente fixo para Gira Home Server",
-        "nl": "Update objecten als vertrouwen veranderd\nGeregistreerd cliënt registratie voor Gira Home Server",
-        "fr": "Mettre à jour des objets si la configuration change\nEnregistrement fixe du client pour Gira Home Server",
-        "it": "Aggiorna gli oggetti se la configurazione è cambiata\nRegistrazione client fissa per Gira Home Server",
-        "es": "Actualizar objetos si la configuración cambia\nRegistro de cliente fijo para Gira Home Server",
-        "pl": "Obiekty aktualne, jeśli konfiguracja zmieniła się zmieniać\nStrona internetowa firmy Gira Home Server",
-        "uk": "Оновити об’єкти, якщо змінилася конфігурація\nВиправлена ​​реєстрація клієнта для Gira Home Server",
-        "zh-cn": "如果组合变化,更新物体\nGira Home Server的固定客户登记"
       }
     },
     "titleLang": {

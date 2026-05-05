@@ -1,4 +1,10 @@
 # Older changes
+## 0.2.1 (2023-01-11)
+
+* (klein0r) Added Ukrainian language
+
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## 0.2.0 (2022-12-12)
 
 * (klein0r) Dropped Admin 5 support
