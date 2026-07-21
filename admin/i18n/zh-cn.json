@@ -1,0 +1,17 @@
+{
+    "Create rooms and functions automatically": "自动创建房间和功能",
+    "Custom web url": "自定义网址",
+    "Hostname or ip address": "主机名或 IP 地址",
+    "IP or hostname of your Gira X1 or HomeServer": "Gira X1 或 HomeServer 的 IP 或主机名",
+    "Options": "选项",
+    "Password": "密码",
+    "Port": "港口",
+    "Server": "服务器",
+    "Support this project": "支持这个项目",
+    "Url preview": "网址预览",
+    "Url settings": "网址设置",
+    "Use custom url for web binding": "使用自定义 url 进行 Web 绑定",
+    "Username": "用户名",
+    "Web adapter instance": "Web 适配器实例",
+    "Your server will use this url to communicate with ioBroker": "您的服务器将使用此 url 与 ioBroker 进行通信"
+}

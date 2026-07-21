@@ -1,0 +1,17 @@
+{
+    "Create rooms and functions automatically": "Creëer automatisch kamers en functies",
+    "Custom web url": "Aangepaste web-URL",
+    "Hostname or ip address": "Hostnaam of IP-adres",
+    "IP or hostname of your Gira X1 or HomeServer": "IP of hostnaam van uw Gira X1 of HomeServer",
+    "Options": "Opties",
+    "Password": "Wachtwoord",
+    "Port": "Haven",
+    "Server": "Server",
+    "Support this project": "Steun dit project",
+    "Url preview": "URL-voorbeeld",
+    "Url settings": "URL-instellingen",
+    "Use custom url for web binding": "Gebruik een aangepaste URL voor webbinding",
+    "Username": "gebruikersnaam",
+    "Web adapter instance": "Webadapter-instantie",
+    "Your server will use this url to communicate with ioBroker": "Uw server zal deze url gebruiken om te communiceren met ioBroker"
+}

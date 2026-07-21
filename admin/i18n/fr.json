@@ -1,0 +1,17 @@
+{
+    "Create rooms and functions automatically": "Créez des salles et des fonctions automatiquement",
+    "Custom web url": "URL Web personnalisée",
+    "Hostname or ip address": "Nom d'hôte ou adresse IP",
+    "IP or hostname of your Gira X1 or HomeServer": "IP ou nom d'hôte de votre Gira X1 ou HomeServer",
+    "Options": "Choix",
+    "Password": "Mot de passe",
+    "Port": "Port",
+    "Server": "Serveur",
+    "Support this project": "Soutenez ce projet",
+    "Url preview": "Aperçu de l'URL",
+    "Url settings": "Paramètres d'URL",
+    "Use custom url for web binding": "Utiliser une URL personnalisée pour la liaison Web",
+    "Username": "Nom d'utilisateur",
+    "Web adapter instance": "Instance d'adaptateur Web",
+    "Your server will use this url to communicate with ioBroker": "Votre serveur utilisera cette URL pour communiquer avec ioBroker"
+}
