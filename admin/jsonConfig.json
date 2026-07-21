@@ -13,6 +13,7 @@
                     "sm": 12,
                     "md": 6,
                     "lg": 6,
+                    "xl": 6,
                     "label": "Server",
                     "help": "IP or hostname of your Gira X1 or HomeServer"
                 },
@@ -20,34 +21,42 @@
                     "type": "number",
                     "min": 1,
                     "max": 65535,
+                    "xs": 12,
                     "sm": 12,
                     "md": 6,
                     "lg": 6,
+                    "xl": 6,
                     "label": "Port"
                 },
                 "userName": {
                     "newLine": true,
                     "type": "text",
+                    "xs": 12,
                     "sm": 12,
                     "md": 6,
                     "lg": 6,
+                    "xl": 6,
                     "label": "Username"
                 },
                 "userPassword": {
                     "type": "password",
                     "repeat": false,
                     "visible": false,
+                    "xs": 12,
                     "sm": 12,
                     "md": 6,
                     "lg": 6,
+                    "xl": 6,
                     "label": "Password"
                 },
                 "createRoomsAndFunctions": {
                     "newLine": true,
                     "type": "checkbox",
+                    "xs": 12,
                     "sm": 12,
                     "md": 6,
                     "lg": 6,
+                    "xl": 6,
                     "label": "Create rooms and functions automatically"
                 },
                 "_headerOptionsWebSettings": {
@@ -55,17 +64,21 @@
                     "type": "header",
                     "text": "Url settings",
                     "size": 3,
+                    "xs": 12,
                     "sm": 12,
                     "md": 12,
-                    "lg": 12
+                    "lg": 12,
+                    "xl": 12
                 },
                 "webInstance": {
                     "newLine": true,
                     "type": "instance",
                     "adapter": "web",
+                    "xs": 12,
                     "sm": 12,
                     "md": 6,
                     "lg": 6,
+                    "xl": 6,
                     "label": "Web adapter instance"
                 },
                 "_webInstanceUrl": {
@@ -79,26 +92,32 @@
                     ],
                     "command": "getWebUrl",
                     "jsonData": "{\"webInstance\": \"${data.webInstance}\", \"webCustomUrlActive\": ${!!data.webCustomUrlActive}, \"webCustomUrl\": \"${data.webCustomUrl}\"}",
+                    "xs": 12,
                     "sm": 12,
                     "md": 6,
                     "lg": 6,
+                    "xl": 6,
                     "label": "Url preview",
                     "help": "Your server will use this url to communicate with ioBroker"
                 },
                 "webCustomUrlActive": {
                     "newLine": true,
                     "type": "checkbox",
+                    "xs": 12,
                     "sm": 12,
                     "md": 6,
                     "lg": 6,
+                    "xl": 6,
                     "label": "Use custom url for web binding"
                 },
                 "webCustomUrl": {
                     "hidden": "!data.webCustomUrlActive",
                     "type": "text",
+                    "xs": 12,
                     "sm": 12,
                     "md": 6,
                     "lg": 6,
+                    "xl": 6,
                     "label": "Custom web url",
                     "help": "Hostname or ip address"
                 },
@@ -107,16 +126,20 @@
                     "type": "header",
                     "text": "Support this project",
                     "size": 3,
+                    "xs": 12,
                     "sm": 12,
                     "md": 12,
-                    "lg": 12
+                    "lg": 12,
+                    "xl": 12
                 },
                 "_ioBrokerKursBanner": {
                     "newLine": true,
                     "type": "staticImage",
+                    "xs": 12,
                     "sm": 12,
                     "md": 6,
                     "lg": 6,
+                    "xl": 6,
                     "href": "https://haus-automatisierung.com/iobroker-kurs/?refid=iobroker-gira-iot",
                     "src": "https://haus-automatisierung.com/images/ads/ioBroker-Kurs.png"
                 }
